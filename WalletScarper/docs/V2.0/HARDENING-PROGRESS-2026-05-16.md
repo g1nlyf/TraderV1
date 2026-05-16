@@ -226,9 +226,9 @@ Created `WalletTradePollerService.tick()`:
 
 | Priority | Issue | Impact | Fix |
 |----------|-------|--------|-----|
-| **HIGH** | pump.fun tokens rejected by Phase 2 validator | Phase 5 pump.fun source produces zero valid candidates when Helius configured | Add pump.fun bonding curve mint authority whitelist in TokenValidatorService |
+| ~~**HIGH**~~ ✅ | pump.fun tokens rejected by Phase 2 validator | Phase 5 pump.fun source produces zero valid candidates when Helius configured | **FIXED**: `_validate_onchain` discards `mutable_supply` flag for `dex_id=="pump_fun"` tokens — bonding curve holds mint_authority until graduation, expected behavior |
 | **HIGH** | `pool_address` empty for Helius live-polled trades | Stage2 pipeline steps requiring pool_address produce incomplete records | Parse pool address from Raydium program instruction accounts |
-| **MEDIUM** | LLM confidence value case-sensitivity | "HIGH" != "high" → wrong gate behavior | Normalize `llm_response.get("confidence")` to lowercase |
+| ~~**MEDIUM**~~ ✅ | LLM confidence value case-sensitivity | "HIGH" != "high" → wrong gate behavior | **FIXED**: `confidence` and `signal_strength` now `.lower()` before comparison in `hermes_review/service.py` |
 | **MEDIUM** | Circuit breaker based on closed outcomes only | Doesn't protect against rapid sequence of open-position entries | Add open position count check as secondary breaker |
 | **MEDIUM** | `wallet_trades` not written directly by live poller | Stage2 wallet intelligence has delay until next wallet_extraction run | Implement direct Stage2 wallet_trades writer with raw_source_event FK chain |
 | **LOW** | pump.fun API endpoint undocumented | May break without warning | Monitor HTTP 4xx/5xx, add health-check logging |

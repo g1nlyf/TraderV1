@@ -152,13 +152,13 @@ class HermesSignalReviewService:
         if decision_type == "signal":
             from walletscarper.config import settings as cfg
 
-            confidence = str(llm_response.get("confidence") or "low")
-            signal_strength = str(llm_response.get("signal_strength") or "weak")
+            confidence = str(llm_response.get("confidence") or "low").lower()
+            signal_strength = str(llm_response.get("signal_strength") or "weak").lower()
             _strength_rank = {"strong": 3, "moderate": 2, "weak": 1, "absent": 0}
-            threshold_rank = _strength_rank.get(cfg.hermes_signal_strength_threshold, 2)
+            threshold_rank = _strength_rank.get(cfg.hermes_signal_strength_threshold.lower(), 2)
             actual_rank = _strength_rank.get(signal_strength, 0)
 
-            if confidence != cfg.hermes_confidence_threshold:
+            if confidence != cfg.hermes_confidence_threshold.lower():
                 log.info(
                     "hermes_review: signal decision skipped — confidence=%s (need %s)",
                     confidence, cfg.hermes_confidence_threshold,
@@ -190,7 +190,7 @@ class HermesSignalReviewService:
                 "side": str(signal.get("side") or "buy"),
                 "signal_type": "wallet_follow",
                 "source_refs": [f"tracked_wallet_signal_event:{signal['tracked_wallet_signal_event_id']}"],
-                "confidence": str(llm_response.get("confidence") or "low"),
+                "confidence": str(llm_response.get("confidence") or "low").lower(),
                 "thesis": {
                     "signal_strength": str(llm_response.get("signal_strength") or "moderate"),
                     "wallet_assessment": str(llm_response.get("wallet_assessment") or "")[:500],

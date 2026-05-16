@@ -53,8 +53,15 @@ class DiscoveryService:
                 continue
             result = validation.get(c.token_mint)
             if result and not result["is_safe"]:
-                log.info("discovery: rejected %s on-chain flags=%s", (c.symbol or c.token_mint[:8]), result["flags"])
-                rejected += 1
+                blocking = set(result.get("flags") or []) & {"freeze_authority_active", "mutable_supply"}
+                # pump.fun bonding curve holds mint_authority until graduation — expected, not a scam indicator
+                if c.dex_id == "pump_fun":
+                    blocking.discard("mutable_supply")
+                if blocking:
+                    log.info("discovery: rejected %s on-chain flags=%s", (c.symbol or c.token_mint[:8]), result["flags"])
+                    rejected += 1
+                else:
+                    safe.append(c)
             else:
                 safe.append(c)
         if rejected:
