@@ -1,0 +1,95 @@
+{
+  "evidence_counts_in_validation_db": {
+    "fill_quote_comparisons": 0,
+    "live_data_acceptance_windows": 0,
+    "quote_observations": 0,
+    "route_quality_evidence": 0,
+    "source_latency_samples": 0
+  },
+  "implemented_capabilities": {
+    "fill_vs_quote": "Append-only fill_quote_comparisons compare paper fills against contemporaneous quote observations without rewriting fills or TradeOutcomes.",
+    "latency_tracking": "Observed-vs-ingested lag, response latency, total latency, and confidence impact are recorded in source_latency_samples and surfaced in operational health summaries.",
+    "live_data_window": "Append-only live_data_acceptance_windows summarize observation-only windows and fail closed when freshness, latency, route, or comparison metrics are insufficient.",
+    "quote_capture": "Observation-only quote snapshots are persisted as RawSourceEvent, normalized MarketSnapshot/evidence refs, quote_observations, and source_latency_samples.",
+    "route_quality": "Append-only route_quality_evidence records liquidity, route depth, spread, independent quote count, score, and sufficiency without executing routes."
+  },
+  "no_live_execution_confirmation": "No live execution, private-key handling, signer, swap adapter, DEX transaction construction, or real order placement was added.",
+  "provenance": {
+    "exported_at": "2026-05-15T14:18:05.736314+00:00",
+    "source_database": "C:\\Users\\hacke\\CascadeProjects\\Finals1\\TraderV1\\WalletScarper\\tmp\\shadow_readiness_validation.sqlite3",
+    "source_final_acceptance_report_id": "final_acceptance_report_61051a351f83435ba76ec5f08fd00c33",
+    "source_shadow_gap_report_id": "shadow_gap_19bdb1c94e3a49e2a15c1ac34107c8d4"
+  },
+  "release_baseline": {
+    "archive": "docs/release-baselines/stage2-accepted-with-gaps-baseline-20260515.zip",
+    "decision": "Stage 2 accepted_with_gaps",
+    "note": "No git metadata exists in this workspace; a timestamped archive baseline was created before implementation changes."
+  },
+  "shadow_gap_status": {
+    "blocks_stage2_release": false,
+    "blocks_stage3_progression": true,
+    "current_evidence": {
+      "fill_vs_quote_comparison": "No simulated fills are compared with independent contemporaneous quotes.",
+      "fresh_high_confidence_quote_stream": "No eligible fresh market snapshot is available.",
+      "route_quality_model": "No sufficient route-quality evidence exists.",
+      "source_latency_distribution": "No source latency samples are recorded.",
+      "stage2_owned_live_data_acceptance_window": "No passed live data acceptance window is recorded."
+    },
+    "latest_report_status": "gap_report_required",
+    "missing_capabilities": [
+      "fresh_high_confidence_quote_stream",
+      "source_latency_distribution",
+      "route_quality_model",
+      "fill_vs_quote_comparison",
+      "stage2_owned_live_data_acceptance_window"
+    ],
+    "status": "partially_closed_implementation_added_but_stage3_still_open"
+  },
+  "validation": {
+    "commands": [
+      {
+        "command": ".\\.venv\\Scripts\\python.exe -m pytest tests\\test_stage2_shadow_readiness_gap_closure.py -q",
+        "details": "7 passed",
+        "result": "passed"
+      },
+      {
+        "command": ".\\.venv\\Scripts\\python.exe -m pytest -q",
+        "details": "55 passed in 62.38s",
+        "result": "passed"
+      },
+      {
+        "command": ".\\.venv\\Scripts\\python.exe -m compileall walletscarper",
+        "details": "compileall completed successfully",
+        "result": "passed"
+      },
+      {
+        "command": ".\\.venv\\Scripts\\python.exe -m walletscarper stage2-migrate",
+        "details": "migrations 1-8 applied to tmp/shadow_readiness_validation.sqlite3",
+        "result": "passed"
+      },
+      {
+        "command": ".\\.venv\\Scripts\\python.exe -m walletscarper project-health-check",
+        "details": "database_connectivity ok; migration_status current; live_execution_enabled false; trading_workflows_enabled false",
+        "result": "passed"
+      },
+      {
+        "command": ".\\.venv\\Scripts\\python.exe -m walletscarper stage2-final-acceptance --run-mode fixture_replay",
+        "details": "decision accepted_with_gaps; invariant_findings 0; critical_violations 0; shadow_status gap_report_required",
+        "result": "passed_with_gaps"
+      },
+      {
+        "command": ".\\.venv\\Scripts\\python.exe -m walletscarper stage2-final-acceptance --run-mode shadow_gap_assessment",
+        "details": "decision accepted_with_gaps; latest shadow gap report remains gap_report_required",
+        "result": "passed_with_gaps"
+      },
+      {
+        "command": "rg dangerous-term scan",
+        "details": "new Stage 2 shadow_readiness code has no matches; remaining matches are docs/prohibitions or legacy read-only market-data terminology",
+        "result": "reviewed"
+      }
+    ],
+    "stage2_database_path": "C:\\Users\\hacke\\CascadeProjects\\Finals1\\TraderV1\\WalletScarper\\tmp\\shadow_readiness_validation.sqlite3",
+    "validated_at": "2026-05-15",
+    "working_directory": "C:\\Users\\hacke\\CascadeProjects\\Finals1\\TraderV1\\WalletScarper"
+  }
+}

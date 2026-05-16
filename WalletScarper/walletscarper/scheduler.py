@@ -1,0 +1,59 @@
+from __future__ import annotations
+
+import asyncio
+import logging
+
+from apscheduler.schedulers.asyncio import AsyncIOScheduler
+
+from walletscarper.config import settings
+from walletscarper.db import db
+from walletscarper.services.backfill import BackfillService
+from walletscarper.services.live_monitor import LiveMonitor
+from walletscarper.services.pipeline import Pipeline
+from walletscarper.services.stage2_scanner import Stage2ScannerService
+from walletscarper.services.telegram import TelegramService
+from walletscarper.services.wallet_tracker import WalletTracker
+from walletscarper.sources.bitquery_corecast import BitqueryCoreCastSource
+
+log = logging.getLogger(__name__)
+
+
+class WalletScarperScheduler:
+    def __init__(self) -> None:
+        self.scheduler = AsyncIOScheduler(timezone="UTC")
+        self.pipeline = Pipeline()
+        self.backfill = BackfillService()
+        self.live = LiveMonitor()
+        self.telegram = TelegramService()
+        self.wallet_tracker = WalletTracker()
+        self.bitquery = BitqueryCoreCastSource()
+        self.stage2_scanner = Stage2ScannerService()
+
+    async def start(self) -> None:
+        await db.init()
+        self.scheduler.add_job(self.pipeline.run_once, "interval", minutes=settings.discovery_interval_minutes, kwargs={"notify": True}, id="discovery", max_instances=1, coalesce=True)
+        self.scheduler.add_job(self.backfill.run_backfill_batch, "interval", minutes=15, id="backfill", max_instances=1, coalesce=True)
+        self.scheduler.add_job(self.live.tick, "interval", seconds=settings.live_monitor_interval_seconds, id="live_monitor", max_instances=1, coalesce=True)
+        if settings.bitquery_configured:
+            self.scheduler.add_job(
+                self.bitquery.stream_dex_trades,
+                "interval",
+                seconds=settings.bitquery_stream_interval_seconds,
+                kwargs={"seconds": settings.bitquery_stream_seconds},
+                id="bitquery_stream",
+                max_instances=1,
+                coalesce=True,
+            )
+        self.scheduler.add_job(self.telegram.poll_commands, "interval", seconds=5, id="telegram_commands", max_instances=1, coalesce=True)
+        self.scheduler.add_job(self.wallet_tracker.run_daily, "cron", hour=settings.daily_wallet_tracker_hour_utc, kwargs={"notify": True}, id="wallet_tracker")
+        # Stage 2 intelligence jobs
+        self.scheduler.add_job(self.stage2_scanner.run_token_scan, "interval", minutes=60, kwargs={"limit": 100}, id="stage2_token_scan", max_instances=1, coalesce=True)
+        self.scheduler.add_job(self.stage2_scanner.run_wallet_extraction, "interval", hours=2, kwargs={"max_tokens": 20, "lookback_hours": 6}, id="stage2_wallet_extraction", max_instances=1, coalesce=True)
+        self.scheduler.start()
+        log.info("scheduler started")
+        await self.pipeline.run_once(notify=True)
+        await self.backfill.run_backfill_batch()
+        if settings.bitquery_configured:
+            asyncio.create_task(self.bitquery.stream_dex_trades(seconds=settings.bitquery_stream_seconds))
+        while True:
+            await asyncio.sleep(3600)

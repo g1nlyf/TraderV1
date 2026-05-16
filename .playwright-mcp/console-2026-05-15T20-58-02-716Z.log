@@ -1,0 +1,27 @@
+[     108ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:8787/favicon.ico:0
+[   15227ms] TypeError: Cannot set properties of null (setting 'outerHTML')
+    at load (http://127.0.0.1:8787/:118:57)
+[   30213ms] TypeError: Cannot set properties of null (setting 'outerHTML')
+    at load (http://127.0.0.1:8787/:118:57)
+[   45263ms] TypeError: Cannot set properties of null (setting 'outerHTML')
+    at load (http://127.0.0.1:8787/:118:57)
+[   60232ms] TypeError: Cannot set properties of null (setting 'outerHTML')
+    at load (http://127.0.0.1:8787/:118:57)
+[   77075ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8787/api/operations/status:0
+[   77075ms] TypeError: Failed to fetch
+    at load (http://127.0.0.1:8787/:117:26)
+[   92088ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8787/api/operations/status:0
+[   92088ms] TypeError: Failed to fetch
+    at load (http://127.0.0.1:8787/:117:26)
+[  107077ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8787/api/operations/status:0
+[  107078ms] TypeError: Failed to fetch
+    at load (http://127.0.0.1:8787/:117:26)
+[  122087ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8787/api/operations/status:0
+[  122088ms] TypeError: Failed to fetch
+    at load (http://127.0.0.1:8787/:117:26)
+[  137099ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8787/api/operations/status:0
+[  137100ms] TypeError: Failed to fetch
+    at load (http://127.0.0.1:8787/:117:26)
+[  152090ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8787/api/operations/status:0
+[  152090ms] TypeError: Failed to fetch
+    at load (http://127.0.0.1:8787/:117:26)

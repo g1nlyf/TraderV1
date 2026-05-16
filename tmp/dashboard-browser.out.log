@@ -1,0 +1,7 @@
+INFO:     127.0.0.1:63373 - "GET /api/operations/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53517 - "GET /api/operations/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56816 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59539 - "GET /favicon.ico HTTP/1.1" 204 No Content
+INFO:     127.0.0.1:56816 - "GET /api/operations/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53718 - "GET /api/operations/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57635 - "GET /api/operations/status HTTP/1.1" 200 OK

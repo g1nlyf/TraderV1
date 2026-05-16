@@ -1,0 +1,344 @@
+{
+  "execution": {
+    "acceptance_run_execution_id": "acceptance_run_execution_0caa84b1fff741018e518fdee7b319eb",
+    "acceptance_run_id": "acceptance_run_f36b96f9cc924ba89e5dddc693734b17",
+    "closed_positions": 1,
+    "config_snapshot_id": "config_snapshot_de67d60f22994274929c4b8ea59ca2f7",
+    "configured_duration_seconds": 60,
+    "critical_violation_count": 0,
+    "data_source_set_json": [
+      "fixture"
+    ],
+    "drawdown": 0.0,
+    "ended_at": "2026-05-15T13:54:19.172847+00:00",
+    "expectancy": 4.8125625,
+    "failed_fills": 1,
+    "fills_count": 3,
+    "final_net_pnl": 4.8125625,
+    "final_report_ref": "final_acceptance_report_54ebabb37daf4a798870fe204dc7f68d",
+    "invariant_violation_count": 0,
+    "leaderboard_snapshot_ref": "strategy_metric_snapshot_c447cbfaccb6470aaf8a4e8e4a79646b",
+    "max_events": 50,
+    "max_jobs": 20,
+    "max_trades": 3,
+    "metadata_json": {
+      "configured_at": "2026-05-15T13:54:17.939364+00:00"
+    },
+    "no_trade_decisions": 1,
+    "open_positions": 0,
+    "orders_count": 3,
+    "outcomes_count": 1,
+    "promotion_criteria_snapshot_id": "promotion_criteria_snapshot_f7958fb98e574f31b64dcd6b82a0dd6f",
+    "risk_limit_snapshot_id": "risk_limit_snapshot_a0540bc543d54a3caae4a6a24dcf40c1",
+    "risk_vetoes": 0,
+    "run_mode": "fixture_replay",
+    "shadow_gap_report_ref": "shadow_gap_3e858fab1e104e6f99a73cdd6d5fa906",
+    "signals_count": 2,
+    "source_degradation_events": 0,
+    "started_at": "2026-05-15T13:54:18.924520+00:00",
+    "status": "gap_report_required",
+    "strategy_config_snapshot_id": "strategy_config_snapshot_591175730ac745d1ac53b5e691e17059",
+    "worker_failures": 0
+  },
+  "final_acceptance_report": {
+    "acceptance_run_id": "acceptance_run_f36b96f9cc924ba89e5dddc693734b17",
+    "acceptance_run_result": "gap_report_required",
+    "decision": "accepted_with_gaps",
+    "final_acceptance_report_id": "final_acceptance_report_54ebabb37daf4a798870fe204dc7f68d",
+    "generated_at": "2026-05-15T13:54:19.164802+00:00",
+    "invariant_summary_json": {
+      "critical_count": 0,
+      "finding_count": 0,
+      "findings": [],
+      "recorded_ids": [],
+      "status": "passed",
+      "warning_count": 0
+    },
+    "known_limitations_json": [
+      "No long-running production worker daemon was added.",
+      "Partial exits remain unsupported.",
+      "Shadow readiness is gap-reported unless quote freshness, latency, route quality, and fill comparison evidence exist."
+    ],
+    "memory_review_summary_json": {
+      "memory_entries": 1,
+      "memory_proposals": 1,
+      "post_trade_reviews": 1
+    },
+    "operational_health_summary_json": {
+      "active_leases": 0,
+      "active_sessions": 0,
+      "blocked_sessions": 0,
+      "critical_invariant_violations": 0,
+      "degraded_source_count": 0,
+      "drawdown": 0.0,
+      "expectancy": 4.8125625,
+      "expired_leases": 0,
+      "failed_fills": 1,
+      "failed_jobs": 0,
+      "leaderboard_summary": [
+        {
+          "average_loss": null,
+          "average_win": 4.8125625,
+          "calculated_at": "2026-05-15T13:59:17.955370+00:00",
+          "closed_trade_count": 1,
+          "concentration_warning": null,
+          "degraded_outcome_count": 0,
+          "expectancy": 4.8125625,
+          "failed_fill_count": 1,
+          "gross_pnl": 4.875,
+          "max_drawdown": 0.0,
+          "metrics_json": "{\"average_loss\": null, \"average_win\": 4.8125625, \"canonical_source\": \"trade_outcomes\", \"closed_trade_count\": 1, \"concentration_warning\": null, \"degraded_outcome_count\": 0, \"expectancy\": 4.8125625, \"failed_fill_count\": 1, \"gross_pnl\": 4.875, \"legacy_sources_excluded\": [\"paper_trades\", \"FIFO PnL\", \"wallet_scores\"], \"max_drawdown\": 0.0, \"net_pnl\": 4.8125625, \"no_trade_count\": 1, \"open_position_count\": 0, \"profit_factor\": 0, \"quality_flags\": [\"low_sample_size\"], \"rejected_count\": 0, \"sample_size_warning\": \"closed_trade_count 1 below required sample 5\", \"strategy_version_id\": \"strategy_version_f45cfc46a2174004a076774ee6ee05e7\", \"win_rate\": 1.0}",
+          "net_pnl": 4.8125625,
+          "no_trade_count": 1,
+          "open_position_count": 0,
+          "profit_factor": 0.0,
+          "promotion_criteria_snapshot_id": "promotion_criteria_snapshot_f7958fb98e574f31b64dcd6b82a0dd6f",
+          "quality_flags_json": "[\"low_sample_size\"]",
+          "rejected_count": 0,
+          "sample_size_warning": "closed_trade_count 1 below required sample 5",
+          "strategy_metric_snapshot_id": "strategy_metric_snapshot_c447cbfaccb6470aaf8a4e8e4a79646b",
+          "strategy_version_id": "strategy_version_f45cfc46a2174004a076774ee6ee05e7",
+          "win_rate": 1.0
+        }
+      ],
+      "memory_review_summary": {
+        "memory_entries": 1,
+        "memory_proposals": 1,
+        "post_trade_reviews": 1
+      },
+      "missed_exit_risk_checks": 0,
+      "net_pnl": 4.8125625,
+      "observed_at": "2026-05-15T13:54:19.024360+00:00",
+      "open_positions": 0,
+      "operational_health_snapshot_id": "operational_health_ca4d940b255f4c848abe61ca75e8f522",
+      "queue_depth": 1,
+      "risk_vetoes": 0,
+      "source_health_summary": [
+        {
+          "confidence_impact": "none",
+          "data_source_id": "data_source_24c66644107d4a64a048220a9e0f9809",
+          "degradation_reason": null,
+          "error_rate": null,
+          "last_successful_event_at": "2026-05-15T13:54:17.955370+00:00",
+          "latency_ms": 120.0,
+          "metadata_json": "{\"fixture_replay\": true}",
+          "observed_at": "2026-05-15T13:54:17.955370+00:00",
+          "rate_limit_state_json": "{}",
+          "source_health_snapshot_id": "source_health_3f4a7986c4b74702b2259cae25e30d7d",
+          "source_name": "dexscreener",
+          "status": "healthy"
+        }
+      ],
+      "stale_source_count": 0,
+      "unavailable_source_count": 0,
+      "unmonitored_open_positions": 0,
+      "warnings": []
+    },
+    "paper_trading_summary_json": {
+      "failed_fill_id": "paper_fill_ec66cdbef4db4202a4fd8bfd55f66eaa",
+      "leaderboard_snapshot_ref": "strategy_metric_snapshot_c447cbfaccb6470aaf8a4e8e4a79646b",
+      "memory_entry_id": "memory_entry_fc9bdeda66594a9b8e2bd3af36267a91",
+      "mode": "fixture_replay",
+      "no_trade_signal_id": "no_trade_signal_e78ef45037094bf68a43637a17bef80c",
+      "outcome_id": "trade_outcome_2caf800564444c34b3c3afa6b9336d7d",
+      "position_id": "paper_position_bc65c2c1d19f4f7f8794e16604670026",
+      "review_id": "post_trade_review_b445dab37815453387edf42646e5da3e",
+      "signal_id": "signal_72dcaeb32e0344b9ac04cc67dfd5debf"
+    },
+    "report_json": {
+      "final_decision": "accepted_with_gaps",
+      "fixture_result": {
+        "failed_fill_id": "paper_fill_ec66cdbef4db4202a4fd8bfd55f66eaa",
+        "leaderboard_snapshot_ref": "strategy_metric_snapshot_c447cbfaccb6470aaf8a4e8e4a79646b",
+        "memory_entry_id": "memory_entry_fc9bdeda66594a9b8e2bd3af36267a91",
+        "mode": "fixture_replay",
+        "no_trade_signal_id": "no_trade_signal_e78ef45037094bf68a43637a17bef80c",
+        "outcome_id": "trade_outcome_2caf800564444c34b3c3afa6b9336d7d",
+        "position_id": "paper_position_bc65c2c1d19f4f7f8794e16604670026",
+        "review_id": "post_trade_review_b445dab37815453387edf42646e5da3e",
+        "signal_id": "signal_72dcaeb32e0344b9ac04cc67dfd5debf"
+      },
+      "invariants": {
+        "critical_count": 0,
+        "finding_count": 0,
+        "findings": [],
+        "recorded_ids": [],
+        "status": "passed",
+        "warning_count": 0
+      },
+      "known_limitations": [
+        "No long-running production worker daemon was added.",
+        "Partial exits remain unsupported.",
+        "Shadow readiness is gap-reported unless quote freshness, latency, route quality, and fill comparison evidence exist."
+      ],
+      "operational_health": {
+        "active_leases": 0,
+        "active_sessions": 0,
+        "blocked_sessions": 0,
+        "critical_invariant_violations": 0,
+        "degraded_source_count": 0,
+        "drawdown": 0.0,
+        "expectancy": 4.8125625,
+        "expired_leases": 0,
+        "failed_fills": 1,
+        "failed_jobs": 0,
+        "leaderboard_summary": [
+          {
+            "average_loss": null,
+            "average_win": 4.8125625,
+            "calculated_at": "2026-05-15T13:59:17.955370+00:00",
+            "closed_trade_count": 1,
+            "concentration_warning": null,
+            "degraded_outcome_count": 0,
+            "expectancy": 4.8125625,
+            "failed_fill_count": 1,
+            "gross_pnl": 4.875,
+            "max_drawdown": 0.0,
+            "metrics_json": "{\"average_loss\": null, \"average_win\": 4.8125625, \"canonical_source\": \"trade_outcomes\", \"closed_trade_count\": 1, \"concentration_warning\": null, \"degraded_outcome_count\": 0, \"expectancy\": 4.8125625, \"failed_fill_count\": 1, \"gross_pnl\": 4.875, \"legacy_sources_excluded\": [\"paper_trades\", \"FIFO PnL\", \"wallet_scores\"], \"max_drawdown\": 0.0, \"net_pnl\": 4.8125625, \"no_trade_count\": 1, \"open_position_count\": 0, \"profit_factor\": 0, \"quality_flags\": [\"low_sample_size\"], \"rejected_count\": 0, \"sample_size_warning\": \"closed_trade_count 1 below required sample 5\", \"strategy_version_id\": \"strategy_version_f45cfc46a2174004a076774ee6ee05e7\", \"win_rate\": 1.0}",
+            "net_pnl": 4.8125625,
+            "no_trade_count": 1,
+            "open_position_count": 0,
+            "profit_factor": 0.0,
+            "promotion_criteria_snapshot_id": "promotion_criteria_snapshot_f7958fb98e574f31b64dcd6b82a0dd6f",
+            "quality_flags_json": "[\"low_sample_size\"]",
+            "rejected_count": 0,
+            "sample_size_warning": "closed_trade_count 1 below required sample 5",
+            "strategy_metric_snapshot_id": "strategy_metric_snapshot_c447cbfaccb6470aaf8a4e8e4a79646b",
+            "strategy_version_id": "strategy_version_f45cfc46a2174004a076774ee6ee05e7",
+            "win_rate": 1.0
+          }
+        ],
+        "memory_review_summary": {
+          "memory_entries": 1,
+          "memory_proposals": 1,
+          "post_trade_reviews": 1
+        },
+        "missed_exit_risk_checks": 0,
+        "net_pnl": 4.8125625,
+        "observed_at": "2026-05-15T13:54:19.024360+00:00",
+        "open_positions": 0,
+        "operational_health_snapshot_id": "operational_health_ca4d940b255f4c848abe61ca75e8f522",
+        "queue_depth": 1,
+        "risk_vetoes": 0,
+        "source_health_summary": [
+          {
+            "confidence_impact": "none",
+            "data_source_id": "data_source_24c66644107d4a64a048220a9e0f9809",
+            "degradation_reason": null,
+            "error_rate": null,
+            "last_successful_event_at": "2026-05-15T13:54:17.955370+00:00",
+            "latency_ms": 120.0,
+            "metadata_json": "{\"fixture_replay\": true}",
+            "observed_at": "2026-05-15T13:54:17.955370+00:00",
+            "rate_limit_state_json": "{}",
+            "source_health_snapshot_id": "source_health_3f4a7986c4b74702b2259cae25e30d7d",
+            "source_name": "dexscreener",
+            "status": "healthy"
+          }
+        ],
+        "stale_source_count": 0,
+        "unavailable_source_count": 0,
+        "unmonitored_open_positions": 0,
+        "warnings": []
+      },
+      "shadow": {
+        "blocks_stage2_release": false,
+        "blocks_stage3_progression": true,
+        "gaps": [
+          {
+            "affected_modules": [
+              "paper_trading",
+              "evaluation",
+              "reports"
+            ],
+            "current_evidence": "Conservative fills exist, but no route-quality evidence exists.",
+            "missing_capability": "route_quality_model",
+            "recommended_remediation": "Add quote/fill comparison artifacts before Stage 3 shadow readiness is claimed.",
+            "required_evidence": "Evidence that paper fills can be compared with plausible current quotes and route assumptions."
+          },
+          {
+            "affected_modules": [
+              "paper_trading",
+              "evaluation",
+              "reports"
+            ],
+            "current_evidence": "No simulated fills are compared with independent contemporaneous quotes.",
+            "missing_capability": "fill_vs_quote_comparison",
+            "recommended_remediation": "Add quote/fill comparison artifacts before Stage 3 shadow readiness is claimed.",
+            "required_evidence": "Evidence that paper fills can be compared with plausible current quotes and route assumptions."
+          }
+        ],
+        "shadow_gap_report_id": "shadow_gap_3e858fab1e104e6f99a73cdd6d5fa906",
+        "status": "gap_report_required"
+      },
+      "sprints": {
+        "sprint_1": "foundation implemented",
+        "sprint_2": "data and wallet evidence implemented",
+        "sprint_3": "risk-gated paper workflow implemented",
+        "sprint_4": "parallel monitoring and strategy memory artifacts implemented",
+        "sprint_5": "hardening harness and acceptance reporting implemented"
+      }
+    },
+    "run_mode": "fixture_replay",
+    "shadow_gap_report_id": "shadow_gap_3e858fab1e104e6f99a73cdd6d5fa906",
+    "shadow_status": "gap_report_required",
+    "source_degradation_summary_json": {
+      "degraded_source_count": 0,
+      "stale_source_count": 0,
+      "unavailable_source_count": 0
+    },
+    "strategy_decisions_json": [
+      {
+        "audit_refs_json": "[]",
+        "created_at": "2026-05-15T13:59:17.955370+00:00",
+        "created_by_service": "strategy_research_service",
+        "decision_type": "insufficient_data",
+        "failed_criteria_json": "[\"min_closed_trades\"]",
+        "metrics_snapshot_id": "strategy_metric_snapshot_c447cbfaccb6470aaf8a4e8e4a79646b",
+        "passed_criteria_json": "[]",
+        "promotion_criteria_snapshot_id": "promotion_criteria_snapshot_f7958fb98e574f31b64dcd6b82a0dd6f",
+        "reason": "Insufficient deterministic closed paper trades.",
+        "strategy_decision_id": "strategy_decision_291b7d7aafc84995b65e3463c52e4c8d",
+        "strategy_version_id": "strategy_version_f45cfc46a2174004a076774ee6ee05e7"
+      }
+    ],
+    "strategy_leaderboard_json": [
+      {
+        "average_loss": null,
+        "average_win": 4.8125625,
+        "calculated_at": "2026-05-15T13:59:17.955370+00:00",
+        "closed_trade_count": 1,
+        "concentration_warning": null,
+        "degraded_outcome_count": 0,
+        "expectancy": 4.8125625,
+        "failed_fill_count": 1,
+        "gross_pnl": 4.875,
+        "max_drawdown": 0.0,
+        "metrics_json": "{\"average_loss\": null, \"average_win\": 4.8125625, \"canonical_source\": \"trade_outcomes\", \"closed_trade_count\": 1, \"concentration_warning\": null, \"degraded_outcome_count\": 0, \"expectancy\": 4.8125625, \"failed_fill_count\": 1, \"gross_pnl\": 4.875, \"legacy_sources_excluded\": [\"paper_trades\", \"FIFO PnL\", \"wallet_scores\"], \"max_drawdown\": 0.0, \"net_pnl\": 4.8125625, \"no_trade_count\": 1, \"open_position_count\": 0, \"profit_factor\": 0, \"quality_flags\": [\"low_sample_size\"], \"rejected_count\": 0, \"sample_size_warning\": \"closed_trade_count 1 below required sample 5\", \"strategy_version_id\": \"strategy_version_f45cfc46a2174004a076774ee6ee05e7\", \"win_rate\": 1.0}",
+        "net_pnl": 4.8125625,
+        "no_trade_count": 1,
+        "open_position_count": 0,
+        "profit_factor": 0.0,
+        "promotion_criteria_snapshot_id": "promotion_criteria_snapshot_f7958fb98e574f31b64dcd6b82a0dd6f",
+        "quality_flags_json": "[\"low_sample_size\"]",
+        "rejected_count": 0,
+        "sample_size_warning": "closed_trade_count 1 below required sample 5",
+        "strategy_metric_snapshot_id": "strategy_metric_snapshot_c447cbfaccb6470aaf8a4e8e4a79646b",
+        "strategy_version_id": "strategy_version_f45cfc46a2174004a076774ee6ee05e7",
+        "win_rate": 1.0
+      }
+    ],
+    "validation_summary_json": {
+      "external_validation_commands": "recorded in implementation progress docs"
+    }
+  },
+  "provenance": {
+    "exported_at": "2026-05-15T13:56:09.004327+00:00",
+    "source_database": "C:\\Users\\hacke\\CascadeProjects\\Finals1\\TraderV1\\WalletScarper\\tmp\\final_release_validation.sqlite3",
+    "source_tables": {
+      "execution": "acceptance_run_executions",
+      "final_acceptance_report": "final_acceptance_reports",
+      "shadow_gap_report": "shadow_mode_gap_reports"
+    }
+  }
+}

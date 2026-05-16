@@ -1,0 +1,17 @@
+services:
+  walletscarper:
+    build: .
+    env_file: .env
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+    command: python -m walletscarper run
+  web:
+    build: .
+    env_file: .env
+    ports:
+      - "8787:8787"
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+    command: python -m walletscarper web

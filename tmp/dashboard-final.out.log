@@ -1,0 +1,22 @@
+INFO:     127.0.0.1:63780 - "GET /api/operations/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63784 - "GET /api/operations/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50141 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61550 - "GET /favicon.ico HTTP/1.1" 204 No Content
+INFO:     127.0.0.1:50141 - "GET /api/operations/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52787 - "GET /api/operations/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52937 - "GET /api/operations/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56304 - "GET /api/operations/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62374 - "GET /api/operations/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57581 - "GET /api/operations/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56488 - "GET /api/operations/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58081 - "GET /api/operations/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63901 - "GET /api/operations/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55430 - "GET /api/operations/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50912 - "GET /api/operations/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51994 - "GET /api/operations/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49669 - "GET /api/operations/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57051 - "GET /api/operations/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51784 - "GET /api/operations/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62363 - "GET /api/operations/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60128 - "GET /api/operations/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65283 - "GET /api/operations/status HTTP/1.1" 200 OK

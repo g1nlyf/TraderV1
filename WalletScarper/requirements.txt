@@ -1,0 +1,17 @@
+aiosqlite==0.20.0
+APScheduler==3.10.4
+base58==2.1.1
+bitquery-corecast-proto==1.0.6
+fastapi==0.115.6
+grpcio==1.80.0
+grpcio-tools==1.80.0
+httpx==0.28.1
+protobuf==6.33.2
+pydantic==2.10.4
+pydantic-settings==2.7.0
+python-dotenv==1.0.1
+pytest==8.3.4
+typer==0.15.1
+rich==13.9.4
+tenacity==9.0.0
+uvicorn==0.34.0

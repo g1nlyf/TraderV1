@@ -1,0 +1,32 @@
+name: traderv1_operator
+version: 0.3.0
+description: "TraderV1 Trading Research Director — autonomous Solana paper-trading intelligence. Workflow: token.scan_universe → token.request_deep_parse → wallet.extract_from_token → wallet.profile_history → wallet.record_agent_review → (wait for wallet.record_signal_event) → agent.record_trading_decision → signal.create → risk.check_entry → paper.create_order → paper.simulate_fill → (hold) → paper.create_exit_decision → risk.check_exit → paper.execute_exit → review.create_post_trade → memory.propose."
+author: TraderV1
+kind: standalone
+provides_tools:
+  - traderv1_project_health
+  - traderv1_latest_reports
+  - traderv1_shadow_gap_summary
+  - token.scan_universe
+  - token.get_profile
+  - token.request_deep_parse
+  - token.record_agent_decision
+  - wallet.extract_from_token
+  - wallet.calculate_token_outcomes
+  - wallet.profile_history
+  - wallet.get_metrics
+  - wallet.record_agent_review
+  - wallet.list_elite
+  - wallet.record_signal_event
+  - agent.record_trading_decision
+  - signal.create
+  - signal.create_no_trade
+  - risk.check_entry
+  - paper.create_order
+  - paper.simulate_fill
+  - paper.create_exit_decision
+  - risk.check_exit
+  - paper.execute_exit
+  - review.create_post_trade
+  - memory.propose
+  - metrics.wallet_report

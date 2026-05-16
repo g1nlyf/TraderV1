@@ -1,0 +1,50 @@
+{
+  "commands": [
+    {
+      "command": ".\\.venv\\Scripts\\python.exe -m pytest -q",
+      "details": "48 passed in 51.59s",
+      "result": "passed"
+    },
+    {
+      "command": ".\\.venv\\Scripts\\python.exe -m compileall walletscarper",
+      "details": "compileall completed successfully",
+      "result": "passed"
+    },
+    {
+      "command": ".\\.venv\\Scripts\\python.exe -m walletscarper stage2-migrate",
+      "details": "migrations 1-7 applied to tmp/final_release_validation.sqlite3",
+      "result": "passed"
+    },
+    {
+      "command": ".\\.venv\\Scripts\\python.exe -m walletscarper project-health-check",
+      "details": "database_connectivity ok; migration_status current; live_execution_enabled false; trading_workflows_enabled false",
+      "result": "passed"
+    },
+    {
+      "command": ".\\.venv\\Scripts\\python.exe -m walletscarper stage2-sprint4-report",
+      "details": "read-only report returned; after fixture replay includes one low-sample-size warning and insufficient_data strategy decision",
+      "result": "passed"
+    },
+    {
+      "command": ".\\.venv\\Scripts\\python.exe -m walletscarper stage2-final-acceptance --run-mode fixture_replay",
+      "details": "status gap_report_required; decision accepted_with_gaps; invariant_findings 0; critical_violations 0; failed_fills 1; shadow_status gap_report_required",
+      "result": "passed_with_gaps"
+    },
+    {
+      "command": "rg dangerous-term scan",
+      "details": "matches are docs/prohibitions or read-only/historical market-data terminology; no live execution/private-key/signer/swap/DEX path found",
+      "result": "reviewed"
+    }
+  ],
+  "final_decision": "accepted_with_gaps",
+  "report_locations": {
+    "final_acceptance_json": "docs/implementation-progress/reports/final-acceptance-report.json",
+    "final_acceptance_markdown": "docs/implementation-progress/reports/final-acceptance-report.md",
+    "shadow_gap_json": "docs/implementation-progress/reports/shadow-mode-gap-report.json",
+    "shadow_gap_markdown": "docs/implementation-progress/reports/shadow-mode-gap-report.md"
+  },
+  "stage2_database_path": "C:\\Users\\hacke\\CascadeProjects\\Finals1\\TraderV1\\WalletScarper\\tmp\\final_release_validation.sqlite3",
+  "stage3_shadow_readiness": "not accepted; gap_report_required",
+  "validated_at": "2026-05-15",
+  "working_directory": "C:\\Users\\hacke\\CascadeProjects\\Finals1\\TraderV1\\WalletScarper"
+}

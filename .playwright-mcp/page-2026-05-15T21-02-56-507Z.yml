@@ -1,0 +1,32 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - heading "TraderV1 Operator Dashboard" [level=1] [ref=e3]
+    - generic [ref=e4]: loading
+  - main [ref=e5]:
+    - generic [ref=e6]:
+      - generic [ref=e7]:
+        - heading "System Status" [level=2] [ref=e8]
+        - generic [ref=e9]:
+          - generic [ref=e10]:
+            - generic [ref=e11]: Stage 2 decision
+            - generic [ref=e12]: "-"
+          - generic [ref=e13]:
+            - generic [ref=e14]: Shadow status
+            - generic [ref=e15]: "-"
+          - generic [ref=e16]:
+            - generic [ref=e17]: Database
+            - generic [ref=e18]: "-"
+      - generic [ref=e19]:
+        - heading "Next Operator Actions" [level=2] [ref=e20]
+        - list
+    - generic [ref=e21]:
+      - heading "Source Health" [level=2] [ref=e23]
+      - heading "Quote Observations" [level=2] [ref=e25]
+      - heading "Latency Summary" [level=2] [ref=e27]
+      - heading "Route Quality Evidence" [level=2] [ref=e29]
+      - heading "Fill-vs-Quote Comparisons" [level=2] [ref=e31]
+      - heading "Paper Trading Summary" [level=2] [ref=e33]
+      - heading "Strategy Leaderboard" [level=2] [ref=e35]
+      - heading "Worker / Queue Status" [level=2] [ref=e37]
+      - heading "Invariant Violations" [level=2] [ref=e39]
+      - heading "Reports / Downloads" [level=2] [ref=e41]
