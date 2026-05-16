@@ -5,7 +5,9 @@ import logging
 from walletscarper.config import settings
 from walletscarper.db import db
 from walletscarper.models import TokenCandidate, utc_now
+from walletscarper.services.token_validator import TokenValidatorService
 from walletscarper.sources import DexScreenerSource, GeckoTerminalSource
+from walletscarper.sources.pumpfun import PumpFunSource
 
 log = logging.getLogger(__name__)
 
@@ -14,18 +16,50 @@ class DiscoveryService:
     def __init__(self) -> None:
         self.dexscreener = DexScreenerSource()
         self.gecko = GeckoTerminalSource()
+        self.pumpfun = PumpFunSource()
+        self.validator = TokenValidatorService()
 
     async def run(self) -> list[TokenCandidate]:
         candidates = await self.dexscreener.discover()
         candidates.extend(await self.gecko.discover_new_and_trending(pages=3))
+        candidates.extend(await self.pumpfun.discover_trending(limit=50))
+        source_counts = _count_sources(candidates)
         candidates = self._dedupe(candidates)
-        enriched = [self._score(c) for c in candidates]
+        enriched = [self._score(c, source_counts) for c in candidates]
         filtered = [c for c in enriched if self._keep(c)]
+        filtered = await self._validate_onchain(filtered)
         filtered.sort(key=lambda c: c.signal_score, reverse=True)
         for candidate in filtered:
             await self.store_candidate(candidate)
         log.info("discovery found %s candidates, kept %s", len(candidates), len(filtered))
         return filtered
+
+    async def _validate_onchain(self, candidates: list[TokenCandidate]) -> list[TokenCandidate]:
+        """Filter out tokens with on-chain hard flags (mutable supply, active freeze authority).
+
+        Only validates HIGH/MEDIUM priority tokens to limit API calls. LOW/REJECTED pass through.
+        """
+        if not settings.token_validation_enabled or not settings.helius_configured:
+            return candidates
+        mints_to_validate = [c.token_mint for c in candidates if c.priority in {"HIGH", "MEDIUM"} and c.token_mint]
+        if not mints_to_validate:
+            return candidates
+        validation = await self.validator.validate_batch(mints_to_validate)
+        safe: list[TokenCandidate] = []
+        rejected = 0
+        for c in candidates:
+            if c.priority not in {"HIGH", "MEDIUM"} or not c.token_mint:
+                safe.append(c)
+                continue
+            result = validation.get(c.token_mint)
+            if result and not result["is_safe"]:
+                log.info("discovery: rejected %s on-chain flags=%s", (c.symbol or c.token_mint[:8]), result["flags"])
+                rejected += 1
+            else:
+                safe.append(c)
+        if rejected:
+            log.info("discovery: on-chain validation rejected %d tokens", rejected)
+        return safe
 
     def _dedupe(self, candidates: list[TokenCandidate]) -> list[TokenCandidate]:
         by_pool: dict[str, TokenCandidate] = {}
@@ -44,7 +78,7 @@ class DiscoveryService:
             return False
         return bool(c.pool_address)
 
-    def _score(self, c: TokenCandidate) -> TokenCandidate:
+    def _score(self, c: TokenCandidate, source_counts: dict[str, int] | None = None) -> TokenCandidate:
         age = c.pair_age_minutes or 0
         age_score = 100 if settings.min_pair_age_minutes <= age <= 1440 else 50 if age <= settings.max_pair_age_minutes else 0
         liquidity_score = min(c.liquidity_usd / max(settings.min_liquidity_usd, 1) * 100, 100)
@@ -56,9 +90,17 @@ class DiscoveryService:
         else:
             buy_sell_score = 0
         fdv_penalty = 20 if c.fdv and c.fdv > settings.max_fdv_usd else 0
-        c.signal_score = max(0, min(100, volume_score * 0.30 + tx_score * 0.20 + liquidity_score * 0.15 + buy_sell_score * 0.15 + age_score * 0.20 - fdv_penalty))
+        # Multi-source consensus boost: +10 if seen by 2+ sources, +15 if 3+
+        consensus_boost = 0
+        if source_counts:
+            n = source_counts.get(c.token_mint, 1)
+            if n >= 3:
+                consensus_boost = 15
+            elif n >= 2:
+                consensus_boost = 10
+        c.signal_score = max(0, min(100, volume_score * 0.30 + tx_score * 0.20 + liquidity_score * 0.15 + buy_sell_score * 0.15 + age_score * 0.20 - fdv_penalty + consensus_boost))
         c.priority = "HIGH" if c.signal_score >= 75 else "MEDIUM" if c.signal_score >= 55 else "LOW" if c.signal_score >= 35 else "REJECTED"
-        c.confidence = "medium" if c.priority in {"HIGH", "MEDIUM"} else "low"
+        c.confidence = "high" if c.signal_score >= 75 and (source_counts or {}).get(c.token_mint, 1) >= 2 else "medium" if c.priority in {"HIGH", "MEDIUM"} else "low"
         return c
 
     async def store_candidate(self, c: TokenCandidate) -> None:
@@ -108,3 +150,12 @@ class DiscoveryService:
                 c.confidence,
             ),
         )
+
+
+def _count_sources(candidates: list[TokenCandidate]) -> dict[str, int]:
+    """Count how many distinct sources reported each token_mint."""
+    counts: dict[str, set[str]] = {}
+    for c in candidates:
+        if c.token_mint:
+            counts.setdefault(c.token_mint, set()).add(c.source or "unknown")
+    return {mint: len(sources) for mint, sources in counts.items()}

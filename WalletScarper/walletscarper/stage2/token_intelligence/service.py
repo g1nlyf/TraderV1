@@ -39,7 +39,7 @@ class TokenIntelligenceService:
               SELECT 1
               FROM normalized_evidence_refs e
               WHERE e.raw_source_event_id = r.raw_source_event_id
-                AND e.normalized_type != 'raw_only'
+                AND NOT (e.normalized_type = 'raw_only' AND r.source_name = 'legacy_tokens_db')
             )
             ORDER BY r.ingested_at, r.raw_source_event_id
             LIMIT ?

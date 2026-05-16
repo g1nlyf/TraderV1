@@ -59,6 +59,10 @@ class HermesSignalReviewService:
             log.debug("hermes_review: Hermes not enabled or no API key — skipping")
             return {"signals_reviewed": 0, "decisions_recorded": 0, "errors": 0, "skipped": "hermes_disabled"}
 
+        if await self._decisions_this_hour() >= settings.hermes_max_decisions_per_hour:
+            log.info("hermes_review: rate limit reached (%d/hr) — skipping", settings.hermes_max_decisions_per_hour)
+            return {"signals_reviewed": 0, "decisions_recorded": 0, "errors": 0, "skipped": "rate_limited"}
+
         signals = await self._pending_signals(max_signals)
         if not signals:
             log.debug("hermes_review: no pending signals")
@@ -146,7 +150,26 @@ class HermesSignalReviewService:
         )
 
         if decision_type == "signal":
-            await self._run_paper_path(decision_id, signal, llm_response)
+            from walletscarper.config import settings as cfg
+
+            confidence = str(llm_response.get("confidence") or "low")
+            signal_strength = str(llm_response.get("signal_strength") or "weak")
+            _strength_rank = {"strong": 3, "moderate": 2, "weak": 1, "absent": 0}
+            threshold_rank = _strength_rank.get(cfg.hermes_signal_strength_threshold, 2)
+            actual_rank = _strength_rank.get(signal_strength, 0)
+
+            if confidence != cfg.hermes_confidence_threshold:
+                log.info(
+                    "hermes_review: signal decision skipped — confidence=%s (need %s)",
+                    confidence, cfg.hermes_confidence_threshold,
+                )
+            elif actual_rank < threshold_rank:
+                log.info(
+                    "hermes_review: signal decision skipped — strength=%s (need >=%s)",
+                    signal_strength, cfg.hermes_signal_strength_threshold,
+                )
+            else:
+                await self._run_paper_path(decision_id, signal, llm_response)
 
         return decision_id
 
@@ -201,13 +224,17 @@ class HermesSignalReviewService:
 
         risk_id = str(risk_result.get("artifact_id") or "")
 
-        # Paper order
+        # Paper order — size capped at paper_max_position_pct of paper portfolio
+        from walletscarper.config import settings as _cfg
+
+        max_position_usd = _cfg.paper_portfolio_usd * _cfg.paper_max_position_pct
         order_result = await run_v2_tool(
             "paper.create_order",
             {
                 "signal_id": signal_id,
                 "risk_check_id": risk_id,
                 "agent_trading_decision_id": decision_id,
+                "intended_size": max_position_usd,
             },
             database=self.database,
         )
@@ -286,7 +313,7 @@ class HermesSignalReviewService:
 
         started = time.perf_counter()
         try:
-            async with httpx.AsyncClient(timeout=45) as client:
+            async with httpx.AsyncClient(timeout=settings.hermes_llm_timeout_seconds) as client:
                 response = await client.post(settings.hermes_base_url.rstrip("/") + "/chat/completions", json=body, headers=headers)
             elapsed = time.perf_counter() - started
             if response.status_code == 429:
@@ -369,6 +396,18 @@ class HermesSignalReviewService:
             (token_mint,),
         )
         return dict(row) if row else {}
+
+    async def _decisions_this_hour(self) -> int:
+        """Count AgentTradingDecisions recorded in the last 60 minutes."""
+        row = await self.database.fetchone(
+            """
+            SELECT COUNT(*) AS cnt
+            FROM agent_trading_decisions
+            WHERE created_by_agent = 'hermes_autonomous'
+              AND created_at >= datetime('now', '-1 hour')
+            """,
+        )
+        return int((row or {}).get("cnt") or 0)
 
     async def _latest_wallet_outcome(self, wallet: str, token_mint: str) -> dict[str, Any]:
         if not wallet or not token_mint:

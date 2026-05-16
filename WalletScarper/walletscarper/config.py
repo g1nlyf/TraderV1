@@ -13,6 +13,7 @@ class Settings(BaseSettings):
     config_version: str = "final-free-v1"
     database_path: Path = Path("data/walletscarper.sqlite3")
     log_level: str = "INFO"
+    log_json: bool = False
 
     telegram_bot_token: str = ""
     telegram_chat_id: str = ""
@@ -26,6 +27,10 @@ class Settings(BaseSettings):
     hermes_model: str = "openai/gpt-oss-20b:free"
     hermes_base_url: str = "https://openrouter.ai/api/v1"
     hermes_api_key: str = ""
+    hermes_confidence_threshold: str = "high"
+    hermes_signal_strength_threshold: str = "moderate"
+    hermes_max_decisions_per_hour: int = 50
+    hermes_llm_timeout_seconds: float = 15.0
 
     bitquery_api_token: str = ""
     bitquery_enabled: bool = False
@@ -38,6 +43,8 @@ class Settings(BaseSettings):
     helius_rpc_url: str = ""
     solana_public_rpc_url: str = "https://api.mainnet-beta.solana.com"
     sol_usd_estimate: float = 160.0
+    wallet_trade_poll_signatures: int = 50
+    token_validation_enabled: bool = True
 
     discovery_interval_minutes: int = 60
     live_monitor_interval_seconds: int = 30
@@ -77,6 +84,11 @@ class Settings(BaseSettings):
     paper_entry_delay_seconds: int = 60
     paper_slippage_bps: float = 150
     paper_fee_bps: float = 40
+    paper_portfolio_usd: float = 1000.0
+    paper_max_position_pct: float = 0.02
+
+    circuit_breaker_enabled: bool = True
+    circuit_breaker_max_consecutive_losses: int = 3
 
     def ensure_dirs(self) -> None:
         self.database_path.parent.mkdir(parents=True, exist_ok=True)
@@ -98,6 +110,18 @@ class Settings(BaseSettings):
     @property
     def bitquery_configured(self) -> bool:
         return bool(self.bitquery_enabled and self.bitquery_api_token)
+
+    @property
+    def helius_configured(self) -> bool:
+        return bool(self.helius_api_key)
+
+    @property
+    def helius_das_url(self) -> str:
+        if self.helius_rpc_url:
+            return self.helius_rpc_url
+        if self.helius_api_key:
+            return f"https://mainnet.helius-rpc.com/?api-key={self.helius_api_key}"
+        return ""
 
 
 settings = Settings()

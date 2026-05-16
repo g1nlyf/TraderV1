@@ -37,9 +37,67 @@ KNOWN_REPORTS = {
 }
 
 
+_START_TIME = __import__("time").time()
+
+
 @app.on_event("startup")
 async def startup() -> None:
     await db.init()
+
+
+@app.get("/health")
+async def health() -> JSONResponse:
+    """Liveness / readiness probe. Returns 200 if DB is reachable."""
+    import time
+
+    try:
+        row = await db.fetchone("SELECT COUNT(*) AS n FROM raw_trades")
+        db_ok = row is not None
+    except Exception:
+        db_ok = False
+    uptime = int(time.time() - _START_TIME)
+    status_code = 200 if db_ok else 503
+    return JSONResponse(
+        {"status": "ok" if db_ok else "degraded", "db": db_ok, "uptime_seconds": uptime},
+        status_code=status_code,
+    )
+
+
+@app.get("/metrics", response_class=Response)
+async def metrics() -> Response:
+    """Prometheus text-format metrics endpoint.
+
+    Exposes key trading system counters without requiring prometheus_client.
+    Scrape with Prometheus or Grafana agent.
+    """
+    try:
+        trades = await db.fetchone("SELECT COUNT(*) AS n FROM raw_trades") or {}
+        wallets = await db.fetchone("SELECT COUNT(*) AS n FROM tracked_wallets WHERE status='active'") or {}
+        tokens = await db.fetchone("SELECT COUNT(*) AS n FROM tokens") or {}
+        signals = await db.fetchone("SELECT COUNT(*) AS n FROM signal_log") or {}
+        paper = await db.fetchone("SELECT COUNT(*) AS n FROM paper_trades WHERE status='open'") or {}
+    except Exception:
+        trades = wallets = tokens = signals = paper = {}
+
+    lines = [
+        "# HELP traderv1_raw_trades_total Total raw trades collected",
+        "# TYPE traderv1_raw_trades_total counter",
+        f"traderv1_raw_trades_total {int(trades.get('n') or 0)}",
+        "# HELP traderv1_active_wallets Active tracked wallets",
+        "# TYPE traderv1_active_wallets gauge",
+        f"traderv1_active_wallets {int(wallets.get('n') or 0)}",
+        "# HELP traderv1_tokens_total Tokens ever discovered",
+        "# TYPE traderv1_tokens_total counter",
+        f"traderv1_tokens_total {int(tokens.get('n') or 0)}",
+        "# HELP traderv1_signals_total Total wallet signals detected",
+        "# TYPE traderv1_signals_total counter",
+        f"traderv1_signals_total {int(signals.get('n') or 0)}",
+        "# HELP traderv1_open_paper_trades Open paper trade positions",
+        "# TYPE traderv1_open_paper_trades gauge",
+        f"traderv1_open_paper_trades {int(paper.get('n') or 0)}",
+        "",
+    ]
+    return Response("\n".join(lines), media_type="text/plain; version=0.0.4; charset=utf-8")
 
 
 @app.get("/api/status")

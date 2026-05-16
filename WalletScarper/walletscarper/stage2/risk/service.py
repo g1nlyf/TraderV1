@@ -46,6 +46,7 @@ class DeterministicRiskService:
         self._check_market_snapshot(snapshot, limits, warnings, vetoes, require_price=True)
         self._check_entry_signal(signal, limits, warnings, vetoes)
         await self._check_open_position_limits(signal, limits, warnings, vetoes)
+        await self._check_circuit_breaker(limits, warnings, vetoes)
         passed = not vetoes
         risk_id = await self.domain.create_risk_check(
             check_scope="entry",
@@ -287,6 +288,38 @@ class DeterministicRiskService:
             vetoes.append("existing_open_position_conflict")
         if open_rows:
             warnings.append("existing_open_positions_present")
+
+    async def _check_circuit_breaker(
+        self,
+        limits: dict[str, Any],
+        warnings: list[str],
+        vetoes: list[str],
+    ) -> None:
+        """Veto entry if recent consecutive closed outcomes are all losses.
+
+        Checks the last N closed trade_outcomes by calculated_at. If all N have
+        net_pnl <= 0 and N >= max_consecutive_losses limit, triggers veto.
+        This prevents the system from continuing to trade through a losing streak.
+        """
+        from walletscarper.config import settings
+
+        if not settings.circuit_breaker_enabled:
+            return
+        max_losses = int(limits.get("circuit_breaker_max_consecutive_losses") or settings.circuit_breaker_max_consecutive_losses)
+        if max_losses <= 0:
+            return
+        recent = await self.database.fetchall(
+            """
+            SELECT net_pnl FROM trade_outcomes
+            ORDER BY calculated_at DESC
+            LIMIT ?
+            """,
+            (max_losses,),
+        )
+        if len(recent) < max_losses:
+            return
+        if all(float(row["net_pnl"] or 0) <= 0 for row in recent):
+            vetoes.append(f"circuit_breaker_triggered:{max_losses}_consecutive_losses")
 
 
 Sprint1RiskService = DeterministicRiskService
