@@ -49,8 +49,11 @@ class WalletScarperScheduler:
         # Stage 2 intelligence jobs
         self.scheduler.add_job(self.stage2_scanner.run_token_scan, "interval", minutes=60, kwargs={"limit": 100}, id="stage2_token_scan", max_instances=1, coalesce=True)
         self.scheduler.add_job(self.stage2_scanner.run_wallet_extraction, "interval", hours=2, kwargs={"max_tokens": 20, "lookback_hours": 6}, id="stage2_wallet_extraction", max_instances=1, coalesce=True)
+        self.scheduler.add_job(self.stage2_scanner.run_legacy_token_sync, "interval", hours=24, kwargs={"limit": 100}, id="stage2_legacy_token_sync", max_instances=1, coalesce=True)
+        self.scheduler.add_job(self.stage2_scanner.run_hermes_signal_review, "interval", minutes=15, kwargs={"max_signals": 5}, id="stage2_hermes_signal_review", max_instances=1, coalesce=True)
         self.scheduler.start()
         log.info("scheduler started")
+        await self.stage2_scanner.run_legacy_token_sync(limit=100)
         await self.pipeline.run_once(notify=True)
         await self.backfill.run_backfill_batch()
         if settings.bitquery_configured:

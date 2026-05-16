@@ -30,6 +30,9 @@ _HEARTBEAT_INTERVAL_MINUTES = 15
 _SESSION_HEARTBEAT_INTERVAL_MINUTES = 5
 _TOKEN_SCAN_INTERVAL_MINUTES = 60
 _WALLET_EXTRACTION_INTERVAL_HOURS = 2
+_WALLET_EXTRACTION_BACKFILL_INTERVAL_HOURS = 6
+_LEGACY_TOKEN_SYNC_INTERVAL_HOURS = 24
+_HERMES_REVIEW_INTERVAL_MINUTES = 15
 
 
 class Stage2Daemon:
@@ -68,6 +71,33 @@ class Stage2Daemon:
             coalesce=True,
         )
         self.scheduler.add_job(
+            self.scanner.run_wallet_extraction_backfill,
+            "interval",
+            hours=_WALLET_EXTRACTION_BACKFILL_INTERVAL_HOURS,
+            kwargs={"max_tokens": 50},
+            id="stage2_wallet_extraction_backfill",
+            max_instances=1,
+            coalesce=True,
+        )
+        self.scheduler.add_job(
+            self.scanner.run_legacy_token_sync,
+            "interval",
+            hours=_LEGACY_TOKEN_SYNC_INTERVAL_HOURS,
+            kwargs={"limit": 100},
+            id="stage2_legacy_token_sync",
+            max_instances=1,
+            coalesce=True,
+        )
+        self.scheduler.add_job(
+            self.scanner.run_hermes_signal_review,
+            "interval",
+            minutes=_HERMES_REVIEW_INTERVAL_MINUTES,
+            kwargs={"max_signals": 5},
+            id="stage2_hermes_signal_review",
+            max_instances=1,
+            coalesce=True,
+        )
+        self.scheduler.add_job(
             self._session_heartbeat,
             "interval",
             minutes=_SESSION_HEARTBEAT_INTERVAL_MINUTES,
@@ -88,8 +118,10 @@ class Stage2Daemon:
         log.info("stage2_daemon: scheduler started — running initial token scan")
 
         # Run immediately on startup
+        await self.scanner.run_legacy_token_sync(limit=100)
         await self.scanner.run_token_scan(limit=100)
-        await self.scanner.run_wallet_extraction(max_tokens=30, lookback_hours=24)
+        await self.scanner.run_wallet_extraction_backfill(max_tokens=50)
+        await self.scanner.run_hermes_signal_review(max_signals=5)
         await self._session_heartbeat()
 
         # Register graceful shutdown on SIGINT / SIGTERM

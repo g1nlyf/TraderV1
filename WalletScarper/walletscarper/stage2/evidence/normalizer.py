@@ -70,6 +70,8 @@ class EvidenceNormalizer:
             return await self._normalize_bitquery(event)
         if event.source_name == "solana_rpc":
             return await self._normalize_solana_rpc(event)
+        if event.source_name == "legacy_tokens_db":
+            return await self._normalize_legacy_db(event)
         if event.source_type == "quote_snapshot":
             return await self._normalize_quote_snapshot(event)
         return await self._reference_raw_only(event, ["unsupported_source_for_normalization"])
@@ -317,6 +319,42 @@ class EvidenceNormalizer:
             token_candidate_ids=[candidate_id],
             market_snapshot_ids=[snapshot_id],
             evidence_ref_ids=refs,
+            quality_flags=_unique_list(flags),
+        )
+
+    async def _normalize_legacy_db(self, event: "_RawEvent") -> NormalizationResult:
+        """Normalize a legacy_tokens_db raw_source_event into a token_candidate.
+
+        Legacy DB tokens have token_mint and pool_address but no price data.
+        They are useful for wallet extraction (building corpora from pool_transactions)
+        even though they cannot be traded based on evidence quality alone.
+        """
+        payload = event.payload
+        token_mint = _text(payload.get("token_mint"))
+        pool_address = _text(payload.get("pool_address"))
+        flags = _unique_list(event.quality_flags)
+        if not token_mint:
+            flags.append("missing_token_mint")
+        if not pool_address:
+            flags.append("missing_pool_address")
+        flags.append("missing_price_usd")
+        if event.confidence not in {"high", "medium"}:
+            flags.append("low_source_confidence")
+        candidate_id = await self._create_token_candidate(
+            event=event,
+            token_mint=token_mint,
+            chain="solana",
+            ecosystem="solana",
+            symbol=_text(payload.get("symbol")),
+            name=_text(payload.get("name")),
+            quality_flags=flags,
+        )
+        ref = await self._create_ref(event, "token_candidate", candidate_id, {"source": event.source_name, "evidence_kind": "legacy_db_token"})
+        return NormalizationResult(
+            raw_source_event_id=event.raw_source_event_id,
+            token_candidate_ids=[candidate_id],
+            market_snapshot_ids=[],
+            evidence_ref_ids=[ref],
             quality_flags=_unique_list(flags),
         )
 

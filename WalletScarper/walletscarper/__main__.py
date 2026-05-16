@@ -157,6 +157,76 @@ def run() -> None:
     asyncio.run(WalletScarperScheduler().start())
 
 
+@app.command("stage2-legacy-sync")
+def stage2_legacy_sync(
+    limit: int = typer.Option(100, help="Max legacy tokens to sync into Stage 2."),
+) -> None:
+    """Sync legacy DB tokens into Stage 2 raw_source_events.
+
+    Enables wallet extraction for transactions collected before the Stage 2 bridge
+    was wired. Run once or on a schedule to keep Stage 2 up to date.
+    """
+    from walletscarper.services.stage2_scanner import Stage2ScannerService
+
+    setup_logging(settings.log_level)
+    settings.ensure_dirs()
+
+    async def _run() -> None:
+        await db.init()
+        scanner = Stage2ScannerService()
+        result = await scanner.run_legacy_token_sync(limit=limit)
+        console.print(json.dumps(result, indent=2, sort_keys=True, default=str))
+
+    asyncio.run(_run())
+
+
+@app.command("stage2-wallet-backfill")
+def stage2_wallet_backfill(
+    max_tokens: int = typer.Option(50, help="Max token profiles to process."),
+) -> None:
+    """Extract wallets for all unprocessed Stage 2 token profiles (no age limit).
+
+    Complements the periodic wallet extraction job by processing older profiles
+    that were skipped due to the lookback_hours filter.
+    """
+    from walletscarper.services.stage2_scanner import Stage2ScannerService
+
+    setup_logging(settings.log_level)
+    settings.ensure_dirs()
+
+    async def _run() -> None:
+        await db.init()
+        scanner = Stage2ScannerService()
+        result = await scanner.run_wallet_extraction_backfill(max_tokens=max_tokens)
+        console.print(json.dumps(result, indent=2, sort_keys=True, default=str))
+
+    asyncio.run(_run())
+
+
+@app.command("stage2-hermes-review")
+def stage2_hermes_review(
+    max_signals: int = typer.Option(10, help="Max wallet signal events to review per run."),
+) -> None:
+    """Run Hermes autonomous wallet signal review via configured LLM.
+
+    Requires HERMES_ENABLED=true and HERMES_API_KEY in .env.
+    Reviews pending real-source wallet signal events and records AgentTradingDecision.
+    If decision_type is 'signal', also runs risk check and creates a paper order.
+    """
+    from walletscarper.services.stage2_scanner import Stage2ScannerService
+
+    setup_logging(settings.log_level)
+    settings.ensure_dirs()
+
+    async def _run() -> None:
+        await db.init()
+        scanner = Stage2ScannerService()
+        result = await scanner.run_hermes_signal_review(max_signals=max_signals)
+        console.print(json.dumps(result, indent=2, sort_keys=True, default=str))
+
+    asyncio.run(_run())
+
+
 @app.command("stage2-run-daemon")
 def stage2_run_daemon() -> None:
     """Start the Stage 2 continuous intelligence daemon.

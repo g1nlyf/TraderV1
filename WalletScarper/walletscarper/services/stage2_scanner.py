@@ -55,6 +55,140 @@ class Stage2ScannerService:
             log.warning("stage2_scanner: run_token_scan failed", exc_info=True)
             return {}
 
+    async def run_legacy_token_sync(self, limit: int = 50) -> dict[str, Any]:
+        """Ingest legacy DB tokens (that have no Stage2 raw_source_event) into Stage2.
+
+        This unblocks wallet extraction for the 744k+ transactions already in the
+        legacy pool_transactions table for tokens discovered before the Stage2 bridge
+        was wired.
+
+        Returns a summary dict with tokens_synced and events_written.
+        """
+        if not await self._ensure_ready():
+            return {}
+        try:
+            from walletscarper.db import db as legacy_db
+            from walletscarper.stage2.legacy_ingestion.models import RawSourceEventDraft
+            from walletscarper.stage2.legacy_ingestion.writer import write_raw_source_event
+            from walletscarper.stage2.events import RawSourceEventLog
+            from datetime import timezone
+            import datetime as _dt
+
+            raw_log = RawSourceEventLog(self._database)
+
+            # Get legacy tokens+pools that have no matching Stage2 raw_source_event by external_id
+            legacy_tokens = await legacy_db.fetchall(
+                """
+                SELECT t.mint, t.symbol, t.name, t.source, t.last_seen_at,
+                       p.pool_address, p.dex_id, p.quote_mint,
+                       (SELECT COUNT(*) FROM pool_transactions pt WHERE pt.token_mint = t.mint) AS tx_count
+                FROM tokens t
+                LEFT JOIN pools p ON p.token_mint = t.mint
+                GROUP BY t.mint
+                ORDER BY tx_count DESC
+                LIMIT ?
+                """,
+                (limit,),
+            )
+
+            if not legacy_tokens:
+                return {"tokens_synced": 0, "events_written": 0}
+
+            # Get existing Stage2 external_ids to avoid duplication
+            existing_rows = await self._database.fetchall(
+                "SELECT external_id FROM raw_source_events WHERE source_name = 'legacy_tokens_db'"
+            )
+            existing_ids: set[str] = {str(r["external_id"]) for r in existing_rows if r.get("external_id")}
+
+            events_written = 0
+            tokens_synced = 0
+            for row in legacy_tokens:
+                pool_addr = str(row.get("pool_address") or "")
+                token_mint = str(row["mint"])
+                external_id = pool_addr or token_mint
+                if external_id in existing_ids:
+                    continue
+
+                try:
+                    observed_raw = row.get("last_seen_at")
+                    if observed_raw:
+                        try:
+                            observed_at = _dt.datetime.fromisoformat(str(observed_raw).replace("Z", "+00:00"))
+                            if observed_at.tzinfo is None:
+                                observed_at = observed_at.replace(tzinfo=timezone.utc)
+                        except ValueError:
+                            observed_at = _dt.datetime.now(timezone.utc)
+                    else:
+                        observed_at = _dt.datetime.now(timezone.utc)
+
+                    draft = RawSourceEventDraft(
+                        source_name="legacy_tokens_db",
+                        source_type="token_discovery",
+                        external_id=external_id,
+                        observed_at=observed_at,
+                        payload={
+                            "token_mint": token_mint,
+                            "pool_address": pool_addr,
+                            "symbol": str(row.get("symbol") or ""),
+                            "name": str(row.get("name") or ""),
+                            "dex_id": str(row.get("dex_id") or ""),
+                            "quote_mint": str(row.get("quote_mint") or ""),
+                            "source": str(row.get("source") or "legacy"),
+                            "tx_count": int(row.get("tx_count") or 0),
+                        },
+                        provenance={"origin": "legacy_tokens_db_sync", "token_mint": token_mint},
+                        confidence="medium",
+                        extraction_method="legacy_db_direct_read",
+                        quality_flags=["legacy_adapter_source"],
+                        raw_adapter_name="LegacyTokensDbAdapter",
+                    )
+                    await write_raw_source_event(draft, raw_log)
+                    existing_ids.add(external_id)
+                    events_written += 1
+                    tokens_synced += 1
+                    log.debug("stage2_scanner: synced legacy token %s (%s)", token_mint[:8], row.get("symbol", ""))
+                except Exception:
+                    log.debug("stage2_scanner: failed to sync legacy token %s", token_mint, exc_info=True)
+
+            log.info("stage2_scanner: legacy_token_sync done — tokens=%d events=%d", tokens_synced, events_written)
+            return {"tokens_synced": tokens_synced, "events_written": events_written}
+        except Exception:
+            log.warning("stage2_scanner: run_legacy_token_sync failed", exc_info=True)
+            return {}
+
+    async def run_wallet_extraction_backfill(self, max_tokens: int = 50) -> dict[str, Any]:
+        """Extract wallets for ALL unprocessed token profiles regardless of age.
+
+        This complements run_wallet_extraction (which only processes recent profiles)
+        by ensuring legacy-synced and older profiles also get wallet extraction.
+        """
+        if not await self._ensure_ready():
+            return {}
+        try:
+            # Use a very large lookback (10 years) to catch all unprocessed profiles
+            return await self.run_wallet_extraction(max_tokens=max_tokens, lookback_hours=87_600)
+        except Exception:
+            log.warning("stage2_scanner: run_wallet_extraction_backfill failed", exc_info=True)
+            return {}
+
+    async def run_hermes_signal_review(self, max_signals: int = 5) -> dict[str, Any]:
+        """Review pending real-source wallet signals via Hermes LLM.
+
+        Calls HermesSignalReviewService which polls unreviewed tracked_wallet_signal_events,
+        calls OpenRouter with the Hermes system prompt, and records AgentTradingDecision.
+        """
+        if not await self._ensure_ready():
+            return {}
+        try:
+            from walletscarper.stage2.hermes_review.service import HermesSignalReviewService
+
+            service = HermesSignalReviewService(self._database)
+            result = await service.review_pending_signals(max_signals=max_signals)
+            return result
+        except Exception:
+            log.warning("stage2_scanner: run_hermes_signal_review failed", exc_info=True)
+            return {}
+
     async def run_wallet_extraction(self, max_tokens: int = 20, lookback_hours: int = 6) -> dict[str, Any]:
         """Extract wallet candidates from recently discovered tokens.
 
