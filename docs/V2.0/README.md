@@ -26,6 +26,7 @@ Scripts produce evidence. Agents synthesize evidence. Deterministic services ver
 10. [implementation-plan/02-three-sprint-plan.md](implementation-plan/02-three-sprint-plan.md)
 11. [implementation-plan/03-traceability-map.md](implementation-plan/03-traceability-map.md)
 12. [RUNTIME-CLOSURE-2026-05-16.md](RUNTIME-CLOSURE-2026-05-16.md)
+13. [HARDENING-PROGRESS-2026-05-16.md](HARDENING-PROGRESS-2026-05-16.md) ← Phase 0-6 hardening (Helius, validation, circuit breaker, pump.fun, prod infra)
 
 ## V2.0 Scope
 

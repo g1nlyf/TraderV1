@@ -1,4 +1,6 @@
-# Implementation Progress
+# Implementation Progress — Historical Reference
+
+> **Note (2026-05-17):** This folder is historical reference. For current system status, see `../STATUS.md`. For Hermes reality, see `../HERMES-REALITY.md`. For gaps and blockers, see `../GAPS-AND-BLOCKERS.md`. For full history, see `../history/PROJECT-HISTORY.md`.
 
 This folder is the factual execution record for implementation work. It records what was actually built, what was only stubbed or tested, what was skipped, and what must carry forward. It is not a replacement for the implementation almanac; it tracks reality against that plan.
 
