@@ -1,0 +1,682 @@
+[
+  {
+    "wallet": "4AXU8oQApwsQsmLAaLAsbWKwPT86ujQKTqVQEngSgYeQ",
+    "buy_vs_market": 1.03,
+    "median_buy_sol": 0.1841,
+    "freq_per_h": 0.3,
+    "hold_sec": 122634.2,
+    "score": 1.0,
+    "pnl": 15.5035,
+    "reasons": []
+  },
+  {
+    "wallet": "4qaHeK5ZNA3x8qk31KBDa9WzM5QePyywHMonv2K4gtfm",
+    "buy_vs_market": 1.037,
+    "median_buy_sol": 0.5001,
+    "freq_per_h": 2.5,
+    "hold_sec": 11295.8,
+    "score": 1.0,
+    "pnl": 52.4879,
+    "reasons": []
+  },
+  {
+    "wallet": "8XJsvMYDnVzvDxNXLxiPYXSc8APdNvxFJaBaruWNEg4B",
+    "buy_vs_market": 1.048,
+    "median_buy_sol": 0.2813,
+    "freq_per_h": 0.2,
+    "hold_sec": 68354.6,
+    "score": 1.0,
+    "pnl": 14.0323,
+    "reasons": []
+  },
+  {
+    "wallet": "6a1sfx1YKVLej2vpxPwk36cwBV8C9mr82nAiA5s4nBV5",
+    "buy_vs_market": 0.832,
+    "median_buy_sol": 0.2525,
+    "freq_per_h": 14.9,
+    "hold_sec": 1563.2,
+    "score": 0.992,
+    "pnl": 14.0546,
+    "reasons": []
+  },
+  {
+    "wallet": "35rnCffR1JkaecRTsCT66Qwmq3WmbWJyriUk4N9SvXnv",
+    "buy_vs_market": 1.01,
+    "median_buy_sol": 0.1029,
+    "freq_per_h": 0.7,
+    "hold_sec": 17181.9,
+    "score": 0.988,
+    "pnl": 7.5251,
+    "reasons": []
+  },
+  {
+    "wallet": "678hhfkqm2mUVjJQmxMPhwCwDnqtVahbSXcCLyFBfRZw",
+    "buy_vs_market": 0.964,
+    "median_buy_sol": 0.5118,
+    "freq_per_h": 8.8,
+    "hold_sec": 2743.6,
+    "score": 0.97,
+    "pnl": 18.4284,
+    "reasons": []
+  },
+  {
+    "wallet": "5h9i589Bb9KHZm5tfJsgPtoWeJ6TiERkBqs42YB2JtTE",
+    "buy_vs_market": 1.165,
+    "median_buy_sol": 0.093,
+    "freq_per_h": 0.6,
+    "hold_sec": 81445.8,
+    "score": 0.959,
+    "pnl": 2.2077,
+    "reasons": []
+  },
+  {
+    "wallet": "3j1yXKqUXLb4miXUsbeMTx3mM3ZyNLQSGmEfnbgX2jSo",
+    "buy_vs_market": 0.995,
+    "median_buy_sol": 0.0441,
+    "freq_per_h": 0.9,
+    "hold_sec": 21426.2,
+    "score": 0.958,
+    "pnl": 3.8135,
+    "reasons": []
+  },
+  {
+    "wallet": "5aXbFCpg5f142baZfGgkRs7s75h7yuSrq4Mw4NtD8c91",
+    "buy_vs_market": 1.03,
+    "median_buy_sol": 1.0063,
+    "freq_per_h": 0.2,
+    "hold_sec": 40604.4,
+    "score": 0.935,
+    "pnl": 32.3695,
+    "reasons": []
+  },
+  {
+    "wallet": "2RJBMvgg4aKJCcyvR8NY5P6RobkUZs3QBZpupoHcxe2H",
+    "buy_vs_market": 1.018,
+    "median_buy_sol": 1.0,
+    "freq_per_h": 2.0,
+    "hold_sec": 17335.3,
+    "score": 0.925,
+    "pnl": 32.1694,
+    "reasons": []
+  },
+  {
+    "wallet": "513WzL94RzgcD2XDPmMtx5Dd64q46G2zkVsdsNckPHhw",
+    "buy_vs_market": 0.93,
+    "median_buy_sol": 0.1015,
+    "freq_per_h": 79.5,
+    "hold_sec": 206.0,
+    "score": 0.91,
+    "pnl": 10.6312,
+    "reasons": []
+  },
+  {
+    "wallet": "5BRXgFp8xvQzzeadA4TJ1Vkq7iHgeq4MQ2C94dgP2Cn",
+    "buy_vs_market": 0.977,
+    "median_buy_sol": 0.2051,
+    "freq_per_h": 0.6,
+    "hold_sec": 592.8,
+    "score": 0.906,
+    "pnl": 2.9824,
+    "reasons": []
+  },
+  {
+    "wallet": "9Ta6z3u7PQKAdwUzVqPhCpeJLTksGGRxWD97fzMLRq57",
+    "buy_vs_market": 0.976,
+    "median_buy_sol": 0.5096,
+    "freq_per_h": 4.4,
+    "hold_sec": 3260.5,
+    "score": 0.902,
+    "pnl": 39.8421,
+    "reasons": []
+  },
+  {
+    "wallet": "3j5z5ERnjuKfiXy7L3c8555G7ron8nUZst1ChgBGrP4s",
+    "buy_vs_market": 0.835,
+    "median_buy_sol": 0.0778,
+    "freq_per_h": 0.4,
+    "hold_sec": 154900.7,
+    "score": 0.897,
+    "pnl": 123.8059,
+    "reasons": []
+  },
+  {
+    "wallet": "4rj8Q9fL8rYHKyzNgWwNXkZuo8ooMpfR4kaxsTu2DZQQ",
+    "buy_vs_market": 1.005,
+    "median_buy_sol": 0.0843,
+    "freq_per_h": 10.2,
+    "hold_sec": 7358.4,
+    "score": 0.897,
+    "pnl": 5.5508,
+    "reasons": []
+  },
+  {
+    "wallet": "6HooG4nsnc4v331fMd79rmh4bvzvA6MaeMJgCJQUwJGo",
+    "buy_vs_market": 1.011,
+    "median_buy_sol": 0.18,
+    "freq_per_h": 0.9,
+    "hold_sec": 15812.6,
+    "score": 0.897,
+    "pnl": 3.9157,
+    "reasons": []
+  },
+  {
+    "wallet": "2W6brXZDty2XK6xxnvmifyd6kL2qvc62Ag57TfNo7Bpd",
+    "buy_vs_market": 1.013,
+    "median_buy_sol": 0.0041,
+    "freq_per_h": 4.7,
+    "hold_sec": 5200.6,
+    "score": 0.893,
+    "pnl": 12.027,
+    "reasons": []
+  },
+  {
+    "wallet": "7BNaxx6KdUYrjACNQZ9He26NBFoFxujQMAfNLnArLGH5",
+    "buy_vs_market": 1.107,
+    "median_buy_sol": 3.6258,
+    "freq_per_h": 94.8,
+    "hold_sec": 618.0,
+    "score": 0.89,
+    "pnl": 47.2887,
+    "reasons": []
+  },
+  {
+    "wallet": "8RHFSeUgXZdvphSXREvZJzbxMajo27oi9JmYBzs9zroa",
+    "buy_vs_market": 4.947,
+    "median_buy_sol": 0.0023,
+    "freq_per_h": 0.2,
+    "hold_sec": 213969.0,
+    "score": 0.89,
+    "pnl": 33.6185,
+    "reasons": []
+  },
+  {
+    "wallet": "2jcjrozuEWzcrQaiV5QJDzYVgxGXCuQcihVXX5zLQ2Qu",
+    "buy_vs_market": 0.964,
+    "median_buy_sol": 0.002,
+    "freq_per_h": 0.3,
+    "hold_sec": 196426.3,
+    "score": 0.877,
+    "pnl": 40.3342,
+    "reasons": []
+  },
+  {
+    "wallet": "A4uFVW8ZmPTtfuGw4e6WCtE62anQJuwDds1eEF9RKhdg",
+    "buy_vs_market": 0.975,
+    "median_buy_sol": 0.0042,
+    "freq_per_h": 0.3,
+    "hold_sec": 18347.2,
+    "score": 0.875,
+    "pnl": 3.2478,
+    "reasons": []
+  },
+  {
+    "wallet": "3SdkUtzAvJW6KGvNUJEphr4MJuxdMQY6uLbYY73iRBqd",
+    "buy_vs_market": 0.736,
+    "median_buy_sol": 2.416,
+    "freq_per_h": 1.1,
+    "hold_sec": 948.0,
+    "score": 0.871,
+    "pnl": 39.3545,
+    "reasons": []
+  },
+  {
+    "wallet": "2NuAgVk3hcb7s4YvP4GjV5fD8eDvZQv5wuN6ZC8igRfV",
+    "buy_vs_market": 0.978,
+    "median_buy_sol": 1.0707,
+    "freq_per_h": 32.9,
+    "hold_sec": 1739.7,
+    "score": 0.868,
+    "pnl": 6.863,
+    "reasons": []
+  },
+  {
+    "wallet": "A9hH2C8CoS21PvVRn4sg5iwNFoSgiSeFQpoxDxAtm9Nu",
+    "buy_vs_market": 1.62,
+    "median_buy_sol": 0.002,
+    "freq_per_h": 0.3,
+    "hold_sec": 131613.3,
+    "score": 0.865,
+    "pnl": 21.7546,
+    "reasons": []
+  },
+  {
+    "wallet": "AUbGVmrCxj7oSNgNdpRpSFfJhRYFwMbh8Npo2Vbyqifw",
+    "buy_vs_market": 1.056,
+    "median_buy_sol": 0.3188,
+    "freq_per_h": 2.7,
+    "hold_sec": 11577.3,
+    "score": 0.86,
+    "pnl": 6.6248,
+    "reasons": []
+  },
+  {
+    "wallet": "8bnQdh6rxCBTrUnvwrC3XaaZXsF61W2aT7fah3zgjPTQ",
+    "buy_vs_market": 1.002,
+    "median_buy_sol": 0.001,
+    "freq_per_h": 0.6,
+    "hold_sec": 134151.1,
+    "score": 0.857,
+    "pnl": 14.9538,
+    "reasons": []
+  },
+  {
+    "wallet": "8PcRVoU7wpXnEKZCfKerSLnyHxfNaJTmn322HfWbwoJw",
+    "buy_vs_market": 0.766,
+    "median_buy_sol": 0.0038,
+    "freq_per_h": 0.9,
+    "hold_sec": 14613.1,
+    "score": 0.853,
+    "pnl": 2.5492,
+    "reasons": []
+  },
+  {
+    "wallet": "7bBpvrmVeCF3hyFWAMynNcaAxprfL2WCnfEpiotKYRfU",
+    "buy_vs_market": 0.894,
+    "median_buy_sol": 0.2515,
+    "freq_per_h": 22.7,
+    "hold_sec": 191.2,
+    "score": 0.852,
+    "pnl": 24.2127,
+    "reasons": []
+  },
+  {
+    "wallet": "7YDyX4KkPVW4mEaUZCwfabr2FQptnbmTMJX9JTAF5y1D",
+    "buy_vs_market": 0.799,
+    "median_buy_sol": 0.2913,
+    "freq_per_h": 1.8,
+    "hold_sec": 12132.1,
+    "score": 0.845,
+    "pnl": 8.5494,
+    "reasons": []
+  },
+  {
+    "wallet": "7dJ8Xzdtf9ZJHoMW143cJssiyVaugzkJ5Lt2zqmiW2Vf",
+    "buy_vs_market": 1.113,
+    "median_buy_sol": 0.0392,
+    "freq_per_h": 0.6,
+    "hold_sec": 148851.6,
+    "score": 0.843,
+    "pnl": 5.9284,
+    "reasons": []
+  },
+  {
+    "wallet": "5hzTEf5CANsvvRQ9FGqskNeKvhwzKXNDFfPyD8iExqot",
+    "buy_vs_market": 1.175,
+    "median_buy_sol": 0.3824,
+    "freq_per_h": 0.5,
+    "hold_sec": 3497.6,
+    "score": 0.84,
+    "pnl": 3.513,
+    "reasons": []
+  },
+  {
+    "wallet": "3q1815j6UC4NXzPqPr9ZACYtFehsePd2t83pxRsna41X",
+    "buy_vs_market": 0.927,
+    "median_buy_sol": 1.8199,
+    "freq_per_h": 35.1,
+    "hold_sec": 3535.6,
+    "score": 0.836,
+    "pnl": 3.3198,
+    "reasons": []
+  },
+  {
+    "wallet": "4eE9LWS25Lg5qzqD1zr6MDvGnLfPmf2gaZL4dLexMrbK",
+    "buy_vs_market": 0.777,
+    "median_buy_sol": 0.0231,
+    "freq_per_h": 0.7,
+    "hold_sec": 69491.5,
+    "score": 0.832,
+    "pnl": 1.2172,
+    "reasons": []
+  },
+  {
+    "wallet": "8zkgFGVZrDLieViwqiXFCydSX6WL5hsxmUu55yBdsNsZ",
+    "buy_vs_market": 1.072,
+    "median_buy_sol": 4.2355,
+    "freq_per_h": 59.8,
+    "hold_sec": 2012.8,
+    "score": 0.83,
+    "pnl": 16.376,
+    "reasons": []
+  },
+  {
+    "wallet": "54xrJ798DGwH1UA2H35QtAzKT55t8pL8bjBs9Arz3eoP",
+    "buy_vs_market": 0.96,
+    "median_buy_sol": 0.267,
+    "freq_per_h": 4.0,
+    "hold_sec": 167.7,
+    "score": 0.825,
+    "pnl": 7.2152,
+    "reasons": []
+  },
+  {
+    "wallet": "98DTt1xyWMALbeTyWZ1KYdnFTj78Lt8YR55KnF2UxXYK",
+    "buy_vs_market": 0.996,
+    "median_buy_sol": 0.0506,
+    "freq_per_h": 2.0,
+    "hold_sec": 363.5,
+    "score": 0.821,
+    "pnl": 1.4386,
+    "reasons": []
+  },
+  {
+    "wallet": "9sxBTJoaAzFxT39CPWYefVkDYgdZNrAhsizcBaY8A2SX",
+    "buy_vs_market": 1.202,
+    "median_buy_sol": 0.0149,
+    "freq_per_h": 0.6,
+    "hold_sec": 10624.8,
+    "score": 0.821,
+    "pnl": 0.886,
+    "reasons": []
+  },
+  {
+    "wallet": "7JkA5iWCEnpiDyZUo9LpbyZLESQZBVrVZkXzA8JP8R5Q",
+    "buy_vs_market": 0.944,
+    "median_buy_sol": 0.0598,
+    "freq_per_h": 2.9,
+    "hold_sec": 8197.7,
+    "score": 0.801,
+    "pnl": 2.2549,
+    "reasons": []
+  },
+  {
+    "wallet": "3ydPFwE41wzKm6HezFb3i4FVN6MB135bLhsGX23fmh2u",
+    "buy_vs_market": 1.017,
+    "median_buy_sol": 0.3136,
+    "freq_per_h": 0.3,
+    "hold_sec": 67017.7,
+    "score": 0.8,
+    "pnl": 10.8745,
+    "reasons": []
+  },
+  {
+    "wallet": "37KuAYcM2Sh7bF42hxEfSQYtQh5Uia74udZWt72DdySu",
+    "buy_vs_market": 1.034,
+    "median_buy_sol": 1.001,
+    "freq_per_h": 0.9,
+    "hold_sec": 58779.0,
+    "score": 0.798,
+    "pnl": 15.896,
+    "reasons": []
+  },
+  {
+    "wallet": "9sXfwUu9ahDkLV58xz6Cb8VDSbi5UQ9it5oT1fS2S6L7",
+    "buy_vs_market": 0.886,
+    "median_buy_sol": 1.9915,
+    "freq_per_h": 15.5,
+    "hold_sec": 2763.6,
+    "score": 0.797,
+    "pnl": 8.6793,
+    "reasons": []
+  },
+  {
+    "wallet": "9QHQrYLTn6xG623DvaQ7rRk3mdCmLv2x9NqQZNsVYRF3",
+    "buy_vs_market": 1.037,
+    "median_buy_sol": 1.006,
+    "freq_per_h": 0.4,
+    "hold_sec": 2728.5,
+    "score": 0.782,
+    "pnl": 9.5924,
+    "reasons": []
+  },
+  {
+    "wallet": "6rEGxRUzhzLadhvhvkwS9xqZfs1G2qD9xRqQdn5eNYzh",
+    "buy_vs_market": 1.232,
+    "median_buy_sol": 0.0041,
+    "freq_per_h": 0.1,
+    "hold_sec": 499924.5,
+    "score": 0.777,
+    "pnl": 77.3263,
+    "reasons": []
+  },
+  {
+    "wallet": "6gUd4TXgwDLMg16q7VxhtE95e2hQYsptDiy8cu78FgNj",
+    "buy_vs_market": 1.09,
+    "median_buy_sol": 0.2,
+    "freq_per_h": 3.1,
+    "hold_sec": 4452.5,
+    "score": 0.775,
+    "pnl": 14.0198,
+    "reasons": []
+  },
+  {
+    "wallet": "6wVhneWXnenZuRQe7T12RDQDbcq14FizBpyLD7yiFfY1",
+    "buy_vs_market": 0.937,
+    "median_buy_sol": 2.6021,
+    "freq_per_h": 3.1,
+    "hold_sec": 743.7,
+    "score": 0.773,
+    "pnl": 14.9127,
+    "reasons": []
+  },
+  {
+    "wallet": "8XFJBF9iCzBvLboUfqkrDcN6hXVxHc649cPR5tcXSRFT",
+    "buy_vs_market": 1.002,
+    "median_buy_sol": 0.4047,
+    "freq_per_h": 0.2,
+    "hold_sec": 108835.4,
+    "score": 0.761,
+    "pnl": 2.8428,
+    "reasons": []
+  },
+  {
+    "wallet": "7EpJ5sMByXAfbsxgm7TYr6Q5PecBs5n3RyEHKo1UCV5d",
+    "buy_vs_market": 0.902,
+    "median_buy_sol": 1.4809,
+    "freq_per_h": 0.0,
+    "hold_sec": 106827.1,
+    "score": 0.756,
+    "pnl": 7.5768,
+    "reasons": []
+  },
+  {
+    "wallet": "28Z7QWU467NezuSepEZkrNyQHCVK7E77JYUqA19QNgWu",
+    "buy_vs_market": 1.039,
+    "median_buy_sol": 1.0123,
+    "freq_per_h": 1.4,
+    "hold_sec": 982.9,
+    "score": 0.755,
+    "pnl": 3.8891,
+    "reasons": []
+  },
+  {
+    "wallet": "2okCGPbFhnzQ9Pt4EuPJSujdmAMTZCKXxXZWpoJ7wWza",
+    "buy_vs_market": 1.28,
+    "median_buy_sol": 1.9014,
+    "freq_per_h": 1.1,
+    "hold_sec": 17070.3,
+    "score": 0.75,
+    "pnl": 5.4991,
+    "reasons": []
+  },
+  {
+    "wallet": "45YbjusvVprTdyvjDb9RkgSYKVasiutS7CG8JVcXSYYi",
+    "buy_vs_market": 1.048,
+    "median_buy_sol": 4.6241,
+    "freq_per_h": 0.1,
+    "hold_sec": 260189.6,
+    "score": 0.75,
+    "pnl": 43.1504,
+    "reasons": []
+  },
+  {
+    "wallet": "5mCr2dwpDTj2z6Dur3fHiDnkRaNHGsAUs27ydimbRQzm",
+    "buy_vs_market": 0.954,
+    "median_buy_sol": 1.9918,
+    "freq_per_h": 3.2,
+    "hold_sec": 4641.1,
+    "score": 0.75,
+    "pnl": 3.6827,
+    "reasons": []
+  },
+  {
+    "wallet": "7YrDc2FiE37Kz7Cmu7yjCWsj9M3DGChAkmu9YLspacKD",
+    "buy_vs_market": 1.28,
+    "median_buy_sol": 1.202,
+    "freq_per_h": 0.3,
+    "hold_sec": 31083.9,
+    "score": 0.75,
+    "pnl": 12.8124,
+    "reasons": []
+  },
+  {
+    "wallet": "2VjYBeVsFhN4AmmHBWyorn6jAYMtvAUytsAEBnECgcuW",
+    "buy_vs_market": 1.117,
+    "median_buy_sol": 0.4012,
+    "freq_per_h": 0.2,
+    "hold_sec": 97118.9,
+    "score": 0.74,
+    "pnl": 3.3859,
+    "reasons": []
+  },
+  {
+    "wallet": "AdQpxVBKFtsXM7BrunJCL9muwbogZQ4wqd4EfedUzeza",
+    "buy_vs_market": 0.942,
+    "median_buy_sol": 0.0479,
+    "freq_per_h": 1.5,
+    "hold_sec": 1492.6,
+    "score": 0.74,
+    "pnl": 0.2798,
+    "reasons": []
+  },
+  {
+    "wallet": "532hVynWPEbSDUz1FwEAffkaAbHgYo5JY9ci9EedRE46",
+    "buy_vs_market": 0.994,
+    "median_buy_sol": 1.7086,
+    "freq_per_h": 1.1,
+    "hold_sec": 13406.6,
+    "score": 0.738,
+    "pnl": 0.6893,
+    "reasons": []
+  },
+  {
+    "wallet": "5aeXH7HLt3xYCss6VdtkeJscsjBNuHCHZUcUXjshN1tQ",
+    "buy_vs_market": 0.998,
+    "median_buy_sol": 1.0131,
+    "freq_per_h": 0.4,
+    "hold_sec": 2659.3,
+    "score": 0.732,
+    "pnl": 4.6664,
+    "reasons": []
+  },
+  {
+    "wallet": "1aDerPKk87xJHCAqTY5bGxF5Xet2MG476y4Zmq2WJ8Y",
+    "buy_vs_market": 1.417,
+    "median_buy_sol": 1.9587,
+    "freq_per_h": 112.9,
+    "hold_sec": 159.2,
+    "score": 0.729,
+    "pnl": 1.7756,
+    "reasons": []
+  },
+  {
+    "wallet": "4uKjaa27AezWAg28n1f7poKBm93nonjnhCKeTJvWP1LG",
+    "buy_vs_market": 1.46,
+    "median_buy_sol": 0.3565,
+    "freq_per_h": 0.7,
+    "hold_sec": 45332.4,
+    "score": 0.728,
+    "pnl": 15.006,
+    "reasons": []
+  },
+  {
+    "wallet": "5rsDQJh43xt2kNP9HhDUwVG728eU2o3YsyhLzpVhZoHk",
+    "buy_vs_market": 1.024,
+    "median_buy_sol": 0.1219,
+    "freq_per_h": 2.6,
+    "hold_sec": 2316.8,
+    "score": 0.726,
+    "pnl": 1.8532,
+    "reasons": []
+  },
+  {
+    "wallet": "2vwteykGt5A5cGt4ue3o7W6AH4ZbTZkbJ54uBh1QG2EW",
+    "buy_vs_market": 0.943,
+    "median_buy_sol": 0.0521,
+    "freq_per_h": 4.0,
+    "hold_sec": 5830.6,
+    "score": 0.725,
+    "pnl": 0.2855,
+    "reasons": []
+  },
+  {
+    "wallet": "6Qt1QtJ9xfW7jrM4xMaNYrd2sUZ4PfGT126sGm29ddv4",
+    "buy_vs_market": 2.58,
+    "median_buy_sol": 4.1226,
+    "freq_per_h": 0.0,
+    "hold_sec": 1325530.0,
+    "score": 0.724,
+    "pnl": 0.5914,
+    "reasons": []
+  },
+  {
+    "wallet": "4x3YyCCyq9XMMDV36LsWP2P11H17hfg1ZMpmM2drLEiK",
+    "buy_vs_market": 1.711,
+    "median_buy_sol": 0.0207,
+    "freq_per_h": 0.0,
+    "hold_sec": 1511111.5,
+    "score": 0.722,
+    "pnl": 0.4317,
+    "reasons": []
+  },
+  {
+    "wallet": "3MY6YkksEfLUPq1g1ZGECzTDrP3kx4EqpYvK5dqCR9pN",
+    "buy_vs_market": 0.803,
+    "median_buy_sol": 0.7088,
+    "freq_per_h": 0.1,
+    "hold_sec": 47236.1,
+    "score": 0.72,
+    "pnl": 3.5041,
+    "reasons": []
+  },
+  {
+    "wallet": "3zZPn3v7N13EKYNZX52YYWsKAymBXUQSvtSSFBuvoMYE",
+    "buy_vs_market": 1.038,
+    "median_buy_sol": 1.9874,
+    "freq_per_h": 0.6,
+    "hold_sec": 10324.1,
+    "score": 0.711,
+    "pnl": 70.0823,
+    "reasons": []
+  },
+  {
+    "wallet": "2cY3CRKGrk3BLeSZJ5ffJseTJA9xamBBhsx944MC5Qfw",
+    "buy_vs_market": 0.892,
+    "median_buy_sol": 0.6024,
+    "freq_per_h": 1.3,
+    "hold_sec": 2033.9,
+    "score": 0.71,
+    "pnl": 1.6437,
+    "reasons": []
+  },
+  {
+    "wallet": "12CWBYjBpNWYW5aKXfPosJCZnExyEfUroK68ch7CBeiz",
+    "buy_vs_market": 1.052,
+    "median_buy_sol": 0.0807,
+    "freq_per_h": 0.5,
+    "hold_sec": 166210.1,
+    "score": 0.702,
+    "pnl": 0.714,
+    "reasons": []
+  },
+  {
+    "wallet": "2tgUbS9UMoQD6GkDZBiqKYCURnGrSb6ocYwRABrSJUvY",
+    "buy_vs_market": 0.953,
+    "median_buy_sol": 0.1089,
+    "freq_per_h": 300.0,
+    "hold_sec": 82.5,
+    "score": 0.694,
+    "pnl": 0.2492,
+    "reasons": []
+  },
+  {
+    "wallet": "2ZDbS3BxQTtDW4v1wSAuLegAYmQvFeRg9PUEX7vjZCrC",
+    "buy_vs_market": 1.013,
+    "median_buy_sol": 0.2029,
+    "freq_per_h": 6.2,
+    "hold_sec": 4312.8,
+    "score": 0.653,
+    "pnl": 0.3805,
+    "reasons": []
+  }
+]

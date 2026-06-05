@@ -1,0 +1,22 @@
+[
+  {
+    "id": "1",
+    "epoch": 2,
+    "endpoint": "projects/614125947213/locations/us-central1/endpoints/8744205419225808896"
+  },
+  {
+    "id": "2",
+    "epoch": 3,
+    "endpoint": "projects/614125947213/locations/us-central1/endpoints/4933597184516947968"
+  },
+  {
+    "id": "3",
+    "epoch": 4,
+    "endpoint": "projects/614125947213/locations/us-central1/endpoints/6506479354376093696"
+  },
+  {
+    "id": "4",
+    "epoch": 4,
+    "endpoint": "projects/614125947213/locations/us-central1/endpoints/5699772071123353600"
+  }
+]

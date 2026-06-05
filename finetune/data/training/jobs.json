@@ -1,0 +1,70 @@
+[
+  {
+    "provider": "vertex",
+    "job_name": "projects/404219979943/locations/europe-west4/tuningJobs/4124253684697661440",
+    "base_model": "gemini-2.5-flash",
+    "status": "JOB_STATE_CANCELLED",
+    "examples": 86,
+    "project": "project-9eb04412-b304-4649-9ff",
+    "location": "europe-west4",
+    "note": "Cancelled: data had no tools field + lowercase types"
+  },
+  {
+    "provider": "vertex",
+    "job_name": "projects/404219979943/locations/europe-west4/tuningJobs/8229671773138845696",
+    "base_model": "gemini-2.5-flash",
+    "display_name": "traderv1-signal-reviewer-v2",
+    "status": "JOB_STATE_CANCELLED",
+    "examples": 190,
+    "project": "project-9eb04412-b304-4649-9ff",
+    "location": "europe-west4",
+    "note": "Cancelled: wrong params (epoch=3, lr=1.0), data had no tools field + lowercase types"
+  },
+  {
+    "provider": "vertex",
+    "job_name": "projects/404219979943/locations/europe-west4/tuningJobs/5341386668366626816",
+    "base_model": "gemini-2.5-flash",
+    "display_name": "traderv1-signal-reviewer-v3",
+    "status": "JOB_STATE_CANCELLED",
+    "examples": 210,
+    "project": "project-9eb04412-b304-4649-9ff",
+    "location": "europe-west4",
+    "note": "Cancelled: data ended with role=user (no closing model turn) + no tools field + lowercase types"
+  },
+  {
+    "provider": "vertex",
+    "job_name": "projects/404219979943/locations/europe-west4/tuningJobs/2613383970645082112",
+    "base_model": "gemini-2.5-flash",
+    "display_name": "traderv1-micro-test",
+    "status": "JOB_STATE_CANCELLED",
+    "examples": 20,
+    "epochs": 1,
+    "project": "project-9eb04412-b304-4649-9ff",
+    "location": "europe-west4",
+    "note": "Cancelled: data ended with role=user + no tools field"
+  },
+  {
+    "provider": "vertex",
+    "job_name": "projects/404219979943/locations/europe-west4/tuningJobs/5261430182794756096",
+    "base_model": "gemini-2.5-flash",
+    "display_name": "traderv1-micro-fixed",
+    "status": "JOB_STATE_CANCELLED",
+    "examples": 20,
+    "epochs": 1,
+    "project": "project-9eb04412-b304-4649-9ff",
+    "location": "europe-west4",
+    "note": "Cancelled: had closing model turn but no tools field"
+  },
+  {
+    "provider": "vertex",
+    "job_name": "projects/404219979943/locations/europe-west4/tuningJobs/8838414186833772544",
+    "base_model": "gemini-2.5-flash",
+    "display_name": "traderv1-1ex-uppercase-types",
+    "status": "JOB_STATE_PENDING",
+    "examples": 1,
+    "epochs": 1,
+    "project": "project-9eb04412-b304-4649-9ff",
+    "location": "europe-west4",
+    "note": "ACTIVE TEST: 1 example, tools field + UPPERCASE types + closing model turn. Watching for tuning_data_stats."
+  }
+]

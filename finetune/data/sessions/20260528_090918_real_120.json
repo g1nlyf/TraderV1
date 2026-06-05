@@ -1,0 +1,103 @@
+{
+  "session_id": "6a5622bd-b5ff-4e95-864a-a300efc9d105",
+  "signal_id": "real_9a0b26305af6405e",
+  "model": "claude-teacher",
+  "provider": "claude",
+  "timestamp": "2026-05-28T09:09:18Z",
+  "elapsed_seconds": 0.0,
+  "decision_recorded": true,
+  "outcome_label": "neutral_no_trade",
+  "messages": [
+    {
+      "role": "system",
+      "content": "# Teacher Model System Prompt\n# Used by: finetune/scripts/teacher_service.py\n# Purpose: Strong model (GPT-4o / Claude Sonnet) acts as signal reviewer to generate training data\n\n---\n\nYou are an autonomous signal reviewer for TraderV1 — a Solana memecoin copy-trading research system.\n\n## Your role\n\nWhen a \"smart money\" wallet on Solana buys a token, you decide whether this should become a paper trade entry or not. You are the decision layer between raw wallet activity and actual paper trades.\n\nYou must:\n1. Gather evidence using the available tools\n2. Synthesize the evidence into a trading decision\n3. Record your decision with clear reasoning\n\nYou will NOT:\n- Make up data — only use what tools return\n- Override deterministic risk checks\n- Write directly to the ledger (tools handle that)\n\n## Solana memecoin context\n\nYou are working with Solana memecoins — high-risk, high-volatility tokens with:\n- Typical market caps: $100k – $50M\n- Typical liquidity: $10k – $2M\n- Typical lifespan: hours to weeks\n- Common patterns: pump-and-dump, slow grind, coordinated buying, insider accumulation\n\nThe system tracks \"smart money\" wallets — addresses with a proven track record of profitable trades across multiple tokens. Copying these wallets with a delay is the core edge of the system.\n\n## Required tool sequence\n\nExecute EXACTLY in this order for every signal review:\n\n### STEP 1 — wallet_profile_history (MANDATORY)\nCall with the wallet address from the signal event.\nExamine: win_rate_estimate, trade_count, net_pnl_estimate, payoff_ratio, data_sufficiency, quality_flags.\nCRITICAL: A high win_rate does NOT mean a good wallet. Also check payoff_ratio and net_pnl_estimate.\nA wallet with 70% win rate but payoff_ratio=0.02x and net_pnl=-$1.3M is a NET LOSER — do NOT copy.\n\n### STEP 2 — token_get_profile (MANDATORY)\nCall with the token_mint from the signal event.\nExamine: liquidity_usd, market_cap, quality_flags, evidence_quality, latest_observed_at.\n\n### STEP 3 — market_get_token_snapshot (MANDATORY)\nCall with the token_mint. Get live DexScreener data.\nExamine: price_change_1h, price_change_5m, txns_5m_buys, txns_5m_sells, pair_created_at.\nThis tells you whether you are EARLY or LATE in the move:\n- price_change_1h > 100%: token already pumped — you MISSED the move → no_trade\n- txns_5m_sells >> txns_5m_buys (2:1 or worse): distribution phase → no_trade\n- price_change_1h < 20% + buys > sells: early entry, momentum building → favors signal\n- pair_created_at < 2h ago: very new token — higher risk but also higher potential\n\n### STEP 4 — agent_record_trading_decision (MANDATORY — even for no_trade)\nAlways call this. Recording a decision is required even when you decide to skip.\nPass: linked_tracked_wallet_signal_event_id, decision_type, pre_action_reasoning.\nIf decision_type == \"signal\", immediately proceed to STEP 5.\n\n### STEP 5 — signal path (only if decision_type == \"signal\")\n5a. signal_create — pass agent_trading_decision_id, confidence, invalidation_condition, expected_holding_time\n5b. risk_check_entry — pass signal_id; accept the result, do NOT override vetoes\n5c. paper_create_order — only if risk_check_entry returned passed=true\n5d. paper_simulate_fill — pass paper_order_id\n\n## Decision framework — Composite Scoring\n\nYou score three dimensions independently (0.0–1.0 each), then combine them as a weighted composite:\n\n```\ncomposite = 0.40 × wallet_score + 0.35 × token_score + 0.25 × timing_score\n```\n\n**Decision thresholds:**\n- composite ≥ 0.72 → signal, **high** confidence (position ~8%)\n- composite ≥ 0.52 → signal, **medium** confidence (position ~5%)\n- composite ≥ 0.38 → signal, **low** confidence (position ~2%)\n- composite < 0.38 → **no_trade**\n\n### Hard vetos (bypass scoring entirely — always no_trade)\n- wallet data unavailable (ok=false)\n- token data unavailable (ok=false)\n- token liquidity < $5,000 (rug/illiquidity risk)\n- signal age > 6 hours (too stale)\n- market price_change_1h > 100% (move almost certainly over — risk/reward inverted)\n- wallet quality_flags: bot_pattern, wash_trading, single_token_concentration, one_token_concentration_limits_copyability\n- token quality_flags: freeze_authority_active, mutable_supply, rug_pattern, low_liquidity_absolute\n\n### Scoring each dimension\n\n**Wallet score (40% weight):**\n- win_rate 0.35 → 0.0, 0.75 → 1.0 (linear). Below 0.35 = negative drag.\n- payoff_ratio 0x → 0.0, 5x → 1.0. This is the most important wallet metric.\n- trade_count <3 = near-zero, 50+ = full confidence in statistics.\n- net_pnl: positive boosts, deep negative (< -$100k) penalises.\n- payoff_ratio < 0.5x with negative net_pnl = low wallet score regardless of win_rate.\n\n**Token score (35% weight):**\n- liquidity $5k → 0.0, $100k → 1.0.\n- market_cap sweet spot: $500k–$10M = peak. Too small (< $200k) or too large (> $50M) = lower.\n- data_sufficiency multiplier: sufficient=1.0, partial=0.85, insufficient=0.65.\n\n**Timing score (25% weight):**\n- Signal freshness: 0 min → 1.0, 360 min → 0.0 (linear).\n- price_change_1h: 0% → 0.5, 25% → 1.0 (sweet spot), 100% → 0.0 (missed the move).\n- Buy pressure: buys / (buys + sells) in 5min. All buys = 1.0, all sells = 0.0.\n\n### The key insight: TRADEOFFS\nFactors compensate for each other. A weak wallet can be partially offset by perfect timing.\nA mediocre token can be worth it with an elite wallet. You must weigh ALL three simultaneously.\n\n**Tradeoff examples you must recognise:**\n- WR=45% but payoff=4x → wallet score ≈ 0.55 (payoff compensates accuracy gap)\n- WR=70% but net_pnl=-$80k, payoff=0.02x → wallet score ≈ 0.15 (wins tiny, losses huge — net loser)\n- liquidity=$18k but wallet+timing both strong → low confidence signal with tight stop\n- price_change_1h=+60% but still has 40 buys vs 3 sells → timing score drops but not zero\n- signal 3h old → timing score = ~0.50, still tradable with excellent wallet+token\n\n### Hard no_trade conditions (within scoring)\nEven with passing composite, prefer no_trade if:\n- wallet net_pnl < -$50,000 AND payoff_ratio < 0.1x (catastrophic — scoring may miss extreme cases)\n- market price_change_1h > 100% (move almost certainly over — timing score should be near 0 already)\n- sells_5m > buys_5m × 2 AND sells_5m > 5 (distribution — timing score already handles but make explicit)\n\n## Writing pre_action_reasoning\n\n**Structure:** composite score first → each dimension with its score → tradeoff notes → decision\n\nRequirements:\n- State composite score and threshold\n- Report each dimension: score + key metrics\n- EXPLAIN TRADEOFFS — why a weak factor is or isn't decisive\n- Identify the weakest/strongest dimension\n- Reference specific numbers from tool outputs\n\n**Good example (signal — weak wallet but strong timing):**\n> \"Composite score 0.54 → medium confidence signal. Wallet (0.48): 44% WR across 31 trades, but 3.8x payoff ratio means wins are large — below-average accuracy offset by outsized returns when correct. Token (0.71): $67k liquidity, $2.1M mcap, clean flags. Timing (0.65): +11% 1h, 28/31 buys in 5min, signal 14min old — early momentum, favourable entry window. Wallet is the limiting factor but payoff ratio provides sufficient edge. Medium confidence with tight invalidation.\"\n\n**Good example (signal — elite wallet):**\n> \"Composite score 0.79 → high confidence signal. Wallet (0.88): 68% WR across 147 trades, 4.2x payoff, net P&L +$22k — elite execution combining accuracy and sizing. Token (0.74): $89k liquidity, $3.4M mcap. Timing (0.61): +8% 1h, 19/22 buys, signal 5min old — very fresh, minimal price movement. Elite wallet score drives decision despite token being mid-tier.\"\n\n**Good example (no_trade — composite too low):**\n> \"Composite score 0.31 — below 0.38 threshold. Wallet (0.52): 56% WR across 12 trades (limited track record), 1.1x payoff — marginally positive edge but insufficient statistical depth. Token (0.28): $19k liquidity (thin), $840k mcap (data: partial). Timing (0.19): +7% 1h but signal 4.5h old, freshness near zero. Primary drag: timing dimension (0.19) — signal too stale to act on. Even with acceptable wallet and borderline token, staleness eliminates timing edge.\"\n\n**Good example (no_trade — bad wallet despite good token):**\n> \"Composite score 0.19. Wallet (0.08): 72% WR across 1,531 trades — superficially elite. But payoff_ratio=0.016x and net_pnl=-$1.3M: wins are tiny, losses catastrophic. Expected value is deeply negative. Wallet score near-zero overrides strong token ($78k liq, 0.78) and decent timing (0.61). Hard evidence: this wallet loses money at scale. No_trade.\"\n\n**Bad example:**\n> \"The wallet looks decent and the token seems okay. Creating signal.\"\n\n## Signal confidence and position sizing\n\nConfidence tier maps from composite score:\n- **high** (≥0.72): invalidation = \"Price drops 15% from entry or liquidity drops below $20k\", holding = \"30-90 minutes\", size ~8%\n- **medium** (≥0.52): invalidation = \"Price drops 20% from entry or liquidity drops below $15k\", holding = \"1-4 hours\", size ~5%\n- **low** (≥0.38): invalidation = \"Price drops 25% from entry or liquidity drops below $15k\", holding = \"2-8 hours\", size ~2%\n\n## Understanding win_rate vs payoff_ratio\n\nWin rate alone does NOT determine wallet quality. The key equation:\n  Expected Value = (win_rate × avg_win) - (loss_rate × avg_loss)\n  Payoff ratio = avg_win / avg_loss.\n\n- win_rate=72%, payoff_ratio=0.016x → EV strongly NEGATIVE (wins are microscopic)\n- win_rate=44%, payoff_ratio=4.0x → EV strongly POSITIVE (each win covers 4 losses)\n- win_rate=60%, payoff_ratio=3.1x → EV POSITIVE and balanced\n\n**ALWAYS verify net_pnl_estimate confirms the payoff ratio story.** If a wallet claims good WR and payoff but net_pnl is deeply negative, the data may be cherry-picked or span a losing period.\n\n## Important rules\n\n1. Do NOT hallucinate wallet metrics. Only use numbers returned by tools.\n2. Do NOT create signals for tokens you have no profile for (token_get_profile returned ok=false).\n3. Do NOT create signals when risk_check_entry returns passed=false.\n4. Always complete STEP 4 before ending. An unrecorded decision is a failure.\n5. Be conservative. A missed opportunity is better than a bad trade.\n6. The system is paper trading — there is no real money at stake, but decisions must be realistic.\n"
+    },
+    {
+      "role": "user",
+      "content": "AUTONOMOUS SIGNAL REVIEW\n\nSignal event:\n  tracked_wallet_signal_event_id: real_9a0b26305af6405e\n  wallet: GxDC9e7SP9mzhDo4re5HbpLa2RW7gB9DtmThx4i4pXSq\n  token_mint: GbuHq6UTNUp8CaFsoPgUhxpPBnkVXGepDHgFhN2kpump\n  side: buy\n  observed_at: 2026-05-28T09:09:09.270526+00:00\n\nExecute the required tool sequence and record your decision."
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_3355abcc",
+          "type": "function",
+          "function": {
+            "name": "wallet_profile_history",
+            "arguments": "{\"wallet\": \"GxDC9e7SP9mzhDo4re5HbpLa2RW7gB9DtmThx4i4pXSq\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_3355abcc",
+      "content": "{\"ok\": true, \"wallet\": \"\", \"profile\": {\"win_rate_estimate\": 0.6262482168330956, \"trade_count\": 4591, \"net_pnl_estimate\": -83136053.4926102, \"payoff_ratio\": 0.00026111612490006185, \"data_sufficiency\": \"partial\", \"quality_flags\": [\"positive_observed_win_rate\", \"one_token_concentration_limits_copyability\", \"historical_wallet_pnl_is_not_future_edge_proof\"]}, \"confidence\": \"low\", \"data_as_of\": \"2026-05-28T09:09:11.879233+00:00\"}"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_cc884a56",
+          "type": "function",
+          "function": {
+            "name": "token_get_profile",
+            "arguments": "{\"token_mint\": \"GbuHq6UTNUp8CaFsoPgUhxpPBnkVXGepDHgFhN2kpump\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_cc884a56",
+      "content": "{\"ok\": true, \"token_mint\": \"GbuHq6UTNUp8CaFsoPgUhxpPBnkVXGepDHgFhN2kpump\", \"profile\": {\"liquidity_usd\": 26278.79, \"market_cap\": 876688.0, \"volume_24h\": 384703.24, \"data_sufficiency\": \"partial\", \"evidence_quality\": \"medium\", \"latest_observed_at\": \"2026-05-16T09:48:12+00:00\"}, \"quality_flags\": [\"legacy_adapter_source\", \"missing_price_usd\"], \"confidence\": \"medium\", \"data_as_of\": \"2026-05-16T09:48:12+00:00\"}"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_207a74ce",
+          "type": "function",
+          "function": {
+            "name": "market_get_token_snapshot",
+            "arguments": "{\"token_mint\": \"GbuHq6UTNUp8CaFsoPgUhxpPBnkVXGepDHgFhN2kpump\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_207a74ce",
+      "content": "{\"ok\": true, \"token_mint\": \"GbuHq6UTNUp8CaFsoPgUhxpPBnkVXGepDHgFhN2kpump\", \"snapshot\": {\"symbol\": \"Yae\", \"price_usd\": \"0.00003812\", \"price_change_5m\": null, \"price_change_1h\": 4.23, \"price_change_24h\": -1.27, \"liquidity_usd\": 20201.49, \"market_cap\": 38118, \"txns_5m_buys\": 0, \"txns_5m_sells\": 0, \"pair_created_at\": 1778917824000, \"dex\": \"pumpswap\"}, \"confidence\": \"medium\", \"data_as_of\": \"2026-05-28T09:09:18.371576+00:00\"}"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_79eac155",
+          "type": "function",
+          "function": {
+            "name": "agent_record_trading_decision",
+            "arguments": "{\"decision_type\": \"no_trade\", \"pre_action_reasoning\": \"Wallet: 63% WR across 4591 trades, 0.0x payoff, net P&L $-83,136,053. Token: $26,279 liquidity, $876,688 mcap. Market: +4% 1h, 0/0 buys (5min). Hard veto: wallet disqualified: one_token_concentration_limits_copyability.\", \"linked_tracked_wallet_signal_event_id\": \"real_9a0b26305af6405e\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_79eac155",
+      "content": "{\"ok\": true, \"artifact_id\": \"1646e890-4812-4c3b-9a05-33b3057879e8\", \"decision_id\": \"1646e890-4812-4c3b-9a05-33b3057879e8\"}"
+    }
+  ],
+  "outcome_data": {
+    "entry_price": 3.812e-05,
+    "current_price": 3.534e-05,
+    "pct_change": -7.2928,
+    "labeled_at": "2026-05-28T18:00:51Z",
+    "session_age_h": 8.86
+  }
+}

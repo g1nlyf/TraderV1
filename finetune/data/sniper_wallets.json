@@ -1,0 +1,218 @@
+[
+  {
+    "wallet": "2REArPR7rMLSjKctY6YWYezLu7k3EzSSdNDPxAXCzE1t",
+    "buy_vs_market": 0.509,
+    "median_buy_sol": 0.3068,
+    "freq_per_h": 0.4,
+    "hold_sec": 314.3,
+    "score": 1.0,
+    "pnl": 26.4022,
+    "reasons": [
+      "buys 49% below market (uncopyable)"
+    ]
+  },
+  {
+    "wallet": "2cTTN1oayKcm1P6W9JZRxd7VRh6oCPAjGQQAPiFLxjze",
+    "buy_vs_market": 0.674,
+    "median_buy_sol": 0.2556,
+    "freq_per_h": 0.4,
+    "hold_sec": 142914.7,
+    "score": 0.927,
+    "pnl": 13.28,
+    "reasons": [
+      "buys 33% below market (uncopyable)"
+    ]
+  },
+  {
+    "wallet": "33CtUEnDcLDXcUd7DfsjG7EbvwsEUYtyTPryy21z893b",
+    "buy_vs_market": 0.613,
+    "median_buy_sol": 0.002,
+    "freq_per_h": 1.6,
+    "hold_sec": 20831.2,
+    "score": 0.916,
+    "pnl": 2.1627,
+    "reasons": [
+      "buys 39% below market (uncopyable)"
+    ]
+  },
+  {
+    "wallet": "336DC1Gpa518rJSfQ34pxWahLgTfjQJ8rdCA3HREh5X4",
+    "buy_vs_market": 0.609,
+    "median_buy_sol": 0.822,
+    "freq_per_h": 0.0,
+    "hold_sec": 2036.1,
+    "score": 0.91,
+    "pnl": 6.2247,
+    "reasons": [
+      "buys 39% below market (uncopyable)"
+    ]
+  },
+  {
+    "wallet": "25Jm1TWSwYK6C26w4weMskcujPyVuukc8KeiFLz2dXRu",
+    "buy_vs_market": 0.037,
+    "median_buy_sol": 0.0021,
+    "freq_per_h": 0.6,
+    "hold_sec": 21205.8,
+    "score": 0.875,
+    "pnl": 1.8934,
+    "reasons": [
+      "buys 96% below market (uncopyable)"
+    ]
+  },
+  {
+    "wallet": "3xxAV3TFBxxwq3LTediRCez6Adc87pP5DGL5sFgfsr3p",
+    "buy_vs_market": 0.084,
+    "median_buy_sol": 0.002,
+    "freq_per_h": 0.4,
+    "hold_sec": 429502.8,
+    "score": 0.857,
+    "pnl": 11.2114,
+    "reasons": [
+      "buys 92% below market (uncopyable)"
+    ]
+  },
+  {
+    "wallet": "317Btnt4E2Nm3rwydP13M7TkRkEwPKXLm4TmUVanaSDy",
+    "buy_vs_market": 0.469,
+    "median_buy_sol": 0.0041,
+    "freq_per_h": 0.6,
+    "hold_sec": 25642.5,
+    "score": 0.827,
+    "pnl": 8.1957,
+    "reasons": [
+      "buys 53% below market (uncopyable)"
+    ]
+  },
+  {
+    "wallet": "2o7L1kDg5DcdG6vofhdTBxwbb3WQAEcchPKkVZENzDL9",
+    "buy_vs_market": 0.471,
+    "median_buy_sol": 0.002,
+    "freq_per_h": 0.6,
+    "hold_sec": 62871.2,
+    "score": 0.799,
+    "pnl": 63.4137,
+    "reasons": [
+      "buys 53% below market (uncopyable)"
+    ]
+  },
+  {
+    "wallet": "8gQoJPTf1VDCr2eWhooZj9VG2WxJ7CsXwB8P1fE8SQSe",
+    "buy_vs_market": 0.582,
+    "median_buy_sol": 0.2051,
+    "freq_per_h": 0.6,
+    "hold_sec": 24480.4,
+    "score": 1.0,
+    "pnl": 11.0093,
+    "reasons": [
+      "buys 42% below market (uncopyable)"
+    ]
+  },
+  {
+    "wallet": "5dnhwS6kp8S224cdAUeK3mrLpd23LRXgJ1bvy13r3WD5",
+    "buy_vs_market": 0.665,
+    "median_buy_sol": 2.0218,
+    "freq_per_h": 0.8,
+    "hold_sec": 8771.3,
+    "score": 0.992,
+    "pnl": 137.3545,
+    "reasons": [
+      "buys 34% below market (uncopyable)"
+    ]
+  },
+  {
+    "wallet": "9i3KNnS1oGbAou7rGnjZ6SbzYQbyhz9kJu5RttuDPpc6",
+    "buy_vs_market": 0.614,
+    "median_buy_sol": 0.0707,
+    "freq_per_h": 0.2,
+    "hold_sec": 31171.4,
+    "score": 0.985,
+    "pnl": 3.3153,
+    "reasons": [
+      "buys 39% below market (uncopyable)"
+    ]
+  },
+  {
+    "wallet": "AeBgCFnkSWMAwv3zjaJPB93hxEBUEVkhEyKVFaxT84pJ",
+    "buy_vs_market": 0.595,
+    "median_buy_sol": 1.5021,
+    "freq_per_h": 36.2,
+    "hold_sec": 1246.5,
+    "score": 0.974,
+    "pnl": 10.3323,
+    "reasons": [
+      "buys 40% below market (uncopyable)"
+    ]
+  },
+  {
+    "wallet": "65L6k74s6SZAxgPpvz3B9bFJjEpTwz72ff4DPMaN6LEW",
+    "buy_vs_market": 0.613,
+    "median_buy_sol": 4.0875,
+    "freq_per_h": 0.3,
+    "hold_sec": 225072.1,
+    "score": 0.932,
+    "pnl": 291.6805,
+    "reasons": [
+      "buys 39% below market (uncopyable)"
+    ]
+  },
+  {
+    "wallet": "78pdJKSFivrQ527LBiVv7CZVbTdzTTqjVV9UAEV88Dm9",
+    "buy_vs_market": 0.56,
+    "median_buy_sol": 0.5076,
+    "freq_per_h": 0.3,
+    "hold_sec": 1524.9,
+    "score": 0.929,
+    "pnl": 49.0741,
+    "reasons": [
+      "buys 44% below market (uncopyable)"
+    ]
+  },
+  {
+    "wallet": "4fookD4RihXmSxkkDYEvnWtBMbNwavbj9hZ2hWTpBkBJ",
+    "buy_vs_market": 0.348,
+    "median_buy_sol": 0.0041,
+    "freq_per_h": 0.7,
+    "hold_sec": 23099.0,
+    "score": 0.871,
+    "pnl": 5.8318,
+    "reasons": [
+      "buys 65% below market (uncopyable)"
+    ]
+  },
+  {
+    "wallet": "9diEcz3e34HpQU6rfacUiCAEc5xnxtdSDHyL4BS7kzY4",
+    "buy_vs_market": 0.344,
+    "median_buy_sol": 0.0021,
+    "freq_per_h": 0.8,
+    "hold_sec": 47660.4,
+    "score": 0.785,
+    "pnl": 19.722,
+    "reasons": [
+      "buys 66% below market (uncopyable)"
+    ]
+  },
+  {
+    "wallet": "7ipiNgwQb6okFjZEsyb2kwZw9rYbbBMcfwmEh2XiH3hV",
+    "buy_vs_market": 0.004,
+    "median_buy_sol": 0.002,
+    "freq_per_h": 0.4,
+    "hold_sec": 514373.4,
+    "score": 0.74,
+    "pnl": 6.308,
+    "reasons": [
+      "buys 100% below market (uncopyable)"
+    ]
+  },
+  {
+    "wallet": "8z6ruF74gC7dHm1iTwagFiHiFawusKBHXUpni5ceEaXr",
+    "buy_vs_market": 0.326,
+    "median_buy_sol": 0.002,
+    "freq_per_h": 0.6,
+    "hold_sec": 195586.1,
+    "score": 0.74,
+    "pnl": 7.9053,
+    "reasons": [
+      "buys 67% below market (uncopyable)"
+    ]
+  }
+]

@@ -1,0 +1,207 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "wallet_profile_history",
+      "description": "Reconstruct recent multi-token wallet history. Returns P&L estimate, win rate, payoff ratio, trade count, data sufficiency, and bot/manipulation flags. Always call this FIRST for any signal review.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "wallet": {
+            "type": "string",
+            "description": "Solana wallet address (base58)"
+          }
+        },
+        "required": ["wallet"]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "token_get_profile",
+      "description": "Return token profile including market cap, liquidity, volume, holder count, quality flags, and evidence quality. Always call this SECOND after wallet_profile_history.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "token_mint": {
+            "type": "string",
+            "description": "Solana token mint address (base58)"
+          },
+          "token_profile_id": {
+            "type": "string",
+            "description": "Token profile ID (alternative to token_mint)"
+          }
+        }
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "market_get_token_snapshot",
+      "description": "Get live DexScreener market snapshot for a token. Call THIRD (after wallet_profile_history and token_get_profile) to assess current entry conditions: how much has price moved since the signal wallet bought, current buy/sell pressure, and token age. Critical for entry timing — a good wallet + good token can still be a bad entry if the token already pumped 200% or is in distribution phase.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "token_mint": {
+            "type": "string",
+            "description": "Solana token mint address (base58)"
+          }
+        },
+        "required": ["token_mint"]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "agent_record_trading_decision",
+      "description": "Record the agent's trading decision. MANDATORY — always call this even for no_trade. This is the most important tool call.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "linked_tracked_wallet_signal_event_id": {
+            "type": "string",
+            "description": "ID of the tracked wallet signal event being reviewed"
+          },
+          "decision_type": {
+            "type": "string",
+            "enum": ["signal", "no_trade", "wait", "downgrade_wallet"],
+            "description": "Trading decision type. Use 'no_trade' when data is insufficient, win_rate < 0.4, signal is stale (>4h), or token has critical quality flags."
+          },
+          "pre_action_reasoning": {
+            "type": "string",
+            "description": "2-5 sentence analysis of wallet quality, token quality, and why this decision was made. Must reference specific metrics observed."
+          },
+          "evidence_refs": {
+            "type": "array",
+            "items": {"type": "string"},
+            "description": "Artifact IDs from previous tool calls (wallet metrics snapshot ID, token profile ID)"
+          },
+          "uncertainties": {
+            "type": "array",
+            "items": {"type": "string"},
+            "description": "List of uncertainties or data gaps that influenced the decision"
+          },
+          "quality_flags": {
+            "type": "array",
+            "items": {"type": "string"},
+            "description": "Quality flags inherited from evidence"
+          }
+        },
+        "required": ["linked_tracked_wallet_signal_event_id", "decision_type", "pre_action_reasoning"]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "signal_create",
+      "description": "Create a structured Signal from the agent decision. Only call if decision_type was 'signal'.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "agent_trading_decision_id": {
+            "type": "string",
+            "description": "ID from agent_record_trading_decision"
+          },
+          "token_id": {
+            "type": "string",
+            "description": "Token profile ID or token mint"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": ["high", "medium", "low", "unknown"]
+          },
+          "invalidation_condition": {
+            "type": "string",
+            "description": "Condition under which this signal should be invalidated (e.g. 'liquidity drops below $20k')"
+          },
+          "expected_holding_time": {
+            "type": "string",
+            "description": "Expected trade duration (e.g. '2-6 hours', '30-90 minutes')"
+          },
+          "source_refs": {
+            "type": "array",
+            "items": {"type": "string"}
+          }
+        },
+        "required": ["agent_trading_decision_id", "invalidation_condition", "expected_holding_time"]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "risk_check_entry",
+      "description": "Run deterministic entry risk check. Only call after signal_create. Accept the result — do NOT override vetoed entries.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "signal_id": {
+            "type": "string",
+            "description": "Signal ID from signal_create"
+          },
+          "risk_limit_snapshot_id": {
+            "type": "string",
+            "description": "Risk limits snapshot ID (use 'current' if unknown)"
+          },
+          "config_snapshot_id": {
+            "type": "string",
+            "description": "Config snapshot ID (use 'current' if unknown)"
+          }
+        },
+        "required": ["signal_id"]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "paper_create_order",
+      "description": "Create paper/shadow order. Only call if risk_check_entry passed=true.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "signal_id": {
+            "type": "string",
+            "description": "Signal ID from signal_create"
+          },
+          "risk_check_id": {
+            "type": "string",
+            "description": "Risk check ID from risk_check_entry"
+          },
+          "agent_trading_decision_id": {
+            "type": "string"
+          }
+        },
+        "required": ["signal_id", "risk_check_id"]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "paper_simulate_fill",
+      "description": "Simulate paper entry fill. Only call after paper_create_order.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "paper_order_id": {
+            "type": "string",
+            "description": "Paper order ID from paper_create_order"
+          },
+          "market_snapshot_id": {
+            "type": "string",
+            "description": "Market snapshot ID (use 'current' if unavailable)"
+          },
+          "agent_trading_decision_id": {
+            "type": "string"
+          }
+        },
+        "required": ["paper_order_id"]
+      }
+    }
+  }
+]

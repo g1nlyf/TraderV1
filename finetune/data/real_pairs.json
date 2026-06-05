@@ -1,0 +1,1562 @@
+[
+  {
+    "wallet": "ARqJ18xaBLrEJYARaYHxfRKSi1pB7dZjwq1NW6Fiuieb",
+    "token_mint": "ESZLbp5qm8SPfiqAR2sDXrZNjo5hKZoD7FAFTmfCpump",
+    "symbol": "DOZER",
+    "approx_liq": 25013.25,
+    "scenario": "bad_wallet",
+    "entry_type": "bad_wallet"
+  },
+  {
+    "wallet": "Ar2Y6o1QmrRAskjii1cRfijeKugHH13ycxW5cd7rro1x",
+    "token_mint": "CCBNp981Gvv8Vo2T4NNUYW6AkxyFGcacfVgY8qyppump",
+    "symbol": "皐月",
+    "approx_liq": 17215.15,
+    "scenario": "bad_token",
+    "entry_type": "bad_token"
+  },
+  {
+    "wallet": "HxjwdF326ZunmUwC1iXhfgL3ku78YsksN6n7Rfxzwr6b",
+    "token_mint": "PoPGUYiYjb79CR2Z5XwGpGkuL5G2gApYktbhAN4Tzhh",
+    "symbol": "POP",
+    "approx_liq": 20935.71,
+    "scenario": "bad_token",
+    "entry_type": "bad_token"
+  },
+  {
+    "wallet": "44zas59yMsNv3nwsjtf9zPCxvaxyvuhLPx6x4ERKXPti",
+    "token_mint": "PoPGUYiYjb79CR2Z5XwGpGkuL5G2gApYktbhAN4Tzhh",
+    "symbol": "POP",
+    "approx_liq": 26962.93,
+    "scenario": "potential_signal",
+    "entry_type": "fresh"
+  },
+  {
+    "wallet": "ARu4n5mFdZogZAravu7CcizaojWnS6oqka37gdLT5SZn",
+    "token_mint": "4aeBSAusGHEEzBEG9DBYtTjvcQjTJWsNfNvfNioYpump",
+    "symbol": "hentai",
+    "approx_liq": 56190.37,
+    "scenario": "potential_signal",
+    "entry_type": "fresh"
+  },
+  {
+    "wallet": "G1nfy85wgagnhLnFyGktq5vZ3QFnewwhFuPC7sor1GsE",
+    "token_mint": "GbuHq6UTNUp8CaFsoPgUhxpPBnkVXGepDHgFhN2kpump",
+    "symbol": "Yae",
+    "approx_liq": 126757.82,
+    "scenario": "bad_wallet",
+    "entry_type": "bad_wallet"
+  },
+  {
+    "wallet": "Ar2Y6o1QmrRAskjii1cRfijeKugHH13ycxW5cd7rro1x",
+    "token_mint": "HFTUnLruD1y7SaPSQPBAEGV3R1ThP4fZcNrSwmZ6pump",
+    "symbol": "BEPE",
+    "approx_liq": 22940.13,
+    "scenario": "bad_token",
+    "entry_type": "bad_token"
+  },
+  {
+    "wallet": "HxjwdF326ZunmUwC1iXhfgL3ku78YsksN6n7Rfxzwr6b",
+    "token_mint": "GbuHq6UTNUp8CaFsoPgUhxpPBnkVXGepDHgFhN2kpump",
+    "symbol": "Yae",
+    "approx_liq": 40906.21,
+    "scenario": "potential_signal",
+    "entry_type": "fresh"
+  },
+  {
+    "wallet": "Ar2Y6o1QmrRAskjii1cRfijeKugHH13ycxW5cd7rro1x",
+    "token_mint": "ESZLbp5qm8SPfiqAR2sDXrZNjo5hKZoD7FAFTmfCpump",
+    "symbol": "DOZER",
+    "approx_liq": 24334.19,
+    "scenario": "bad_token",
+    "entry_type": "bad_token"
+  },
+  {
+    "wallet": "GxDC9e7SP9mzhDo4re5HbpLa2RW7gB9DtmThx4i4pXSq",
+    "token_mint": "6BonAuugSmeJa7r1kdj6xjbUayKi4EiwZBy5ZXtcpump",
+    "symbol": "HELPCJ",
+    "approx_liq": 14582.87,
+    "scenario": "bad_wallet",
+    "entry_type": "bad_wallet"
+  },
+  {
+    "wallet": "2MFoS3MPtvyQ4Wh4M9pdfPjz6UhVoNbFbGJAskCPCj3h",
+    "token_mint": "9LooeuSKG3H2mxj9yxWvoNibVLuxsE8qeobuHjZfpump",
+    "symbol": "LUCY",
+    "approx_liq": 31699.44,
+    "scenario": "potential_signal",
+    "entry_type": "fresh"
+  },
+  {
+    "wallet": "Ar2Y6o1QmrRAskjii1cRfijeKugHH13ycxW5cd7rro1x",
+    "token_mint": "BnK8QgRW6BGPbPV2b1tAZgxVwAJvJpEC9xPoQikRpump",
+    "symbol": "Jim",
+    "approx_liq": 25493.07,
+    "scenario": "potential_signal",
+    "entry_type": "fresh"
+  },
+  {
+    "wallet": "HxjwdF326ZunmUwC1iXhfgL3ku78YsksN6n7Rfxzwr6b",
+    "token_mint": "HFTUnLruD1y7SaPSQPBAEGV3R1ThP4fZcNrSwmZ6pump",
+    "symbol": "BEPE",
+    "approx_liq": 22940.13,
+    "scenario": "bad_token",
+    "entry_type": "bad_token"
+  },
+  {
+    "wallet": "44zas59yMsNv3nwsjtf9zPCxvaxyvuhLPx6x4ERKXPti",
+    "token_mint": "PoPGUYiYjb79CR2Z5XwGpGkuL5G2gApYktbhAN4Tzhh",
+    "symbol": "POP",
+    "approx_liq": 29786.52,
+    "scenario": "potential_signal",
+    "entry_type": "fresh"
+  },
+  {
+    "wallet": "GxDC9e7SP9mzhDo4re5HbpLa2RW7gB9DtmThx4i4pXSq",
+    "token_mint": "HFTUnLruD1y7SaPSQPBAEGV3R1ThP4fZcNrSwmZ6pump",
+    "symbol": "BEPE",
+    "approx_liq": 22668.5,
+    "scenario": "bad_wallet",
+    "entry_type": "bad_wallet"
+  },
+  {
+    "wallet": "AacCEk4xZHPgQ2dUR8BTtAmUeokg4RE812sAFswJotx6",
+    "token_mint": "CMUJzTahkRDanjpPonDS87FQuyntSLWhUYRkR79EybSU",
+    "symbol": "CELL",
+    "approx_liq": 32795.97,
+    "scenario": "bad_wallet",
+    "entry_type": "bad_wallet"
+  },
+  {
+    "wallet": "6TYDxGmVxkBPBmEfnmLXx6jVff9LknsjRHqdTjVyZmG8",
+    "token_mint": "PoPGUYiYjb79CR2Z5XwGpGkuL5G2gApYktbhAN4Tzhh",
+    "symbol": "POP",
+    "approx_liq": 26962.93,
+    "scenario": "potential_signal",
+    "entry_type": "fresh"
+  },
+  {
+    "wallet": "74MgeAHGAviQj2AB5jGhpSZVxtXvcoaqT9UC6fscvGPk",
+    "token_mint": "7qkvtgs6QvpNnxDhZArZg29DcWGTVp5EFNJ1AtySpump",
+    "symbol": "SELLUR",
+    "approx_liq": 56631.03,
+    "scenario": "bad_wallet",
+    "entry_type": "bad_wallet"
+  },
+  {
+    "wallet": "6TYDxGmVxkBPBmEfnmLXx6jVff9LknsjRHqdTjVyZmG8",
+    "token_mint": "GbuHq6UTNUp8CaFsoPgUhxpPBnkVXGepDHgFhN2kpump",
+    "symbol": "Yae",
+    "approx_liq": 26278.79,
+    "scenario": "potential_signal",
+    "entry_type": "fresh"
+  },
+  {
+    "wallet": "G1HJCy8zzZeoptdeBbbFodCCfXTjJyFSJHGq13DAYm9a",
+    "token_mint": "BnK8QgRW6BGPbPV2b1tAZgxVwAJvJpEC9xPoQikRpump",
+    "symbol": "Jim",
+    "approx_liq": 25493.07,
+    "scenario": "bad_wallet",
+    "entry_type": "bad_wallet"
+  },
+  {
+    "wallet": "6TYDxGmVxkBPBmEfnmLXx6jVff9LknsjRHqdTjVyZmG8",
+    "token_mint": "BigGboBX6veMLQV6gzqgV9Pbx8LeobR6eDjUQicXpump",
+    "symbol": "BAGELS",
+    "approx_liq": 24832.79,
+    "scenario": "bad_token",
+    "entry_type": "bad_token"
+  },
+  {
+    "wallet": "5PiF5SoM7y3xiE6aPsvqvfyMJhYxUr5YSPN8Jr7WUVCm",
+    "token_mint": "D9gKwxJF9kFxFUki8KK2WxjqdLFBnnuvvVvmueCUpump",
+    "symbol": "BOPO",
+    "approx_liq": 37871.32,
+    "scenario": "bad_wallet",
+    "entry_type": "bad_wallet"
+  },
+  {
+    "wallet": "6TYDxGmVxkBPBmEfnmLXx6jVff9LknsjRHqdTjVyZmG8",
+    "token_mint": "9LooeuSKG3H2mxj9yxWvoNibVLuxsE8qeobuHjZfpump",
+    "symbol": "LUCY",
+    "approx_liq": 34901.29,
+    "scenario": "potential_signal",
+    "entry_type": "fresh"
+  },
+  {
+    "wallet": "Ar2Y6o1QmrRAskjii1cRfijeKugHH13ycxW5cd7rro1x",
+    "token_mint": "4aeBSAusGHEEzBEG9DBYtTjvcQjTJWsNfNvfNioYpump",
+    "symbol": "hentai",
+    "approx_liq": 56190.37,
+    "scenario": "potential_signal",
+    "entry_type": "fresh"
+  },
+  {
+    "wallet": "44zas59yMsNv3nwsjtf9zPCxvaxyvuhLPx6x4ERKXPti",
+    "token_mint": "Cz2M3oyo28kZiKn3MRq75hRmsygErdg6C5i9Hhwkpump",
+    "symbol": "Uta",
+    "approx_liq": 7802.06,
+    "scenario": "bad_token",
+    "entry_type": "bad_token"
+  },
+  {
+    "wallet": "2MFoS3MPtvyQ4Wh4M9pdfPjz6UhVoNbFbGJAskCPCj3h",
+    "token_mint": "HFTUnLruD1y7SaPSQPBAEGV3R1ThP4fZcNrSwmZ6pump",
+    "symbol": "BEPE",
+    "approx_liq": 22668.5,
+    "scenario": "bad_token",
+    "entry_type": "bad_token"
+  },
+  {
+    "wallet": "2MFoS3MPtvyQ4Wh4M9pdfPjz6UhVoNbFbGJAskCPCj3h",
+    "token_mint": "BigGboBX6veMLQV6gzqgV9Pbx8LeobR6eDjUQicXpump",
+    "symbol": "BAGELS",
+    "approx_liq": 24832.79,
+    "scenario": "bad_token",
+    "entry_type": "bad_token"
+  },
+  {
+    "wallet": "ARu4n5mFdZogZAravu7CcizaojWnS6oqka37gdLT5SZn",
+    "token_mint": "ESZLbp5qm8SPfiqAR2sDXrZNjo5hKZoD7FAFTmfCpump",
+    "symbol": "DOZER",
+    "approx_liq": 24733.43,
+    "scenario": "bad_token",
+    "entry_type": "bad_token"
+  },
+  {
+    "wallet": "6TYDxGmVxkBPBmEfnmLXx6jVff9LknsjRHqdTjVyZmG8",
+    "token_mint": "ESZLbp5qm8SPfiqAR2sDXrZNjo5hKZoD7FAFTmfCpump",
+    "symbol": "DOZER",
+    "approx_liq": 24334.19,
+    "scenario": "bad_token",
+    "entry_type": "bad_token"
+  },
+  {
+    "wallet": "GxDC9e7SP9mzhDo4re5HbpLa2RW7gB9DtmThx4i4pXSq",
+    "token_mint": "GbuHq6UTNUp8CaFsoPgUhxpPBnkVXGepDHgFhN2kpump",
+    "symbol": "Yae",
+    "approx_liq": 40906.21,
+    "scenario": "bad_wallet",
+    "entry_type": "bad_wallet"
+  },
+  {
+    "wallet": "2MFoS3MPtvyQ4Wh4M9pdfPjz6UhVoNbFbGJAskCPCj3h",
+    "token_mint": "4aeBSAusGHEEzBEG9DBYtTjvcQjTJWsNfNvfNioYpump",
+    "symbol": "hentai",
+    "approx_liq": 70340.44,
+    "scenario": "potential_signal",
+    "entry_type": "fresh"
+  },
+  {
+    "wallet": "DnoPZbkYZSD1s74KVf9CwAwnqPiNL8ypzRp4kfFByp85",
+    "token_mint": "BigGboBX6veMLQV6gzqgV9Pbx8LeobR6eDjUQicXpump",
+    "symbol": "BAGELS",
+    "approx_liq": 44192.3,
+    "scenario": "bad_wallet",
+    "entry_type": "bad_wallet"
+  },
+  {
+    "wallet": "44zas59yMsNv3nwsjtf9zPCxvaxyvuhLPx6x4ERKXPti",
+    "token_mint": "ESZLbp5qm8SPfiqAR2sDXrZNjo5hKZoD7FAFTmfCpump",
+    "symbol": "DOZER",
+    "approx_liq": 24733.43,
+    "scenario": "bad_token",
+    "entry_type": "bad_token"
+  },
+  {
+    "wallet": "44zas59yMsNv3nwsjtf9zPCxvaxyvuhLPx6x4ERKXPti",
+    "token_mint": "4aeBSAusGHEEzBEG9DBYtTjvcQjTJWsNfNvfNioYpump",
+    "symbol": "hentai",
+    "approx_liq": 70340.44,
+    "scenario": "potential_signal",
+    "entry_type": "fresh"
+  },
+  {
+    "wallet": "2MFoS3MPtvyQ4Wh4M9pdfPjz6UhVoNbFbGJAskCPCj3h",
+    "token_mint": "D9gKwxJF9kFxFUki8KK2WxjqdLFBnnuvvVvmueCUpump",
+    "symbol": "BOPO",
+    "approx_liq": 37871.32,
+    "scenario": "potential_signal",
+    "entry_type": "fresh"
+  },
+  {
+    "wallet": "A1Pb44RGvJ5F8sMycWVNRCrp348igfQtqYT14KhHkYxz",
+    "token_mint": "BnK8QgRW6BGPbPV2b1tAZgxVwAJvJpEC9xPoQikRpump",
+    "symbol": "Jim",
+    "approx_liq": 37094.95,
+    "scenario": "bad_wallet",
+    "entry_type": "bad_wallet"
+  },
+  {
+    "wallet": "Ar2Y6o1QmrRAskjii1cRfijeKugHH13ycxW5cd7rro1x",
+    "token_mint": "ESZLbp5qm8SPfiqAR2sDXrZNjo5hKZoD7FAFTmfCpump",
+    "symbol": "DOZER",
+    "approx_liq": 25013.25,
+    "scenario": "potential_signal",
+    "entry_type": "fresh"
+  },
+  {
+    "wallet": "DxobwuKnbT88UFKJUAji65KNprGcWF2NtpfzkuhcwyP7",
+    "token_mint": "CMUJzTahkRDanjpPonDS87FQuyntSLWhUYRkR79EybSU",
+    "symbol": "CELL",
+    "approx_liq": 33094.66,
+    "scenario": "bad_wallet",
+    "entry_type": "bad_wallet"
+  },
+  {
+    "wallet": "6TYDxGmVxkBPBmEfnmLXx6jVff9LknsjRHqdTjVyZmG8",
+    "token_mint": "HFTUnLruD1y7SaPSQPBAEGV3R1ThP4fZcNrSwmZ6pump",
+    "symbol": "BEPE",
+    "approx_liq": 20897.34,
+    "scenario": "bad_token",
+    "entry_type": "bad_token"
+  },
+  {
+    "wallet": "PCQKbT6vhJTu1Yf1AGTBT5Q44nmj2iUYXxpG1rSP3Wg",
+    "token_mint": "4aeBSAusGHEEzBEG9DBYtTjvcQjTJWsNfNvfNioYpump",
+    "symbol": "hentai",
+    "approx_liq": 70340.44,
+    "scenario": "bad_wallet",
+    "entry_type": "bad_wallet"
+  },
+  {
+    "wallet": "2MFoS3MPtvyQ4Wh4M9pdfPjz6UhVoNbFbGJAskCPCj3h",
+    "token_mint": "BnK8QgRW6BGPbPV2b1tAZgxVwAJvJpEC9xPoQikRpump",
+    "symbol": "Jim",
+    "approx_liq": 37094.95,
+    "scenario": "potential_signal",
+    "entry_type": "fresh"
+  },
+  {
+    "wallet": "ARu4n5mFdZogZAravu7CcizaojWnS6oqka37gdLT5SZn",
+    "token_mint": "6BonAuugSmeJa7r1kdj6xjbUayKi4EiwZBy5ZXtcpump",
+    "symbol": "HELPCJ",
+    "approx_liq": 19449.96,
+    "scenario": "bad_token",
+    "entry_type": "bad_token"
+  },
+  {
+    "wallet": "2MFoS3MPtvyQ4Wh4M9pdfPjz6UhVoNbFbGJAskCPCj3h",
+    "token_mint": "Cz2M3oyo28kZiKn3MRq75hRmsygErdg6C5i9Hhwkpump",
+    "symbol": "Uta",
+    "approx_liq": 10824.1,
+    "scenario": "bad_token",
+    "entry_type": "bad_token"
+  },
+  {
+    "wallet": "44zas59yMsNv3nwsjtf9zPCxvaxyvuhLPx6x4ERKXPti",
+    "token_mint": "BnK8QgRW6BGPbPV2b1tAZgxVwAJvJpEC9xPoQikRpump",
+    "symbol": "Jim",
+    "approx_liq": 37094.95,
+    "scenario": "potential_signal",
+    "entry_type": "fresh"
+  },
+  {
+    "wallet": "GxDC9e7SP9mzhDo4re5HbpLa2RW7gB9DtmThx4i4pXSq",
+    "token_mint": "CQLRgHND9E4K4ed8xPAmhyQY61EgLmsUqTN5MDFcpump",
+    "symbol": "Drake",
+    "approx_liq": 15974.45,
+    "scenario": "bad_wallet",
+    "entry_type": "bad_wallet"
+  },
+  {
+    "wallet": "ARu4n5mFdZogZAravu7CcizaojWnS6oqka37gdLT5SZn",
+    "token_mint": "7qkvtgs6QvpNnxDhZArZg29DcWGTVp5EFNJ1AtySpump",
+    "symbol": "SELLUR",
+    "approx_liq": 56631.03,
+    "scenario": "potential_signal",
+    "entry_type": "fresh"
+  },
+  {
+    "wallet": "ARu4n5mFdZogZAravu7CcizaojWnS6oqka37gdLT5SZn",
+    "token_mint": "CQLRgHND9E4K4ed8xPAmhyQY61EgLmsUqTN5MDFcpump",
+    "symbol": "Drake",
+    "approx_liq": 15974.45,
+    "scenario": "bad_token",
+    "entry_type": "bad_token"
+  },
+  {
+    "wallet": "ARu4n5mFdZogZAravu7CcizaojWnS6oqka37gdLT5SZn",
+    "token_mint": "BnK8QgRW6BGPbPV2b1tAZgxVwAJvJpEC9xPoQikRpump",
+    "symbol": "Jim",
+    "approx_liq": 25493.07,
+    "scenario": "potential_signal",
+    "entry_type": "fresh"
+  },
+  {
+    "wallet": "GxDC9e7SP9mzhDo4re5HbpLa2RW7gB9DtmThx4i4pXSq",
+    "token_mint": "9LooeuSKG3H2mxj9yxWvoNibVLuxsE8qeobuHjZfpump",
+    "symbol": "LUCY",
+    "approx_liq": 32955.64,
+    "scenario": "bad_wallet",
+    "entry_type": "bad_wallet"
+  },
+  {
+    "wallet": "GxDC9e7SP9mzhDo4re5HbpLa2RW7gB9DtmThx4i4pXSq",
+    "token_mint": "CMUJzTahkRDanjpPonDS87FQuyntSLWhUYRkR79EybSU",
+    "symbol": "CELL",
+    "approx_liq": 32795.97,
+    "scenario": "bad_wallet",
+    "entry_type": "bad_wallet"
+  },
+  {
+    "wallet": "DwTUWBMLVwTpwWXHGQFsYMiShoQPFHFuN1xsdrnFqFui",
+    "token_mint": "9LooeuSKG3H2mxj9yxWvoNibVLuxsE8qeobuHjZfpump",
+    "symbol": "LUCY",
+    "approx_liq": 31699.44,
+    "scenario": "bad_wallet",
+    "entry_type": "bad_wallet"
+  },
+  {
+    "wallet": "GxDC9e7SP9mzhDo4re5HbpLa2RW7gB9DtmThx4i4pXSq",
+    "token_mint": "BigGboBX6veMLQV6gzqgV9Pbx8LeobR6eDjUQicXpump",
+    "symbol": "BAGELS",
+    "approx_liq": 44192.3,
+    "scenario": "bad_wallet",
+    "entry_type": "bad_wallet"
+  },
+  {
+    "wallet": "HxjwdF326ZunmUwC1iXhfgL3ku78YsksN6n7Rfxzwr6b",
+    "token_mint": "9LooeuSKG3H2mxj9yxWvoNibVLuxsE8qeobuHjZfpump",
+    "symbol": "LUCY",
+    "approx_liq": 31699.44,
+    "scenario": "potential_signal",
+    "entry_type": "fresh"
+  },
+  {
+    "wallet": "6TYDxGmVxkBPBmEfnmLXx6jVff9LknsjRHqdTjVyZmG8",
+    "token_mint": "7qkvtgs6QvpNnxDhZArZg29DcWGTVp5EFNJ1AtySpump",
+    "symbol": "SELLUR",
+    "approx_liq": 56631.03,
+    "scenario": "potential_signal",
+    "entry_type": "fresh"
+  },
+  {
+    "wallet": "HxjwdF326ZunmUwC1iXhfgL3ku78YsksN6n7Rfxzwr6b",
+    "token_mint": "CMUJzTahkRDanjpPonDS87FQuyntSLWhUYRkR79EybSU",
+    "symbol": "CELL",
+    "approx_liq": 32795.97,
+    "scenario": "potential_signal",
+    "entry_type": "fresh"
+  },
+  {
+    "wallet": "44zas59yMsNv3nwsjtf9zPCxvaxyvuhLPx6x4ERKXPti",
+    "token_mint": "AS21nWLsDmR1ZknjWRLnnZdL4KmRB7b5tYgh3E3bEgU7",
+    "symbol": "woof",
+    "approx_liq": 12783.99,
+    "scenario": "bad_token",
+    "entry_type": "bad_token"
+  },
+  {
+    "wallet": "2MFoS3MPtvyQ4Wh4M9pdfPjz6UhVoNbFbGJAskCPCj3h",
+    "token_mint": "GbuHq6UTNUp8CaFsoPgUhxpPBnkVXGepDHgFhN2kpump",
+    "symbol": "Yae",
+    "approx_liq": 126757.82,
+    "scenario": "potential_signal",
+    "entry_type": "fresh"
+  },
+  {
+    "wallet": "2MFoS3MPtvyQ4Wh4M9pdfPjz6UhVoNbFbGJAskCPCj3h",
+    "token_mint": "PoPGUYiYjb79CR2Z5XwGpGkuL5G2gApYktbhAN4Tzhh",
+    "symbol": "POP",
+    "approx_liq": 29786.52,
+    "scenario": "potential_signal",
+    "entry_type": "fresh"
+  },
+  {
+    "wallet": "DfzdLZpzwHT6ymunPLDoEo6aznwS8ifxb1FaH4uQpvjZ",
+    "token_mint": "9LooeuSKG3H2mxj9yxWvoNibVLuxsE8qeobuHjZfpump",
+    "symbol": "LUCY",
+    "approx_liq": 32955.64,
+    "scenario": "bad_wallet",
+    "entry_type": "bad_wallet"
+  },
+  {
+    "wallet": "6TYDxGmVxkBPBmEfnmLXx6jVff9LknsjRHqdTjVyZmG8",
+    "token_mint": "4aeBSAusGHEEzBEG9DBYtTjvcQjTJWsNfNvfNioYpump",
+    "symbol": "hentai",
+    "approx_liq": 57234.18,
+    "scenario": "potential_signal",
+    "entry_type": "fresh"
+  },
+  {
+    "wallet": "8CLBkAeGcbFC13YqJAmgmc6c4QnhqfHB3WcoNZtwBu7w",
+    "token_mint": "4aeBSAusGHEEzBEG9DBYtTjvcQjTJWsNfNvfNioYpump",
+    "symbol": "hentai",
+    "approx_liq": 56190.37,
+    "scenario": "bad_wallet",
+    "entry_type": "bad_wallet"
+  },
+  {
+    "wallet": "HxjwdF326ZunmUwC1iXhfgL3ku78YsksN6n7Rfxzwr6b",
+    "token_mint": "GbuHq6UTNUp8CaFsoPgUhxpPBnkVXGepDHgFhN2kpump",
+    "symbol": "Yae",
+    "approx_liq": 126757.82,
+    "scenario": "potential_signal",
+    "entry_type": "fresh"
+  },
+  {
+    "wallet": "6TYDxGmVxkBPBmEfnmLXx6jVff9LknsjRHqdTjVyZmG8",
+    "token_mint": "CMUJzTahkRDanjpPonDS87FQuyntSLWhUYRkR79EybSU",
+    "symbol": "CELL",
+    "approx_liq": 33094.66,
+    "scenario": "potential_signal",
+    "entry_type": "fresh"
+  },
+  {
+    "wallet": "9Fw5sLtirtNqbgmFwGBtDVdDj7L7wFP8zoHGhYSPYSk2",
+    "token_mint": "PoPGUYiYjb79CR2Z5XwGpGkuL5G2gApYktbhAN4Tzhh",
+    "symbol": "POP",
+    "approx_liq": 26962.93,
+    "scenario": "bad_wallet",
+    "entry_type": "bad_wallet"
+  },
+  {
+    "wallet": "ARu4n5mFdZogZAravu7CcizaojWnS6oqka37gdLT5SZn",
+    "token_mint": "CMUJzTahkRDanjpPonDS87FQuyntSLWhUYRkR79EybSU",
+    "symbol": "CELL",
+    "approx_liq": 33094.66,
+    "scenario": "potential_signal",
+    "entry_type": "fresh"
+  },
+  {
+    "wallet": "ARu4n5mFdZogZAravu7CcizaojWnS6oqka37gdLT5SZn",
+    "token_mint": "BnK8QgRW6BGPbPV2b1tAZgxVwAJvJpEC9xPoQikRpump",
+    "symbol": "Jim",
+    "approx_liq": 23411.61,
+    "scenario": "bad_token",
+    "entry_type": "bad_token"
+  },
+  {
+    "wallet": "HSebDUkZiV7Zvy6vGF72yMEWNNBs64USycYcpoBhNpQh",
+    "token_mint": "PoPGUYiYjb79CR2Z5XwGpGkuL5G2gApYktbhAN4Tzhh",
+    "symbol": "POP",
+    "approx_liq": 29786.52,
+    "scenario": "bad_wallet",
+    "entry_type": "bad_wallet"
+  },
+  {
+    "wallet": "GxDC9e7SP9mzhDo4re5HbpLa2RW7gB9DtmThx4i4pXSq",
+    "token_mint": "BnK8QgRW6BGPbPV2b1tAZgxVwAJvJpEC9xPoQikRpump",
+    "symbol": "Jim",
+    "approx_liq": 23411.61,
+    "scenario": "bad_wallet",
+    "entry_type": "bad_wallet"
+  },
+  {
+    "wallet": "GxDC9e7SP9mzhDo4re5HbpLa2RW7gB9DtmThx4i4pXSq",
+    "token_mint": "ESZLbp5qm8SPfiqAR2sDXrZNjo5hKZoD7FAFTmfCpump",
+    "symbol": "DOZER",
+    "approx_liq": 25013.25,
+    "scenario": "bad_wallet",
+    "entry_type": "bad_wallet"
+  },
+  {
+    "wallet": "41WFRGQe7YBDue1ZNckz61bBUy6Kr3i4nTJa3GFKkqyZ",
+    "token_mint": "4aeBSAusGHEEzBEG9DBYtTjvcQjTJWsNfNvfNioYpump",
+    "symbol": "hentai",
+    "approx_liq": 57234.18,
+    "scenario": "bad_wallet",
+    "entry_type": "bad_wallet"
+  },
+  {
+    "wallet": "HwiPraf8FPgp9N6dWRtUbyJQf9hLtepjvtiVDiLCRDBD",
+    "token_mint": "9LooeuSKG3H2mxj9yxWvoNibVLuxsE8qeobuHjZfpump",
+    "symbol": "LUCY",
+    "approx_liq": 34901.29,
+    "scenario": "bad_wallet",
+    "entry_type": "bad_wallet"
+  },
+  {
+    "wallet": "2MFoS3MPtvyQ4Wh4M9pdfPjz6UhVoNbFbGJAskCPCj3h",
+    "token_mint": "HFTUnLruD1y7SaPSQPBAEGV3R1ThP4fZcNrSwmZ6pump",
+    "symbol": "BEPE",
+    "approx_liq": 20897.34,
+    "scenario": "bad_token",
+    "entry_type": "bad_token"
+  },
+  {
+    "wallet": "HxjwdF326ZunmUwC1iXhfgL3ku78YsksN6n7Rfxzwr6b",
+    "token_mint": "D9gKwxJF9kFxFUki8KK2WxjqdLFBnnuvvVvmueCUpump",
+    "symbol": "BOPO",
+    "approx_liq": 37871.32,
+    "scenario": "potential_signal",
+    "entry_type": "fresh"
+  },
+  {
+    "wallet": "HxjwdF326ZunmUwC1iXhfgL3ku78YsksN6n7Rfxzwr6b",
+    "token_mint": "AS21nWLsDmR1ZknjWRLnnZdL4KmRB7b5tYgh3E3bEgU7",
+    "symbol": "woof",
+    "approx_liq": 12783.99,
+    "scenario": "bad_token",
+    "entry_type": "bad_token"
+  },
+  {
+    "wallet": "HkhAh4nKDss2xGy3wPgBGBauGA17xWZV3UE2hnxcpADX",
+    "token_mint": "GbuHq6UTNUp8CaFsoPgUhxpPBnkVXGepDHgFhN2kpump",
+    "symbol": "Yae",
+    "approx_liq": 26278.79,
+    "scenario": "bad_wallet",
+    "entry_type": "bad_wallet"
+  },
+  {
+    "wallet": "44zas59yMsNv3nwsjtf9zPCxvaxyvuhLPx6x4ERKXPti",
+    "token_mint": "PoPGUYiYjb79CR2Z5XwGpGkuL5G2gApYktbhAN4Tzhh",
+    "symbol": "POP",
+    "approx_liq": 20935.71,
+    "scenario": "bad_token",
+    "entry_type": "bad_token"
+  },
+  {
+    "wallet": "678hhfkqm2mUVjJQmxMPhwCwDnqtVahbSXcCLyFBfRZw",
+    "token_mint": "D9gKwxJF9kFxFUki8KK2WxjqdLFBnnuvvVvmueCUpump",
+    "symbol": "BOPO",
+    "approx_liq": 33063.11,
+    "scenario": "bad_wallet",
+    "entry_type": "bad_wallet"
+  },
+  {
+    "wallet": "2MFoS3MPtvyQ4Wh4M9pdfPjz6UhVoNbFbGJAskCPCj3h",
+    "token_mint": "6BonAuugSmeJa7r1kdj6xjbUayKi4EiwZBy5ZXtcpump",
+    "symbol": "HELPCJ",
+    "approx_liq": 14582.87,
+    "scenario": "bad_token",
+    "entry_type": "bad_token"
+  },
+  {
+    "wallet": "HxjwdF326ZunmUwC1iXhfgL3ku78YsksN6n7Rfxzwr6b",
+    "token_mint": "6BonAuugSmeJa7r1kdj6xjbUayKi4EiwZBy5ZXtcpump",
+    "symbol": "HELPCJ",
+    "approx_liq": 14900.4,
+    "scenario": "bad_token",
+    "entry_type": "bad_token"
+  },
+  {
+    "wallet": "6TYDxGmVxkBPBmEfnmLXx6jVff9LknsjRHqdTjVyZmG8",
+    "token_mint": "CCBNp981Gvv8Vo2T4NNUYW6AkxyFGcacfVgY8qyppump",
+    "symbol": "皐月",
+    "approx_liq": 17215.15,
+    "scenario": "bad_token",
+    "entry_type": "bad_token"
+  },
+  {
+    "wallet": "Ar2Y6o1QmrRAskjii1cRfijeKugHH13ycxW5cd7rro1x",
+    "token_mint": "9LooeuSKG3H2mxj9yxWvoNibVLuxsE8qeobuHjZfpump",
+    "symbol": "LUCY",
+    "approx_liq": 32955.64,
+    "scenario": "potential_signal",
+    "entry_type": "fresh"
+  },
+  {
+    "wallet": "Ar2Y6o1QmrRAskjii1cRfijeKugHH13ycxW5cd7rro1x",
+    "token_mint": "D9gKwxJF9kFxFUki8KK2WxjqdLFBnnuvvVvmueCUpump",
+    "symbol": "BOPO",
+    "approx_liq": 33063.11,
+    "scenario": "potential_signal",
+    "entry_type": "fresh"
+  },
+  {
+    "wallet": "ARu4n5mFdZogZAravu7CcizaojWnS6oqka37gdLT5SZn",
+    "token_mint": "GbuHq6UTNUp8CaFsoPgUhxpPBnkVXGepDHgFhN2kpump",
+    "symbol": "Yae",
+    "approx_liq": 26278.79,
+    "scenario": "potential_signal",
+    "entry_type": "fresh"
+  },
+  {
+    "wallet": "ARu4n5mFdZogZAravu7CcizaojWnS6oqka37gdLT5SZn",
+    "token_mint": "D9gKwxJF9kFxFUki8KK2WxjqdLFBnnuvvVvmueCUpump",
+    "symbol": "BOPO",
+    "approx_liq": 33063.11,
+    "scenario": "potential_signal",
+    "entry_type": "fresh"
+  },
+  {
+    "wallet": "44zas59yMsNv3nwsjtf9zPCxvaxyvuhLPx6x4ERKXPti",
+    "token_mint": "9LooeuSKG3H2mxj9yxWvoNibVLuxsE8qeobuHjZfpump",
+    "symbol": "LUCY",
+    "approx_liq": 34901.29,
+    "scenario": "potential_signal",
+    "entry_type": "fresh"
+  },
+  {
+    "wallet": "44zas59yMsNv3nwsjtf9zPCxvaxyvuhLPx6x4ERKXPti",
+    "token_mint": "4aeBSAusGHEEzBEG9DBYtTjvcQjTJWsNfNvfNioYpump",
+    "symbol": "hentai",
+    "approx_liq": 57234.18,
+    "scenario": "potential_signal",
+    "entry_type": "fresh"
+  },
+  {
+    "wallet": "E1kgaaAzQ1mgn1KVWSFZfBwN7MtuV7yiDXnTAvEsh8Jw",
+    "token_mint": "GbuHq6UTNUp8CaFsoPgUhxpPBnkVXGepDHgFhN2kpump",
+    "symbol": "Yae",
+    "approx_liq": 40906.21,
+    "scenario": "bad_wallet",
+    "entry_type": "bad_wallet"
+  },
+  {
+    "wallet": "Ar2Y6o1QmrRAskjii1cRfijeKugHH13ycxW5cd7rro1x",
+    "token_mint": "BigGboBX6veMLQV6gzqgV9Pbx8LeobR6eDjUQicXpump",
+    "symbol": "BAGELS",
+    "approx_liq": 44192.3,
+    "scenario": "potential_signal",
+    "entry_type": "fresh"
+  },
+  {
+    "wallet": "44zas59yMsNv3nwsjtf9zPCxvaxyvuhLPx6x4ERKXPti",
+    "token_mint": "6BonAuugSmeJa7r1kdj6xjbUayKi4EiwZBy5ZXtcpump",
+    "symbol": "HELPCJ",
+    "approx_liq": 19449.96,
+    "scenario": "bad_token",
+    "entry_type": "bad_token"
+  },
+  {
+    "wallet": "Ar2Y6o1QmrRAskjii1cRfijeKugHH13ycxW5cd7rro1x",
+    "token_mint": "6BonAuugSmeJa7r1kdj6xjbUayKi4EiwZBy5ZXtcpump",
+    "symbol": "HELPCJ",
+    "approx_liq": 14900.4,
+    "scenario": "bad_token",
+    "entry_type": "bad_token"
+  },
+  {
+    "wallet": "2MFoS3MPtvyQ4Wh4M9pdfPjz6UhVoNbFbGJAskCPCj3h",
+    "token_mint": "GbuHq6UTNUp8CaFsoPgUhxpPBnkVXGepDHgFhN2kpump",
+    "symbol": "Yae",
+    "approx_liq": 126757.82,
+    "scenario": "potential_signal",
+    "entry_type": "fresh",
+    "signal_age_override_hours": 3.5
+  },
+  {
+    "wallet": "HxjwdF326ZunmUwC1iXhfgL3ku78YsksN6n7Rfxzwr6b",
+    "token_mint": "GbuHq6UTNUp8CaFsoPgUhxpPBnkVXGepDHgFhN2kpump",
+    "symbol": "Yae",
+    "approx_liq": 126757.82,
+    "scenario": "potential_signal",
+    "entry_type": "fresh",
+    "signal_age_override_hours": 3.5
+  },
+  {
+    "wallet": "2MFoS3MPtvyQ4Wh4M9pdfPjz6UhVoNbFbGJAskCPCj3h",
+    "token_mint": "4aeBSAusGHEEzBEG9DBYtTjvcQjTJWsNfNvfNioYpump",
+    "symbol": "hentai",
+    "approx_liq": 70340.44,
+    "scenario": "potential_signal",
+    "entry_type": "fresh",
+    "signal_age_override_hours": 3.5
+  },
+  {
+    "wallet": "44zas59yMsNv3nwsjtf9zPCxvaxyvuhLPx6x4ERKXPti",
+    "token_mint": "4aeBSAusGHEEzBEG9DBYtTjvcQjTJWsNfNvfNioYpump",
+    "symbol": "hentai",
+    "approx_liq": 70340.44,
+    "scenario": "potential_signal",
+    "entry_type": "fresh",
+    "signal_age_override_hours": 3.5
+  },
+  {
+    "wallet": "6TYDxGmVxkBPBmEfnmLXx6jVff9LknsjRHqdTjVyZmG8",
+    "token_mint": "4aeBSAusGHEEzBEG9DBYtTjvcQjTJWsNfNvfNioYpump",
+    "symbol": "hentai",
+    "approx_liq": 57234.18,
+    "scenario": "potential_signal",
+    "entry_type": "fresh",
+    "signal_age_override_hours": 3.5
+  },
+  {
+    "wallet": "44zas59yMsNv3nwsjtf9zPCxvaxyvuhLPx6x4ERKXPti",
+    "token_mint": "4aeBSAusGHEEzBEG9DBYtTjvcQjTJWsNfNvfNioYpump",
+    "symbol": "hentai",
+    "approx_liq": 57234.18,
+    "scenario": "potential_signal",
+    "entry_type": "fresh",
+    "signal_age_override_hours": 3.5
+  },
+  {
+    "wallet": "ARu4n5mFdZogZAravu7CcizaojWnS6oqka37gdLT5SZn",
+    "token_mint": "7qkvtgs6QvpNnxDhZArZg29DcWGTVp5EFNJ1AtySpump",
+    "symbol": "SELLUR",
+    "approx_liq": 56631.03,
+    "scenario": "potential_signal",
+    "entry_type": "fresh",
+    "signal_age_override_hours": 3.5
+  },
+  {
+    "wallet": "6TYDxGmVxkBPBmEfnmLXx6jVff9LknsjRHqdTjVyZmG8",
+    "token_mint": "7qkvtgs6QvpNnxDhZArZg29DcWGTVp5EFNJ1AtySpump",
+    "symbol": "SELLUR",
+    "approx_liq": 56631.03,
+    "scenario": "potential_signal",
+    "entry_type": "fresh",
+    "signal_age_override_hours": 3.5
+  },
+  {
+    "wallet": "ARu4n5mFdZogZAravu7CcizaojWnS6oqka37gdLT5SZn",
+    "token_mint": "4aeBSAusGHEEzBEG9DBYtTjvcQjTJWsNfNvfNioYpump",
+    "symbol": "hentai",
+    "approx_liq": 56190.37,
+    "scenario": "potential_signal",
+    "entry_type": "fresh",
+    "signal_age_override_hours": 3.5
+  },
+  {
+    "wallet": "Ar2Y6o1QmrRAskjii1cRfijeKugHH13ycxW5cd7rro1x",
+    "token_mint": "4aeBSAusGHEEzBEG9DBYtTjvcQjTJWsNfNvfNioYpump",
+    "symbol": "hentai",
+    "approx_liq": 56190.37,
+    "scenario": "potential_signal",
+    "entry_type": "fresh",
+    "signal_age_override_hours": 3.5
+  },
+  {
+    "wallet": "Ar2Y6o1QmrRAskjii1cRfijeKugHH13ycxW5cd7rro1x",
+    "token_mint": "BigGboBX6veMLQV6gzqgV9Pbx8LeobR6eDjUQicXpump",
+    "symbol": "BAGELS",
+    "approx_liq": 44192.3,
+    "scenario": "potential_signal",
+    "entry_type": "fresh",
+    "signal_age_override_hours": 3.5
+  },
+  {
+    "wallet": "HxjwdF326ZunmUwC1iXhfgL3ku78YsksN6n7Rfxzwr6b",
+    "token_mint": "GbuHq6UTNUp8CaFsoPgUhxpPBnkVXGepDHgFhN2kpump",
+    "symbol": "Yae",
+    "approx_liq": 40906.21,
+    "scenario": "potential_signal",
+    "entry_type": "fresh",
+    "signal_age_override_hours": 3.5
+  },
+  {
+    "wallet": "2MFoS3MPtvyQ4Wh4M9pdfPjz6UhVoNbFbGJAskCPCj3h",
+    "token_mint": "D9gKwxJF9kFxFUki8KK2WxjqdLFBnnuvvVvmueCUpump",
+    "symbol": "BOPO",
+    "approx_liq": 37871.32,
+    "scenario": "potential_signal",
+    "entry_type": "fresh",
+    "signal_age_override_hours": 3.5
+  },
+  {
+    "wallet": "HxjwdF326ZunmUwC1iXhfgL3ku78YsksN6n7Rfxzwr6b",
+    "token_mint": "D9gKwxJF9kFxFUki8KK2WxjqdLFBnnuvvVvmueCUpump",
+    "symbol": "BOPO",
+    "approx_liq": 37871.32,
+    "scenario": "potential_signal",
+    "entry_type": "fresh",
+    "signal_age_override_hours": 3.5
+  },
+  {
+    "wallet": "2MFoS3MPtvyQ4Wh4M9pdfPjz6UhVoNbFbGJAskCPCj3h",
+    "token_mint": "BnK8QgRW6BGPbPV2b1tAZgxVwAJvJpEC9xPoQikRpump",
+    "symbol": "Jim",
+    "approx_liq": 37094.95,
+    "scenario": "potential_signal",
+    "entry_type": "fresh",
+    "signal_age_override_hours": 3.5
+  },
+  {
+    "wallet": "44zas59yMsNv3nwsjtf9zPCxvaxyvuhLPx6x4ERKXPti",
+    "token_mint": "BnK8QgRW6BGPbPV2b1tAZgxVwAJvJpEC9xPoQikRpump",
+    "symbol": "Jim",
+    "approx_liq": 37094.95,
+    "scenario": "potential_signal",
+    "entry_type": "fresh",
+    "signal_age_override_hours": 3.5
+  },
+  {
+    "wallet": "6TYDxGmVxkBPBmEfnmLXx6jVff9LknsjRHqdTjVyZmG8",
+    "token_mint": "9LooeuSKG3H2mxj9yxWvoNibVLuxsE8qeobuHjZfpump",
+    "symbol": "LUCY",
+    "approx_liq": 34901.29,
+    "scenario": "potential_signal",
+    "entry_type": "fresh",
+    "signal_age_override_hours": 3.5
+  },
+  {
+    "wallet": "44zas59yMsNv3nwsjtf9zPCxvaxyvuhLPx6x4ERKXPti",
+    "token_mint": "9LooeuSKG3H2mxj9yxWvoNibVLuxsE8qeobuHjZfpump",
+    "symbol": "LUCY",
+    "approx_liq": 34901.29,
+    "scenario": "potential_signal",
+    "entry_type": "fresh",
+    "signal_age_override_hours": 3.5
+  },
+  {
+    "wallet": "6TYDxGmVxkBPBmEfnmLXx6jVff9LknsjRHqdTjVyZmG8",
+    "token_mint": "CMUJzTahkRDanjpPonDS87FQuyntSLWhUYRkR79EybSU",
+    "symbol": "CELL",
+    "approx_liq": 33094.66,
+    "scenario": "potential_signal",
+    "entry_type": "fresh",
+    "signal_age_override_hours": 3.5
+  },
+  {
+    "wallet": "ARu4n5mFdZogZAravu7CcizaojWnS6oqka37gdLT5SZn",
+    "token_mint": "CMUJzTahkRDanjpPonDS87FQuyntSLWhUYRkR79EybSU",
+    "symbol": "CELL",
+    "approx_liq": 33094.66,
+    "scenario": "potential_signal",
+    "entry_type": "fresh",
+    "signal_age_override_hours": 3.5
+  },
+  {
+    "wallet": "2MFoS3MPtvyQ4Wh4M9pdfPjz6UhVoNbFbGJAskCPCj3h",
+    "token_mint": "CCBNp981Gvv8Vo2T4NNUYW6AkxyFGcacfVgY8qyppump",
+    "symbol": "皐月",
+    "approx_liq": 17215.15,
+    "scenario": "borderline",
+    "entry_type": "unknown"
+  },
+  {
+    "wallet": "44zas59yMsNv3nwsjtf9zPCxvaxyvuhLPx6x4ERKXPti",
+    "token_mint": "PoPGUYiYjb79CR2Z5XwGpGkuL5G2gApYktbhAN4Tzhh",
+    "symbol": "POP",
+    "approx_liq": 20935.71,
+    "scenario": "borderline",
+    "entry_type": "unknown"
+  },
+  {
+    "wallet": "6TYDxGmVxkBPBmEfnmLXx6jVff9LknsjRHqdTjVyZmG8",
+    "token_mint": "HFTUnLruD1y7SaPSQPBAEGV3R1ThP4fZcNrSwmZ6pump",
+    "symbol": "BEPE",
+    "approx_liq": 22940.13,
+    "scenario": "borderline",
+    "entry_type": "unknown"
+  },
+  {
+    "wallet": "ARu4n5mFdZogZAravu7CcizaojWnS6oqka37gdLT5SZn",
+    "token_mint": "6BonAuugSmeJa7r1kdj6xjbUayKi4EiwZBy5ZXtcpump",
+    "symbol": "HELPCJ",
+    "approx_liq": 19449.96,
+    "scenario": "borderline",
+    "entry_type": "unknown"
+  },
+  {
+    "wallet": "HxjwdF326ZunmUwC1iXhfgL3ku78YsksN6n7Rfxzwr6b",
+    "token_mint": "CQLRgHND9E4K4ed8xPAmhyQY61EgLmsUqTN5MDFcpump",
+    "symbol": "Drake",
+    "approx_liq": 15974.45,
+    "scenario": "borderline",
+    "entry_type": "unknown"
+  },
+  {
+    "wallet": "2MFoS3MPtvyQ4Wh4M9pdfPjz6UhVoNbFbGJAskCPCj3h",
+    "token_mint": "BnK8QgRW6BGPbPV2b1tAZgxVwAJvJpEC9xPoQikRpump",
+    "symbol": "Jim",
+    "approx_liq": 23411.61,
+    "scenario": "borderline",
+    "entry_type": "unknown"
+  },
+  {
+    "wallet": "44zas59yMsNv3nwsjtf9zPCxvaxyvuhLPx6x4ERKXPti",
+    "token_mint": "CCBNp981Gvv8Vo2T4NNUYW6AkxyFGcacfVgY8qyppump",
+    "symbol": "皐月",
+    "approx_liq": 17215.15,
+    "scenario": "borderline",
+    "entry_type": "unknown"
+  },
+  {
+    "wallet": "6TYDxGmVxkBPBmEfnmLXx6jVff9LknsjRHqdTjVyZmG8",
+    "token_mint": "PoPGUYiYjb79CR2Z5XwGpGkuL5G2gApYktbhAN4Tzhh",
+    "symbol": "POP",
+    "approx_liq": 20935.71,
+    "scenario": "borderline",
+    "entry_type": "unknown"
+  },
+  {
+    "wallet": "ARu4n5mFdZogZAravu7CcizaojWnS6oqka37gdLT5SZn",
+    "token_mint": "HFTUnLruD1y7SaPSQPBAEGV3R1ThP4fZcNrSwmZ6pump",
+    "symbol": "BEPE",
+    "approx_liq": 22940.13,
+    "scenario": "borderline",
+    "entry_type": "unknown"
+  },
+  {
+    "wallet": "HxjwdF326ZunmUwC1iXhfgL3ku78YsksN6n7Rfxzwr6b",
+    "token_mint": "6BonAuugSmeJa7r1kdj6xjbUayKi4EiwZBy5ZXtcpump",
+    "symbol": "HELPCJ",
+    "approx_liq": 19449.96,
+    "scenario": "borderline",
+    "entry_type": "unknown"
+  },
+  {
+    "wallet": "GxDC9e7SP9mzhDo4re5HbpLa2RW7gB9DtmThx4i4pXSq",
+    "token_mint": "GbuHq6UTNUp8CaFsoPgUhxpPBnkVXGepDHgFhN2kpump",
+    "symbol": "Yae",
+    "approx_liq": 126757.82,
+    "scenario": "bad_wallet",
+    "entry_type": "bad_wallet"
+  },
+  {
+    "wallet": "GxDC9e7SP9mzhDo4re5HbpLa2RW7gB9DtmThx4i4pXSq",
+    "token_mint": "4aeBSAusGHEEzBEG9DBYtTjvcQjTJWsNfNvfNioYpump",
+    "symbol": "hentai",
+    "approx_liq": 56190.37,
+    "scenario": "bad_wallet",
+    "entry_type": "bad_wallet"
+  },
+  {
+    "wallet": "GxDC9e7SP9mzhDo4re5HbpLa2RW7gB9DtmThx4i4pXSq",
+    "token_mint": "7qkvtgs6QvpNnxDhZArZg29DcWGTVp5EFNJ1AtySpump",
+    "symbol": "SELLUR",
+    "approx_liq": 56631.03,
+    "scenario": "bad_wallet",
+    "entry_type": "bad_wallet"
+  },
+  {
+    "wallet": "GxDC9e7SP9mzhDo4re5HbpLa2RW7gB9DtmThx4i4pXSq",
+    "token_mint": "9LooeuSKG3H2mxj9yxWvoNibVLuxsE8qeobuHjZfpump",
+    "symbol": "LUCY",
+    "approx_liq": 32955.64,
+    "scenario": "bad_wallet",
+    "entry_type": "bad_wallet"
+  },
+  {
+    "wallet": "GxDC9e7SP9mzhDo4re5HbpLa2RW7gB9DtmThx4i4pXSq",
+    "token_mint": "BnK8QgRW6BGPbPV2b1tAZgxVwAJvJpEC9xPoQikRpump",
+    "symbol": "Jim",
+    "approx_liq": 25493.07,
+    "scenario": "bad_wallet",
+    "entry_type": "bad_wallet"
+  },
+  {
+    "wallet": "GxDC9e7SP9mzhDo4re5HbpLa2RW7gB9DtmThx4i4pXSq",
+    "token_mint": "CMUJzTahkRDanjpPonDS87FQuyntSLWhUYRkR79EybSU",
+    "symbol": "CELL",
+    "approx_liq": 32795.97,
+    "scenario": "bad_wallet",
+    "entry_type": "bad_wallet"
+  },
+  {
+    "wallet": "GxDC9e7SP9mzhDo4re5HbpLa2RW7gB9DtmThx4i4pXSq",
+    "token_mint": "D9gKwxJF9kFxFUki8KK2WxjqdLFBnnuvvVvmueCUpump",
+    "symbol": "BOPO",
+    "approx_liq": 37871.32,
+    "scenario": "bad_wallet",
+    "entry_type": "bad_wallet"
+  },
+  {
+    "wallet": "GxDC9e7SP9mzhDo4re5HbpLa2RW7gB9DtmThx4i4pXSq",
+    "token_mint": "ESZLbp5qm8SPfiqAR2sDXrZNjo5hKZoD7FAFTmfCpump",
+    "symbol": "DOZER",
+    "approx_liq": 25013.25,
+    "scenario": "bad_wallet",
+    "entry_type": "bad_wallet"
+  },
+  {
+    "wallet": "GxDC9e7SP9mzhDo4re5HbpLa2RW7gB9DtmThx4i4pXSq",
+    "token_mint": "BigGboBX6veMLQV6gzqgV9Pbx8LeobR6eDjUQicXpump",
+    "symbol": "BAGELS",
+    "approx_liq": 44192.3,
+    "scenario": "bad_wallet",
+    "entry_type": "bad_wallet"
+  },
+  {
+    "wallet": "GxDC9e7SP9mzhDo4re5HbpLa2RW7gB9DtmThx4i4pXSq",
+    "token_mint": "PoPGUYiYjb79CR2Z5XwGpGkuL5G2gApYktbhAN4Tzhh",
+    "symbol": "POP",
+    "approx_liq": 29786.52,
+    "scenario": "bad_wallet",
+    "entry_type": "bad_wallet"
+  },
+  {
+    "wallet": "ARqJ18xaBLrEJYARaYHxfRKSi1pB7dZjwq1NW6Fiuieb",
+    "token_mint": "GbuHq6UTNUp8CaFsoPgUhxpPBnkVXGepDHgFhN2kpump",
+    "symbol": "Yae",
+    "approx_liq": 126757.82,
+    "scenario": "bad_wallet",
+    "entry_type": "bad_wallet"
+  },
+  {
+    "wallet": "G1nfy85wgagnhLnFyGktq5vZ3QFnewwhFuPC7sor1GsE",
+    "token_mint": "7qkvtgs6QvpNnxDhZArZg29DcWGTVp5EFNJ1AtySpump",
+    "symbol": "SELLUR",
+    "approx_liq": 56631.03,
+    "scenario": "bad_wallet",
+    "entry_type": "bad_wallet"
+  },
+  {
+    "wallet": "AacCEk4xZHPgQ2dUR8BTtAmUeokg4RE812sAFswJotx6",
+    "token_mint": "4aeBSAusGHEEzBEG9DBYtTjvcQjTJWsNfNvfNioYpump",
+    "symbol": "hentai",
+    "approx_liq": 57234.18,
+    "scenario": "bad_wallet",
+    "entry_type": "bad_wallet"
+  },
+  {
+    "wallet": "74MgeAHGAviQj2AB5jGhpSZVxtXvcoaqT9UC6fscvGPk",
+    "token_mint": "D9gKwxJF9kFxFUki8KK2WxjqdLFBnnuvvVvmueCUpump",
+    "symbol": "BOPO",
+    "approx_liq": 37871.32,
+    "scenario": "bad_wallet",
+    "entry_type": "bad_wallet"
+  },
+  {
+    "wallet": "G1HJCy8zzZeoptdeBbbFodCCfXTjJyFSJHGq13DAYm9a",
+    "token_mint": "CMUJzTahkRDanjpPonDS87FQuyntSLWhUYRkR79EybSU",
+    "symbol": "CELL",
+    "approx_liq": 33094.66,
+    "scenario": "bad_wallet",
+    "entry_type": "bad_wallet"
+  },
+  {
+    "wallet": "5PiF5SoM7y3xiE6aPsvqvfyMJhYxUr5YSPN8Jr7WUVCm",
+    "token_mint": "BnK8QgRW6BGPbPV2b1tAZgxVwAJvJpEC9xPoQikRpump",
+    "symbol": "Jim",
+    "approx_liq": 37094.95,
+    "scenario": "bad_wallet",
+    "entry_type": "bad_wallet"
+  },
+  {
+    "wallet": "DnoPZbkYZSD1s74KVf9CwAwnqPiNL8ypzRp4kfFByp85",
+    "token_mint": "ESZLbp5qm8SPfiqAR2sDXrZNjo5hKZoD7FAFTmfCpump",
+    "symbol": "DOZER",
+    "approx_liq": 25013.25,
+    "scenario": "bad_wallet",
+    "entry_type": "bad_wallet"
+  },
+  {
+    "wallet": "A1Pb44RGvJ5F8sMycWVNRCrp348igfQtqYT14KhHkYxz",
+    "token_mint": "9LooeuSKG3H2mxj9yxWvoNibVLuxsE8qeobuHjZfpump",
+    "symbol": "LUCY",
+    "approx_liq": 34901.29,
+    "scenario": "bad_wallet",
+    "entry_type": "bad_wallet"
+  },
+  {
+    "wallet": "DxobwuKnbT88UFKJUAji65KNprGcWF2NtpfzkuhcwyP7",
+    "token_mint": "BigGboBX6veMLQV6gzqgV9Pbx8LeobR6eDjUQicXpump",
+    "symbol": "BAGELS",
+    "approx_liq": 44192.3,
+    "scenario": "bad_wallet",
+    "entry_type": "bad_wallet"
+  },
+  {
+    "wallet": "PCQKbT6vhJTu1Yf1AGTBT5Q44nmj2iUYXxpG1rSP3Wg",
+    "token_mint": "PoPGUYiYjb79CR2Z5XwGpGkuL5G2gApYktbhAN4Tzhh",
+    "symbol": "POP",
+    "approx_liq": 29786.52,
+    "scenario": "bad_wallet",
+    "entry_type": "bad_wallet"
+  },
+  {
+    "wallet": "2MFoS3MPtvyQ4Wh4M9pdfPjz6UhVoNbFbGJAskCPCj3h",
+    "token_mint": "GbuHq6UTNUp8CaFsoPgUhxpPBnkVXGepDHgFhN2kpump",
+    "symbol": "Yae",
+    "approx_liq": 126757.82,
+    "scenario": "potential_signal",
+    "entry_type": "stale",
+    "signal_age_override_hours": 3.5
+  },
+  {
+    "wallet": "HxjwdF326ZunmUwC1iXhfgL3ku78YsksN6n7Rfxzwr6b",
+    "token_mint": "GbuHq6UTNUp8CaFsoPgUhxpPBnkVXGepDHgFhN2kpump",
+    "symbol": "Yae",
+    "approx_liq": 126757.82,
+    "scenario": "potential_signal",
+    "entry_type": "stale",
+    "signal_age_override_hours": 3.5
+  },
+  {
+    "wallet": "2MFoS3MPtvyQ4Wh4M9pdfPjz6UhVoNbFbGJAskCPCj3h",
+    "token_mint": "GbuHq6UTNUp8CaFsoPgUhxpPBnkVXGepDHgFhN2kpump",
+    "symbol": "Yae",
+    "approx_liq": 126757.82,
+    "scenario": "potential_signal",
+    "entry_type": "stale",
+    "signal_age_override_hours": 3.5
+  },
+  {
+    "wallet": "HxjwdF326ZunmUwC1iXhfgL3ku78YsksN6n7Rfxzwr6b",
+    "token_mint": "GbuHq6UTNUp8CaFsoPgUhxpPBnkVXGepDHgFhN2kpump",
+    "symbol": "Yae",
+    "approx_liq": 126757.82,
+    "scenario": "potential_signal",
+    "entry_type": "stale",
+    "signal_age_override_hours": 3.5
+  },
+  {
+    "wallet": "2MFoS3MPtvyQ4Wh4M9pdfPjz6UhVoNbFbGJAskCPCj3h",
+    "token_mint": "4aeBSAusGHEEzBEG9DBYtTjvcQjTJWsNfNvfNioYpump",
+    "symbol": "hentai",
+    "approx_liq": 70340.44,
+    "scenario": "potential_signal",
+    "entry_type": "stale",
+    "signal_age_override_hours": 3.5
+  },
+  {
+    "wallet": "44zas59yMsNv3nwsjtf9zPCxvaxyvuhLPx6x4ERKXPti",
+    "token_mint": "4aeBSAusGHEEzBEG9DBYtTjvcQjTJWsNfNvfNioYpump",
+    "symbol": "hentai",
+    "approx_liq": 70340.44,
+    "scenario": "potential_signal",
+    "entry_type": "stale",
+    "signal_age_override_hours": 3.5
+  },
+  {
+    "wallet": "2MFoS3MPtvyQ4Wh4M9pdfPjz6UhVoNbFbGJAskCPCj3h",
+    "token_mint": "4aeBSAusGHEEzBEG9DBYtTjvcQjTJWsNfNvfNioYpump",
+    "symbol": "hentai",
+    "approx_liq": 70340.44,
+    "scenario": "potential_signal",
+    "entry_type": "stale",
+    "signal_age_override_hours": 3.5
+  },
+  {
+    "wallet": "44zas59yMsNv3nwsjtf9zPCxvaxyvuhLPx6x4ERKXPti",
+    "token_mint": "4aeBSAusGHEEzBEG9DBYtTjvcQjTJWsNfNvfNioYpump",
+    "symbol": "hentai",
+    "approx_liq": 70340.44,
+    "scenario": "potential_signal",
+    "entry_type": "stale",
+    "signal_age_override_hours": 3.5
+  },
+  {
+    "wallet": "6TYDxGmVxkBPBmEfnmLXx6jVff9LknsjRHqdTjVyZmG8",
+    "token_mint": "4aeBSAusGHEEzBEG9DBYtTjvcQjTJWsNfNvfNioYpump",
+    "symbol": "hentai",
+    "approx_liq": 57234.18,
+    "scenario": "potential_signal",
+    "entry_type": "stale",
+    "signal_age_override_hours": 3.5
+  },
+  {
+    "wallet": "44zas59yMsNv3nwsjtf9zPCxvaxyvuhLPx6x4ERKXPti",
+    "token_mint": "4aeBSAusGHEEzBEG9DBYtTjvcQjTJWsNfNvfNioYpump",
+    "symbol": "hentai",
+    "approx_liq": 57234.18,
+    "scenario": "potential_signal",
+    "entry_type": "stale",
+    "signal_age_override_hours": 3.5
+  },
+  {
+    "wallet": "6TYDxGmVxkBPBmEfnmLXx6jVff9LknsjRHqdTjVyZmG8",
+    "token_mint": "4aeBSAusGHEEzBEG9DBYtTjvcQjTJWsNfNvfNioYpump",
+    "symbol": "hentai",
+    "approx_liq": 57234.18,
+    "scenario": "potential_signal",
+    "entry_type": "stale",
+    "signal_age_override_hours": 3.5
+  },
+  {
+    "wallet": "44zas59yMsNv3nwsjtf9zPCxvaxyvuhLPx6x4ERKXPti",
+    "token_mint": "4aeBSAusGHEEzBEG9DBYtTjvcQjTJWsNfNvfNioYpump",
+    "symbol": "hentai",
+    "approx_liq": 57234.18,
+    "scenario": "potential_signal",
+    "entry_type": "stale",
+    "signal_age_override_hours": 3.5
+  },
+  {
+    "wallet": "ARu4n5mFdZogZAravu7CcizaojWnS6oqka37gdLT5SZn",
+    "token_mint": "7qkvtgs6QvpNnxDhZArZg29DcWGTVp5EFNJ1AtySpump",
+    "symbol": "SELLUR",
+    "approx_liq": 56631.03,
+    "scenario": "potential_signal",
+    "entry_type": "stale",
+    "signal_age_override_hours": 3.5
+  },
+  {
+    "wallet": "6TYDxGmVxkBPBmEfnmLXx6jVff9LknsjRHqdTjVyZmG8",
+    "token_mint": "7qkvtgs6QvpNnxDhZArZg29DcWGTVp5EFNJ1AtySpump",
+    "symbol": "SELLUR",
+    "approx_liq": 56631.03,
+    "scenario": "potential_signal",
+    "entry_type": "stale",
+    "signal_age_override_hours": 3.5
+  },
+  {
+    "wallet": "ARu4n5mFdZogZAravu7CcizaojWnS6oqka37gdLT5SZn",
+    "token_mint": "7qkvtgs6QvpNnxDhZArZg29DcWGTVp5EFNJ1AtySpump",
+    "symbol": "SELLUR",
+    "approx_liq": 56631.03,
+    "scenario": "potential_signal",
+    "entry_type": "stale",
+    "signal_age_override_hours": 3.5
+  },
+  {
+    "wallet": "6TYDxGmVxkBPBmEfnmLXx6jVff9LknsjRHqdTjVyZmG8",
+    "token_mint": "7qkvtgs6QvpNnxDhZArZg29DcWGTVp5EFNJ1AtySpump",
+    "symbol": "SELLUR",
+    "approx_liq": 56631.03,
+    "scenario": "potential_signal",
+    "entry_type": "stale",
+    "signal_age_override_hours": 3.5
+  },
+  {
+    "wallet": "ARu4n5mFdZogZAravu7CcizaojWnS6oqka37gdLT5SZn",
+    "token_mint": "4aeBSAusGHEEzBEG9DBYtTjvcQjTJWsNfNvfNioYpump",
+    "symbol": "hentai",
+    "approx_liq": 56190.37,
+    "scenario": "potential_signal",
+    "entry_type": "stale",
+    "signal_age_override_hours": 3.5
+  },
+  {
+    "wallet": "Ar2Y6o1QmrRAskjii1cRfijeKugHH13ycxW5cd7rro1x",
+    "token_mint": "4aeBSAusGHEEzBEG9DBYtTjvcQjTJWsNfNvfNioYpump",
+    "symbol": "hentai",
+    "approx_liq": 56190.37,
+    "scenario": "potential_signal",
+    "entry_type": "stale",
+    "signal_age_override_hours": 3.5
+  },
+  {
+    "wallet": "ARu4n5mFdZogZAravu7CcizaojWnS6oqka37gdLT5SZn",
+    "token_mint": "4aeBSAusGHEEzBEG9DBYtTjvcQjTJWsNfNvfNioYpump",
+    "symbol": "hentai",
+    "approx_liq": 56190.37,
+    "scenario": "potential_signal",
+    "entry_type": "stale",
+    "signal_age_override_hours": 3.5
+  },
+  {
+    "wallet": "Ar2Y6o1QmrRAskjii1cRfijeKugHH13ycxW5cd7rro1x",
+    "token_mint": "4aeBSAusGHEEzBEG9DBYtTjvcQjTJWsNfNvfNioYpump",
+    "symbol": "hentai",
+    "approx_liq": 56190.37,
+    "scenario": "potential_signal",
+    "entry_type": "stale",
+    "signal_age_override_hours": 3.5
+  },
+  {
+    "wallet": "2MFoS3MPtvyQ4Wh4M9pdfPjz6UhVoNbFbGJAskCPCj3h",
+    "token_mint": "CCBNp981Gvv8Vo2T4NNUYW6AkxyFGcacfVgY8qyppump",
+    "symbol": "皐月",
+    "approx_liq": 17215.15,
+    "scenario": "borderline",
+    "entry_type": "borderline"
+  },
+  {
+    "wallet": "44zas59yMsNv3nwsjtf9zPCxvaxyvuhLPx6x4ERKXPti",
+    "token_mint": "PoPGUYiYjb79CR2Z5XwGpGkuL5G2gApYktbhAN4Tzhh",
+    "symbol": "POP",
+    "approx_liq": 20935.71,
+    "scenario": "borderline",
+    "entry_type": "borderline"
+  },
+  {
+    "wallet": "6TYDxGmVxkBPBmEfnmLXx6jVff9LknsjRHqdTjVyZmG8",
+    "token_mint": "HFTUnLruD1y7SaPSQPBAEGV3R1ThP4fZcNrSwmZ6pump",
+    "symbol": "BEPE",
+    "approx_liq": 22940.13,
+    "scenario": "borderline",
+    "entry_type": "borderline"
+  },
+  {
+    "wallet": "ARu4n5mFdZogZAravu7CcizaojWnS6oqka37gdLT5SZn",
+    "token_mint": "6BonAuugSmeJa7r1kdj6xjbUayKi4EiwZBy5ZXtcpump",
+    "symbol": "HELPCJ",
+    "approx_liq": 19449.96,
+    "scenario": "borderline",
+    "entry_type": "borderline"
+  },
+  {
+    "wallet": "HxjwdF326ZunmUwC1iXhfgL3ku78YsksN6n7Rfxzwr6b",
+    "token_mint": "CQLRgHND9E4K4ed8xPAmhyQY61EgLmsUqTN5MDFcpump",
+    "symbol": "Drake",
+    "approx_liq": 15974.45,
+    "scenario": "borderline",
+    "entry_type": "borderline"
+  },
+  {
+    "wallet": "2MFoS3MPtvyQ4Wh4M9pdfPjz6UhVoNbFbGJAskCPCj3h",
+    "token_mint": "BnK8QgRW6BGPbPV2b1tAZgxVwAJvJpEC9xPoQikRpump",
+    "symbol": "Jim",
+    "approx_liq": 23411.61,
+    "scenario": "borderline",
+    "entry_type": "borderline"
+  },
+  {
+    "wallet": "44zas59yMsNv3nwsjtf9zPCxvaxyvuhLPx6x4ERKXPti",
+    "token_mint": "CCBNp981Gvv8Vo2T4NNUYW6AkxyFGcacfVgY8qyppump",
+    "symbol": "皐月",
+    "approx_liq": 17215.15,
+    "scenario": "borderline",
+    "entry_type": "borderline"
+  },
+  {
+    "wallet": "6TYDxGmVxkBPBmEfnmLXx6jVff9LknsjRHqdTjVyZmG8",
+    "token_mint": "PoPGUYiYjb79CR2Z5XwGpGkuL5G2gApYktbhAN4Tzhh",
+    "symbol": "POP",
+    "approx_liq": 20935.71,
+    "scenario": "borderline",
+    "entry_type": "borderline"
+  },
+  {
+    "wallet": "ARu4n5mFdZogZAravu7CcizaojWnS6oqka37gdLT5SZn",
+    "token_mint": "HFTUnLruD1y7SaPSQPBAEGV3R1ThP4fZcNrSwmZ6pump",
+    "symbol": "BEPE",
+    "approx_liq": 22940.13,
+    "scenario": "borderline",
+    "entry_type": "borderline"
+  },
+  {
+    "wallet": "HxjwdF326ZunmUwC1iXhfgL3ku78YsksN6n7Rfxzwr6b",
+    "token_mint": "6BonAuugSmeJa7r1kdj6xjbUayKi4EiwZBy5ZXtcpump",
+    "symbol": "HELPCJ",
+    "approx_liq": 19449.96,
+    "scenario": "borderline",
+    "entry_type": "borderline"
+  },
+  {
+    "wallet": "GxDC9e7SP9mzhDo4re5HbpLa2RW7gB9DtmThx4i4pXSq",
+    "token_mint": "GbuHq6UTNUp8CaFsoPgUhxpPBnkVXGepDHgFhN2kpump",
+    "symbol": "Yae",
+    "approx_liq": 126757.82,
+    "scenario": "bad_wallet",
+    "entry_type": "bad_wallet"
+  },
+  {
+    "wallet": "GxDC9e7SP9mzhDo4re5HbpLa2RW7gB9DtmThx4i4pXSq",
+    "token_mint": "4aeBSAusGHEEzBEG9DBYtTjvcQjTJWsNfNvfNioYpump",
+    "symbol": "hentai",
+    "approx_liq": 56190.37,
+    "scenario": "bad_wallet",
+    "entry_type": "bad_wallet"
+  },
+  {
+    "wallet": "GxDC9e7SP9mzhDo4re5HbpLa2RW7gB9DtmThx4i4pXSq",
+    "token_mint": "7qkvtgs6QvpNnxDhZArZg29DcWGTVp5EFNJ1AtySpump",
+    "symbol": "SELLUR",
+    "approx_liq": 56631.03,
+    "scenario": "bad_wallet",
+    "entry_type": "bad_wallet"
+  },
+  {
+    "wallet": "GxDC9e7SP9mzhDo4re5HbpLa2RW7gB9DtmThx4i4pXSq",
+    "token_mint": "9LooeuSKG3H2mxj9yxWvoNibVLuxsE8qeobuHjZfpump",
+    "symbol": "LUCY",
+    "approx_liq": 32955.64,
+    "scenario": "bad_wallet",
+    "entry_type": "bad_wallet"
+  },
+  {
+    "wallet": "GxDC9e7SP9mzhDo4re5HbpLa2RW7gB9DtmThx4i4pXSq",
+    "token_mint": "BnK8QgRW6BGPbPV2b1tAZgxVwAJvJpEC9xPoQikRpump",
+    "symbol": "Jim",
+    "approx_liq": 25493.07,
+    "scenario": "bad_wallet",
+    "entry_type": "bad_wallet"
+  },
+  {
+    "wallet": "GxDC9e7SP9mzhDo4re5HbpLa2RW7gB9DtmThx4i4pXSq",
+    "token_mint": "CMUJzTahkRDanjpPonDS87FQuyntSLWhUYRkR79EybSU",
+    "symbol": "CELL",
+    "approx_liq": 32795.97,
+    "scenario": "bad_wallet",
+    "entry_type": "bad_wallet"
+  },
+  {
+    "wallet": "GxDC9e7SP9mzhDo4re5HbpLa2RW7gB9DtmThx4i4pXSq",
+    "token_mint": "D9gKwxJF9kFxFUki8KK2WxjqdLFBnnuvvVvmueCUpump",
+    "symbol": "BOPO",
+    "approx_liq": 37871.32,
+    "scenario": "bad_wallet",
+    "entry_type": "bad_wallet"
+  },
+  {
+    "wallet": "GxDC9e7SP9mzhDo4re5HbpLa2RW7gB9DtmThx4i4pXSq",
+    "token_mint": "ESZLbp5qm8SPfiqAR2sDXrZNjo5hKZoD7FAFTmfCpump",
+    "symbol": "DOZER",
+    "approx_liq": 25013.25,
+    "scenario": "bad_wallet",
+    "entry_type": "bad_wallet"
+  },
+  {
+    "wallet": "GxDC9e7SP9mzhDo4re5HbpLa2RW7gB9DtmThx4i4pXSq",
+    "token_mint": "BigGboBX6veMLQV6gzqgV9Pbx8LeobR6eDjUQicXpump",
+    "symbol": "BAGELS",
+    "approx_liq": 44192.3,
+    "scenario": "bad_wallet",
+    "entry_type": "bad_wallet"
+  },
+  {
+    "wallet": "GxDC9e7SP9mzhDo4re5HbpLa2RW7gB9DtmThx4i4pXSq",
+    "token_mint": "PoPGUYiYjb79CR2Z5XwGpGkuL5G2gApYktbhAN4Tzhh",
+    "symbol": "POP",
+    "approx_liq": 29786.52,
+    "scenario": "bad_wallet",
+    "entry_type": "bad_wallet"
+  },
+  {
+    "wallet": "ARqJ18xaBLrEJYARaYHxfRKSi1pB7dZjwq1NW6Fiuieb",
+    "token_mint": "GbuHq6UTNUp8CaFsoPgUhxpPBnkVXGepDHgFhN2kpump",
+    "symbol": "Yae",
+    "approx_liq": 126757.82,
+    "scenario": "bad_wallet",
+    "entry_type": "bad_wallet"
+  },
+  {
+    "wallet": "G1nfy85wgagnhLnFyGktq5vZ3QFnewwhFuPC7sor1GsE",
+    "token_mint": "7qkvtgs6QvpNnxDhZArZg29DcWGTVp5EFNJ1AtySpump",
+    "symbol": "SELLUR",
+    "approx_liq": 56631.03,
+    "scenario": "bad_wallet",
+    "entry_type": "bad_wallet"
+  },
+  {
+    "wallet": "AacCEk4xZHPgQ2dUR8BTtAmUeokg4RE812sAFswJotx6",
+    "token_mint": "4aeBSAusGHEEzBEG9DBYtTjvcQjTJWsNfNvfNioYpump",
+    "symbol": "hentai",
+    "approx_liq": 57234.18,
+    "scenario": "bad_wallet",
+    "entry_type": "bad_wallet"
+  },
+  {
+    "wallet": "74MgeAHGAviQj2AB5jGhpSZVxtXvcoaqT9UC6fscvGPk",
+    "token_mint": "D9gKwxJF9kFxFUki8KK2WxjqdLFBnnuvvVvmueCUpump",
+    "symbol": "BOPO",
+    "approx_liq": 37871.32,
+    "scenario": "bad_wallet",
+    "entry_type": "bad_wallet"
+  },
+  {
+    "wallet": "G1HJCy8zzZeoptdeBbbFodCCfXTjJyFSJHGq13DAYm9a",
+    "token_mint": "CMUJzTahkRDanjpPonDS87FQuyntSLWhUYRkR79EybSU",
+    "symbol": "CELL",
+    "approx_liq": 33094.66,
+    "scenario": "bad_wallet",
+    "entry_type": "bad_wallet"
+  },
+  {
+    "wallet": "5PiF5SoM7y3xiE6aPsvqvfyMJhYxUr5YSPN8Jr7WUVCm",
+    "token_mint": "BnK8QgRW6BGPbPV2b1tAZgxVwAJvJpEC9xPoQikRpump",
+    "symbol": "Jim",
+    "approx_liq": 37094.95,
+    "scenario": "bad_wallet",
+    "entry_type": "bad_wallet"
+  },
+  {
+    "wallet": "DnoPZbkYZSD1s74KVf9CwAwnqPiNL8ypzRp4kfFByp85",
+    "token_mint": "ESZLbp5qm8SPfiqAR2sDXrZNjo5hKZoD7FAFTmfCpump",
+    "symbol": "DOZER",
+    "approx_liq": 25013.25,
+    "scenario": "bad_wallet",
+    "entry_type": "bad_wallet"
+  },
+  {
+    "wallet": "A1Pb44RGvJ5F8sMycWVNRCrp348igfQtqYT14KhHkYxz",
+    "token_mint": "9LooeuSKG3H2mxj9yxWvoNibVLuxsE8qeobuHjZfpump",
+    "symbol": "LUCY",
+    "approx_liq": 34901.29,
+    "scenario": "bad_wallet",
+    "entry_type": "bad_wallet"
+  },
+  {
+    "wallet": "DxobwuKnbT88UFKJUAji65KNprGcWF2NtpfzkuhcwyP7",
+    "token_mint": "BigGboBX6veMLQV6gzqgV9Pbx8LeobR6eDjUQicXpump",
+    "symbol": "BAGELS",
+    "approx_liq": 44192.3,
+    "scenario": "bad_wallet",
+    "entry_type": "bad_wallet"
+  },
+  {
+    "wallet": "PCQKbT6vhJTu1Yf1AGTBT5Q44nmj2iUYXxpG1rSP3Wg",
+    "token_mint": "PoPGUYiYjb79CR2Z5XwGpGkuL5G2gApYktbhAN4Tzhh",
+    "symbol": "POP",
+    "approx_liq": 29786.52,
+    "scenario": "bad_wallet",
+    "entry_type": "bad_wallet"
+  }
+]

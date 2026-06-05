@@ -1,0 +1,32 @@
+{
+  "strategy": "mean_reversion_v1",
+  "type": "deterministic_rule",
+  "status": "INVALIDATED",
+  "do_not_trade": true,
+  "invalidated_date": "2026-06-04",
+  "invalidated_by": "H-001",
+  "invalidated_reason": "Realized OOS EV -0.97% (edge over base -0.80%, perm_p 0.887, CI95 spans zero, negative in every temporal slice). The +1.57% below was a WIN-RATE-IMPLIED artifact, not realized PnL. See hypothesis_lab/hypotheses/H-001-champion-degradation.md.",
+  "rule": "drawdown_from_high<-0.10 AND range_pct>median AND buy_pressure_6>median",
+  "validation_DEPRECATED_win_rate_implied": {
+    "holdout_n": 941,
+    "tokens": 34,
+    "win_rate": 0.48,
+    "base_win": 0.401,
+    "ev_per_trade_net": 0.0157,
+    "base_ev": -0.0098,
+    "fires_pct": 0.16,
+    "eval": "temporal_future_holdout (win-rate-implied EV — DO NOT TRUST)"
+  },
+  "validation_realized": {
+    "holdout_n": 1360,
+    "tokens": 49,
+    "rule_ev_realized": -0.0097,
+    "base_ev_realized": -0.0017,
+    "edge_over_base": -0.0080,
+    "perm_p": 0.887,
+    "ci95": [-0.0225, 0.0064],
+    "eval": "finetune/pipeline/eval_stats.py (realized payoff + permutation + bootstrap)"
+  },
+  "payoff": "+20%/-12% triple-barrier, cost 1.8%",
+  "module": "finetune/pipeline/meanrev_strategy.py"
+}

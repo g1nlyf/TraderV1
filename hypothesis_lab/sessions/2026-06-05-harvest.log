@@ -1,0 +1,25 @@
+[11:20:18] === HARVEST START — 180d 1m, names=['UNI', 'LTC', 'FIL', 'LINK', 'ETH', 'DOGE', 'AAVE', 'ADA', 'XRP', 'BTC'] ===
+[11:23:40] === HARVEST START — 180d 1m, names=['UNI', 'LTC', 'FIL', 'LINK', 'ETH', 'DOGE', 'AAVE', 'ADA', 'XRP', 'BTC'] ===
+[11:25:41] [1/10] UNIUSDT perp: 259202 bars -> UNI_perp_1m.npz (121s)
+[11:27:43] [1/10] UNIUSDT spot: 259204 bars -> UNI_spot_1m.npz (122s)
+[11:29:47] [2/10] LTCUSDT perp: 259206 bars -> LTC_perp_1m.npz (124s)
+[11:31:50] [2/10] LTCUSDT spot: 259208 bars -> LTC_spot_1m.npz (123s)
+[11:33:53] [3/10] FILUSDT perp: 259210 bars -> FIL_perp_1m.npz (122s)
+[11:34:12]     net error ('Connection aborted.', ConnectionResetError(10054, 'Eine vorhandene Verbindung wurde vom Remotehost geschlossen', None, 10054, None)); retry in 3s
+[11:42:08]     net error ('Connection aborted.', ConnectionResetError(10054, 'Eine vorhandene Verbindung wurde vom Remotehost geschlossen', None, 10054, None)); retry in 3s
+[11:43:58] [3/10] FILUSDT spot: 259220 bars -> FIL_spot_1m.npz (605s)
+[11:45:54] [4/10] LINKUSDT perp: 259222 bars -> LINK_perp_1m.npz (116s)
+[11:47:53] [4/10] LINKUSDT spot: 259224 bars -> LINK_spot_1m.npz (119s)
+[11:49:57] [5/10] ETHUSDT perp: 259226 bars -> ETH_perp_1m.npz (124s)
+[11:52:00] [5/10] ETHUSDT spot: 259228 bars -> ETH_spot_1m.npz (123s)
+[11:54:02] [6/10] DOGEUSDT perp: 259230 bars -> DOGE_perp_1m.npz (122s)
+[11:56:05] [6/10] DOGEUSDT spot: 259233 bars -> DOGE_spot_1m.npz (123s)
+[11:58:05] [7/10] AAVEUSDT perp: 259234 bars -> AAVE_perp_1m.npz (120s)
+[12:00:13] [7/10] AAVEUSDT spot: 259237 bars -> AAVE_spot_1m.npz (128s)
+[12:02:11] [8/10] ADAUSDT perp: 259239 bars -> ADA_perp_1m.npz (117s)
+[12:04:10] [8/10] ADAUSDT spot: 259241 bars -> ADA_spot_1m.npz (119s)
+[12:06:11] [9/10] XRPUSDT perp: 259243 bars -> XRP_perp_1m.npz (121s)
+[12:08:04] [9/10] XRPUSDT spot: 259245 bars -> XRP_spot_1m.npz (113s)
+[12:10:11] [10/10] BTCUSDT perp: 259247 bars -> BTC_perp_1m.npz (127s)
+[12:12:16] [10/10] BTCUSDT spot: 259249 bars -> BTC_spot_1m.npz (125s)
+[12:12:16] === HARVEST DONE ===

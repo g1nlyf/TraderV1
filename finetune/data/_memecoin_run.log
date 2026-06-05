@@ -1,0 +1,30 @@
+  listed trending_pools?page=1: total distinct=19
+  listed new_pools?page=1: total distinct=39
+  listed pools?page=1: total distinct=52
+  listed pools?page=2: total distinct=69
+  listed pools?page=3: total distinct=87
+  listed pools?page=4: total distinct=105
+  listed pools?page=5: total distinct=124
+  listed pools?page=6: total distinct=141
+[harvest] 90 pools; fetching OHLCV (cached skipped) ...
+[harvest] done.
+[analyze] building panel from cache ...
+      tokens=13 periods=1148 (~57d)
+
+  === UNHEDGED (long-only, = H-03) (look=24h dd<-0.1 hold=24h, cost 1.5%) ===
+    TRAIN EV=+9.89% t=+10.78 n=1890
+    TEST  EV/event=+16.04% win=49.7% t=+7.31 n=1559
+    TEST  CI95=[+6.19%,+30.14%] perm_p=0.666
+    regime: SOL-up EV=-5.67% (n=133)  SOL-down EV=+18.06% (n=1426)
+    cost sweep: 0.5%->+17.04%  1.0%->+16.54%  1.5%->+16.04%  2.0%->+15.54%  3.0%->+14.54%
+    VERDICT: PROMISING — Positive net EV, partial significance.
+
+  === NEUTRAL (long memecoin − short SOL) (look=24h dd<-0.1 hold=24h, cost 1.5%) ===
+    TRAIN EV=+10.02% t=+10.96 n=1890
+    TEST  EV/event=+17.59% win=52.2% t=+7.99 n=1559
+    TEST  CI95=[+7.61%,+31.68%] perm_p=0.666
+    regime: SOL-up EV=-4.55% (n=133)  SOL-down EV=+19.65% (n=1426)
+    cost sweep: 0.5%->+18.59%  1.0%->+18.09%  1.5%->+17.59%  2.0%->+17.09%  3.0%->+16.09%
+    VERDICT: PROMISING — Positive net EV, partial significance.
+
+  wrote finetune\data\memecoin_neutral_result.json; appended finetune\data\memecoin_neutral_log.jsonl

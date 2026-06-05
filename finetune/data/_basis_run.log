@@ -1,0 +1,51 @@
+[0/4] Discovering top-50 USDT perps by 24h volume ...
+[1/4] Fetching 50 funding histories (Binance + Bybit) + spot/perp 8h klines x ~730d ...
+      periods=2190 (~730d)  assets(Binance)=46  with-Bybit=40
+[2/4] Funding descriptive: mean APR=+2.5% median=+3.6%  lag1 sign-persistence=72.6% (>50% => exploitable)
+[3/4] Evaluating carry engines out-of-time (EWMA span tuned on TRAIN) ...
+
+  === SINGLE-VENUE long-carry (all names, EW) (EWMA span=24) ===
+    [TAKER 5.5bps/leg]
+    TRAIN apr=+3.0% sh=+11.68 | TEST apr=-0.2% sh=-1.00 hit=47.3% maxDD=-0.5% n=657
+    TEST CI95=[-1.1%,+0.8%] breakeven=5.5bps | regime up=+1.0% down=-1.1%
+    cost sweep: 1.0->+3%  3.0->+2%  5.5->-0%  8.0->-2%  11.0->-4%
+    VERDICT(taker): REFUTED — No positive net carry out-of-time after costs (funding too thin / flips eat it).
+    [MAKER 1.0bps/leg — realistic: 8h windows, no spread-crossing needed]
+    TRAIN apr=+5.0% sh=+25.68 | TEST apr=+2.9% sh=+14.54 hit=83.7% maxDD=-0.1% n=657
+    TEST CI95=[+2.2%,+3.8%] breakeven=5.5bps | regime up=+3.9% down=+2.3%
+    VERDICT(maker): VALIDATED — Net +APR out-of-time, CI excludes 0, Sharpe>1, sign-stable across BTC regimes — a genuine structural carry edge.
+
+  === SINGLE-VENUE long-carry (TOP-10 funding) (EWMA span=24) ===
+    [TAKER 5.5bps/leg]
+    TRAIN apr=-6.2% sh=-10.70 | TEST apr=-3.2% sh=-3.45 hit=48.1% maxDD=-3.3% n=657
+    TEST CI95=[-6.5%,+1.0%] breakeven=4.5bps | regime up=-1.3% down=-3.9%
+    cost sweep: 1.0->+9%  3.0->+4%  5.5->-3%  8.0->-10%  11.0->-18%
+    VERDICT(taker): REFUTED — No positive net carry out-of-time after costs (funding too thin / flips eat it).
+    [MAKER 1.0bps/leg — realistic: 8h windows, no spread-crossing needed]
+    TRAIN apr=+5.8% sh=+21.58 | TEST apr=+9.0% sh=+11.25 hit=80.7% maxDD=-0.2% n=657
+    TEST CI95=[+6.1%,+12.5%] breakeven=4.5bps | regime up=+11.6% down=+7.4%
+    VERDICT(maker): VALIDATED — Net +APR out-of-time, CI excludes 0, Sharpe>1, sign-stable across BTC regimes — a genuine structural carry edge.
+
+  === CROSS-VENUE spread (Binance-Bybit) (EWMA span=24) ===
+    [TAKER 5.5bps/leg]
+    TRAIN apr=-5.5% sh=-14.24 | TEST apr=-9.0% sh=-27.45 hit=18.7% maxDD=-5.3% n=657
+    TEST CI95=[-10.3%,-7.9%] breakeven=1.5000000000000002bps | regime up=-10.1% down=-7.9%
+    cost sweep: 1.0->+1%  3.0->-4%  5.5->-9%  8.0->-14%  11.0->-21%
+    VERDICT(taker): REFUTED — No positive net carry out-of-time after costs (funding too thin / flips eat it).
+
+[5/5] BASIS-AWARE honest PnL (= funding + spot_ret − perp_ret), maker 1.0bps
+      adds the real delta-neutral price leg => the HONEST Sharpe / drawdown
+
+  === SINGLE-VENUE long-carry (all names, EW) — BASIS-AWARE (span=24) ===
+    funding-only: apr=+2.9% sharpe=+14.54 maxDD=-0.1%
+    basis-aware : apr=+3.1% sharpe=+8.08 hit=59.1% maxDD=-0.1% n=657
+    basis CI95=[+2.2%,+4.0%] | regime up=+3.8% down=+2.7%
+    VERDICT(basis): VALIDATED — Net +APR out-of-time, CI excludes 0, Sharpe>1, sign-stable across BTC regimes — a genuine structural carry edge.
+
+  === SINGLE-VENUE long-carry (TOP-10 funding) — BASIS-AWARE (span=24) ===
+    funding-only: apr=+9.0% sharpe=+11.25 maxDD=-0.2%
+    basis-aware : apr=+9.4% sharpe=+8.97 hit=65.8% maxDD=-0.2% n=657
+    basis CI95=[+6.3%,+12.9%] | regime up=+11.4% down=+8.2%
+    VERDICT(basis): VALIDATED — Net +APR out-of-time, CI excludes 0, Sharpe>1, sign-stable across BTC regimes — a genuine structural carry edge.
+
+  wrote finetune\data\funding_harvest_result.json; appended finetune\data\funding_harvest_log.jsonl

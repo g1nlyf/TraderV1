@@ -1,0 +1,27 @@
+{"contents": [{"role": "user", "parts": [{"text": "Convert to Roman numerals: 1"}]}, {"role": "model", "parts": [{"text": "I"}]}]}
+{"contents": [{"role": "user", "parts": [{"text": "Convert to Roman numerals: 2"}]}, {"role": "model", "parts": [{"text": "II"}]}]}
+{"contents": [{"role": "user", "parts": [{"text": "Convert to Roman numerals: 3"}]}, {"role": "model", "parts": [{"text": "III"}]}]}
+{"contents": [{"role": "user", "parts": [{"text": "Convert to Roman numerals: 4"}]}, {"role": "model", "parts": [{"text": "IV"}]}]}
+{"contents": [{"role": "user", "parts": [{"text": "Convert to Roman numerals: 5"}]}, {"role": "model", "parts": [{"text": "V"}]}]}
+{"contents": [{"role": "user", "parts": [{"text": "Convert to Roman numerals: 6"}]}, {"role": "model", "parts": [{"text": "VI"}]}]}
+{"contents": [{"role": "user", "parts": [{"text": "Convert to Roman numerals: 7"}]}, {"role": "model", "parts": [{"text": "VII"}]}]}
+{"contents": [{"role": "user", "parts": [{"text": "Convert to Roman numerals: 8"}]}, {"role": "model", "parts": [{"text": "VIII"}]}]}
+{"contents": [{"role": "user", "parts": [{"text": "Convert to Roman numerals: 9"}]}, {"role": "model", "parts": [{"text": "IX"}]}]}
+{"contents": [{"role": "user", "parts": [{"text": "Convert to Roman numerals: 10"}]}, {"role": "model", "parts": [{"text": "X"}]}]}
+{"contents": [{"role": "user", "parts": [{"text": "Convert to Roman numerals: 11"}]}, {"role": "model", "parts": [{"text": "XI"}]}]}
+{"contents": [{"role": "user", "parts": [{"text": "Convert to Roman numerals: 12"}]}, {"role": "model", "parts": [{"text": "XII"}]}]}
+{"contents": [{"role": "user", "parts": [{"text": "Convert to Roman numerals: 13"}]}, {"role": "model", "parts": [{"text": "XIII"}]}]}
+{"contents": [{"role": "user", "parts": [{"text": "Convert to Roman numerals: 14"}]}, {"role": "model", "parts": [{"text": "XIV"}]}]}
+{"contents": [{"role": "user", "parts": [{"text": "Convert to Roman numerals: 15"}]}, {"role": "model", "parts": [{"text": "XV"}]}]}
+{"contents": [{"role": "user", "parts": [{"text": "Convert to Roman numerals: 16"}]}, {"role": "model", "parts": [{"text": "XVI"}]}]}
+{"contents": [{"role": "user", "parts": [{"text": "Convert to Roman numerals: 17"}]}, {"role": "model", "parts": [{"text": "XVII"}]}]}
+{"contents": [{"role": "user", "parts": [{"text": "Convert to Roman numerals: 18"}]}, {"role": "model", "parts": [{"text": "XVIII"}]}]}
+{"contents": [{"role": "user", "parts": [{"text": "Convert to Roman numerals: 19"}]}, {"role": "model", "parts": [{"text": "XIX"}]}]}
+{"contents": [{"role": "user", "parts": [{"text": "Convert to Roman numerals: 20"}]}, {"role": "model", "parts": [{"text": "XX"}]}]}
+{"contents": [{"role": "user", "parts": [{"text": "Convert to Roman numerals: 30"}]}, {"role": "model", "parts": [{"text": "XXX"}]}]}
+{"contents": [{"role": "user", "parts": [{"text": "Convert to Roman numerals: 40"}]}, {"role": "model", "parts": [{"text": "XL"}]}]}
+{"contents": [{"role": "user", "parts": [{"text": "Convert to Roman numerals: 50"}]}, {"role": "model", "parts": [{"text": "L"}]}]}
+{"contents": [{"role": "user", "parts": [{"text": "What is 4 in Roman numerals?"}]}, {"role": "model", "parts": [{"text": "IV"}]}]}
+{"contents": [{"role": "user", "parts": [{"text": "Roman numeral for 9?"}]}, {"role": "model", "parts": [{"text": "IX"}]}]}
+{"contents": [{"role": "user", "parts": [{"text": "Express 14 as Roman numeral."}]}, {"role": "model", "parts": [{"text": "XIV"}]}]}
+{"contents": [{"role": "user", "parts": [{"text": "Write 19 in Roman numerals."}]}, {"role": "model", "parts": [{"text": "XIX"}]}]}

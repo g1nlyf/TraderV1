@@ -1,0 +1,76 @@
+# Fine-tuning configuration for TraderV1 signal reviewer
+
+model:
+  provider: "vertex"                    # Vertex AI (GCP credits)
+  base_tier1: "gemini-2.5-flash"       # Tier 1: fast decisions + no_trade (~2s)
+  base_tier2: "gemini-2.5-pro"         # Tier 2: trade validation, domain-aware (~8s)
+  # Both support SFT on europe-west4. 3.x NOT supported yet (confirmed 2026-05).
+
+vertex:
+  project: "sft-test-clean"
+  location: "us-central1"             # us-central1 — confirmed working 2026-05
+  gcs_bucket: "traderv1-sft-clean"
+
+inference:
+  tier1_model: "gemini-2.5-flash"      # → set FINETUNED_MODEL_T1 after SFT
+  tier2_model: "gemini-2.5-pro"        # → set FINETUNED_MODEL_T2 after SFT
+  # When 3.x models support fine-tuning → upgrade tier2 to gemini-3.x-pro
+
+training:
+  n_epochs: 5                        # v3: 5 epochs (was 3); outcome-weighted data benefits more passes
+  batch_size: 4                      # Together.ai recommends 4-8 for 7B models
+  learning_rate_multiplier: 0.7      # v3: 0.7 (was 1.0); SFT-on-SFT needs conservative LR
+  min_examples: 50                   # refuse to train below this threshold
+  target_examples: 300               # ideal dataset size
+
+validation_split: 0.15               # 15% held out for val
+
+data:
+  db_path: "../WalletScarper/data/stage2_foundation.sqlite3"
+  raw_dir: "data/raw"
+  labeled_dir: "data/labeled"
+  synthetic_dir: "data/synthetic"
+  training_dir: "data/training"
+  train_file: "data/training/train.jsonl"
+  val_file: "data/training/val.jsonl"
+
+teacher:
+  provider: "vertex"                # Vertex AI via ADC (gcloud auth application-default login)
+  model: "gemini-2.5-pro"          # strongest EU model → highest quality training data
+  location: "europe-west4"         # Amsterdam
+  max_examples_per_real_event: 3   # augmentation per real event
+  # fallback if pro unavailable:
+  # provider: "openrouter"
+  # model: "openrouter/owl-alpha"
+
+phase2:
+  # Real-budget paper trading — active after initial fine-tune
+  enabled: false                    # set true after first trained model deployed
+  paper_budget_usd: 500             # starting paper balance
+  position_size_pct: 0.05           # 5% of current balance per trade
+  circuit_breaker_drawdown: 0.30    # halt trading at 30% drawdown from peak
+  retrain_trigger_outcomes: 30      # new labeled outcomes needed to trigger retrain
+  budget_injected_into_context: true  # model receives current balance + drawdown state
+
+synthetic:
+  count: 300                         # synthetic examples to generate
+  no_trade_ratio: 0.65               # 65% no_trade, 35% signal (reflects reality)
+  scenarios:
+    - insufficient_data
+    - low_win_rate
+    - stale_signal
+    - critical_quality_flags
+    - good_wallet_good_token       # → signal
+    - good_wallet_bad_token
+    - bad_wallet_good_token
+    - partial_data_conservative
+    - old_signal_skip
+    - high_holder_concentration
+    - no_liquidity
+    - strong_copyable_wallet       # → signal
+
+# Decision quality thresholds (for evaluation)
+quality:
+  min_reasoning_length: 50          # min chars in pre_action_reasoning
+  required_tool_calls: ["wallet_profile_history", "token_get_profile", "agent_record_trading_decision"]
+  allowed_decision_types: ["signal", "no_trade", "wait", "downgrade_wallet"]
