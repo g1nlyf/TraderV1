@@ -33,6 +33,8 @@ sys.path.insert(0, str(ROOT / "hypothesis_lab" / "scripts"))
 import funding_harvest as fh          # noqa: E402
 import h013_tradeable_carry as h13    # noqa: E402  (offline panel loader)
 import funding_leads2 as fl2          # noqa: E402  (load_perp)
+sys.path.insert(0, str(ROOT / "finetune" / "pipeline"))
+import eval_stats as es               # noqa: E402,F401  (canonical promotion gate — see test_stack REAL GATE)
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")  # type: ignore
 
 MAKER = 0.0001
@@ -180,13 +182,25 @@ def test_stack(panel, spot_names, tp, cut, book):
     sharpe_better = best[2] > s_c
     apr_ci_better = best[4][0] >= ci_c[0]
     low_corr = (abs(r_active) < 0.3) if np.isfinite(r_active) else False
-    gate = low_corr and sharpe_better and apr_ci_better and n_ev_te > 0
-    verdict = ("HARDENS C-002 (uncorrelated 2nd sleeve) — gate-candidate Y" if gate
-               else f"stack does not CI-dominate carry (best Sh {best[2]:+.2f} vs {s_c:+.2f}) — "
-                    f"gate-candidate N")
-    print(f"  VERDICT: r={'<0.3' if low_corr else '>=0.3 or n/a'}; {verdict}")
+    # ----- ADVISORY Sharpe heuristic (NOT the promotion gate) -----
+    sharpe_heuristic = low_corr and sharpe_better and apr_ci_better and n_ev_te > 0
+    # ----- REAL promotion gate (CONSTRAINTS / eval_stats): a sleeve is promotable ONLY with
+    # n>100 independent events, perm_p<0.05 AND CI95>0 on realized per-event payoffs. The H-042
+    # sleeve's honest per-event series is sleeve_te[active] (ci_s computed above). -----
+    gate_real = (n_ev_te > 100) and (ci_s[0] > 0)
+    print(f"  SHARPE-HEURISTIC (advisory, NOT the gate): "
+          f"{'stack Sharpe-dominates carry' if sharpe_heuristic else 'no Sharpe dominance'} "
+          f"(best Sh {best[2]:+.2f} vs carry {s_c:+.2f}; r={'<0.3' if low_corr else '>=0.3/na'})")
+    print(f"  REAL GATE (eval_stats CONSTRAINTS): sleeve n_events={n_ev_te} (need >100), "
+          f"sleeve CI95=[{ci_s[0]:+.1%},{ci_s[1]:+.1%}] -> "
+          f"{'PASS' if gate_real else 'FAIL (sub-gate — do NOT promote)'}; "
+          f"perm_p NOT computed here (needs the full drop-event base set from h042_deep).")
+    verdict = (("Sharpe-advisory positive; " if sharpe_heuristic else "no Sharpe dominance; ")
+               + f"REAL gate {'PASS' if gate_real else 'FAIL'} (n={n_ev_te}, need >100)")
+    print(f"  VERDICT: {verdict}")
     return {"r_active": r_active, "r_full": r_full, "n_ev_te": n_ev_te,
-            "carry": (a_c, s_c, dd_c, ci_c, n_c), "rows": rows, "gate": gate, "verdict": verdict}
+            "carry": (a_c, s_c, dd_c, ci_c, n_c), "rows": rows,
+            "gate": gate_real, "sharpe_heuristic": sharpe_heuristic, "verdict": verdict}
 
 
 # ===================================================================== 2) DE-RISKER

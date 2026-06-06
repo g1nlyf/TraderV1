@@ -1,0 +1,4 @@
+# regenerable artifacts (rebuild with build_events.py in ~30s)
+_cache/
+__pycache__/
+*.pyc

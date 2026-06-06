@@ -114,8 +114,23 @@ CI95 of C-002 → carry book is **near-optimal on current data**; no cheap Sharp
 Session-1 baseline was EW-all tradeable +0.8% (Sharpe 1.79). H-021's fixed-selection +1.44%
 (Sharpe 3.20) supersedes it as the single-sleeve best.
 
+## Wallet / on-chain alpha (Sprint 5, 2026-06-06) — UNPROVEN (long) / REAL-but-uncapturable (short)
+First honest point-in-time test (`hypothesis_lab/wallet_alpha/`, SYNTHESIS.md). Substrate = raw_trades
+5.5h cross-section. Results (temporal OOS, capped realized EV, eval_stats gate):
+- **H-160 consensus quality: DEAD.** Naive smart-wallet copy = −17.7% EV (cluster-buys mark the top).
+  Point-in-time wallet quality *anti*-predicts (rho −0.37 = in-session survivorship). Adds ~0 over token context.
+  → invalidates `finetune/pipeline/copy_engine.py` (it was in-sample + survivorship).
+- **H-161 archetype mix: DEAD.** Archetype is a weak proxy token context already holds.
+- **H-162 distribution-sell down-signal: REAL, NOT promotable.** Coordinated quality-wallet sells predict
+  larger forward drops; SHORT side gate-clears (wq-sell +22% EV, perm_p 0.008, CI [+15.9%,+27.6%], n=212;
+  selection edge +4.5–5.9% cost-invariant). Blocked by (a) no short/avoid venue for microcaps, (b) eff-n=1
+  session ⇒ regime-capture risk (the −17% base is a May-14 down-session). Logged as risk/exit signal.
+- **No new champion. No new stack sleeve.** Wallet alpha is not sized. Binding constraint reconfirmed = DATA
+  (need multi-day capture for persistence + a shortable subset for capture). Next: H-163/H-164.
+
 ## Pending Promotions
-_None._ See ROADMAP Track 3 for the broad-generation search for a gate-clearing edge.
+_None._ C-002 sole champion; H-042 sole sub-gate sleeve; wallet alpha unproven (long)/uncapturable (short).
+See ROADMAP for the multi-day-capture unblock (now the highest-leverage data need).
 
 ## Stacking Rule
 Champions are independent filters applied serially. Combined EV = (1+EV_1)×(1+EV_2)−1.

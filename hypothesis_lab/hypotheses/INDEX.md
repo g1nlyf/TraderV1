@@ -1,5 +1,9 @@
 # Hypothesis Index
 
+> **Canonical truth lives in `hypothesis_lab/knowledge/`** (CANONICAL_STATE, DATA_LEDGER, DEAD_TRACKS,
+> LIVE_THREADS, DUPLICATE_MAP, QUESTIONS, DATA_AUDIT). This index is the per-ID log. H-080..H-159 are
+> concept-duplicate-heavy → see DUPLICATE_MAP.md for the collapse.
+
 | ID | Name | Status | EV (net) | Win Rate | n OOS | Date | Notes |
 |----|------|--------|----------|----------|-------|------|-------|
 | H-001 | Champion degradation diagnosis | **tested · FAIL** | −0.97% realized | 41.7% | 1360 | 2026-06-04 | "Degradation" was a measurement artifact. Champion never had an edge (perm_p 0.887). C-001 retired; eval instrument fixed. |
@@ -27,6 +31,9 @@
 | H-058 | Dropper-basket (portfolio H-042) | **= H-042 period-mean** | see H-042 | — | 91-325 | 2026-06-05 | The market-neutral EW basket of period droppers IS the H-042 period-level series |
 | H-060–H-079 | Forced-flow amplifiers (Zone-1 batch) | **tested · ALL FAIL** | none beat H-042 +1.46% | — | 15–325 | 2026-06-05 | H-060 repeat-cascade +2.75% but n=29 (collect-forward); H-065 basis-snap = TRAP #5 (lag-1 autocorr). H-042 edge is idiosyncratic single-name. See sessions/2026-06-05-test-zone1.md |
 | H-080–H-159 | Carry/microstruct/calendar/macro (Zone 2-5 batch) | **gen + triaged · 0 gate-clearers** | all within CI of C-002 | — | 657 | 2026-06-05 | ~80 generated. Tested cluster (regime-gate, selection, de-risker) all CI-tie C-002. **STACK r(C-002,H-042)≈0 confirmed** (bank on collect-forward). ~30 BLOCKED (OI/L2/options/OKX/SPX/on-chain); Zone-4 calendar low-n deferred. See sessions/2026-06-05-test-carry.md + genZone1-5.md |
+| H-160 | Wallet-consensus quality (point-in-time) | **tested · FAIL (DEAD)** | naive-copy −17.7%; wq-select −22.9% (rho −0.37) | 21% | 455 | 2026-06-06 | Consensus=crowding (buy the top); in-session "skill"=survivorship anti-signal; wallet adds ~0 over token context. Kills copy_engine premise. `wallet_alpha/`, SYNTHESIS.md |
+| H-161 | Wallet archetype mix (KMeans sniper/swing/bot/hodler) | **tested · FAIL (DEAD)** | arch rho +0.06–0.10; token+arch≈token | — | 455 | 2026-06-06 | Archetype is a weak proxy token context already holds. Sniper-clusters worst, swing least-bad but n<30. DEAD |
+| H-162 | Distribution (sell) cluster down-signal | **tested · REAL, NOT promotable** | wq-sell SHORT +22% EV, perm_p 0.008, CI[+15.9,+27.6], n=212 | 80% down | 390 | 2026-06-06 | Coordinated quality-sells predict drops; selection edge +4.5–5.9% **cost-invariant**. Ordering random<buy<sell<wq-sell. Blocked: no short venue + **eff-n=1 session (regime-capture risk)**. Risk/exit signal. Next: H-163 multi-day, H-164 shortable subset |
 
 ## Legacy (from brain vault, pre-2026-06-04)
 | ID | Name | EV (net) | Verdict |

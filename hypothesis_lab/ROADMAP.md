@@ -1,5 +1,21 @@
 # ROADMAP — Hypothesis Queue
 
+> State reconciled in `knowledge/CANONICAL_STATE.md`. C-002 sole champion; H-042 sole sub-gate sleeve;
+> wallet alpha unproven (long)/uncapturable (short, H-162). **Binding constraint = DATA, not ideas.**
+
+## Track 5: Wallet Intelligence — Sprint 5 DONE (2026-06-06), now DATA-gated
+First honest point-in-time wallet-alpha stack built + tested (`wallet_alpha/`, SYNTHESIS.md). H-160/H-161
+DEAD; H-162 real-but-uncapturable down-signal. Next steps are the **highest-leverage data unblock** in the
+whole program:
+
+| Priority | ID | Next test | Unblock needed |
+|----------|-----|-----------|----------------|
+| **P0** | — | Multi-day on-chain capture: run the bitquery firehose daily ≥30d | a daily cron dump (cheap) |
+| P1 | H-163 | Replicate wq-sell cross-sectional ordering ACROSS sessions (kills regime-capture, eff-n=days) | multi-day capture |
+| P1 | H-164 | Down-signal on the CEX/perp-listed shortable subset; fuse with C-002 funding/basis | token↔perp mapping |
+| P2 | H-165 | quality-sell-cluster as EXIT overlay for any future long book | a profitable long book (none yet) |
+| P2 | — | real memecoin slippage curve by liquidity bucket (replace flat 1.8% cost) | quote/impact data |
+
 ## Active Research Tracks
 
 ### Track 1: Champion — RESOLVED (was "fix the champion")
