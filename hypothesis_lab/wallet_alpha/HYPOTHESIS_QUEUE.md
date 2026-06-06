@@ -53,6 +53,26 @@ Gate = realized net EV>+2% ∧ perm<0.05 ∧ CI95>0 ∧ n>100, TEST-ONLY walk-fo
 4. **H-180** (archetype-consensus) — re-test the genius-level wallet idea under the corrected gate.
 5. **H-182** (wallet-token fit) + **H-190** (sizing overlay) + **H-185** (transitions) + **H-187 intra** (co-buy cluster).
 
+## Cycle log (tournament results, append per cycle)
+- **2026-06-06 cyc1-2** (walk-forward, corrected gate): token_gbm +4.66% perm 0.044; neutral +7.34% perm 0.002;
+  token+wallet +1.78% over token-only perm 0.000 (CI upper +2.14% via token+wq); **H-184 rug-skip +4.73% perm
+  0.000** (ROBUST). Naive avoidance filter CORRECTED to n.s. (0.117). promoted=0.
+- **2026-06-06 cyc3** (added H-183/H-185 via prev_state): H183_buy_acceleration −9.1% n.s. (**continuation
+  FAILS** → status dead); H183_buy_distribution +3.4% n.s. (reversal weak); **H183_neutral_post_distrib +5.57%
+  EV** (only positive seen) but **n=2** (status: promising, DATA-STARVED → GMGN volume); H185 transitions too
+  sparse (n=6, status: DATA-STARVED). promoted=0. Ledger=43 rows.
+
+## Status updates after cycles
+- **test-now → tested:** H-170 (separator, avoidance-axis), H-171/H-171b (wallet increment CONFIRMED, carried by
+  wq+cohesion), H-184 (rug-skip ROBUST, shadow no-trade filter), H-183 (continuation dead / reversal weak),
+  H-185 (transition data-starved).
+- **DATA-STARVED → needs GMGN cross-day volume (the unblock now running):** H-183 post-distribution bounce
+  (n=2!), H-185 transitions, H-186 liquidity migration, H-191 regime tagger, H-189 edge stack.
+- **Heavy, deferred to GMGN cross-day (single-regime cousins already dead → don't re-run on May-14):** H-180
+  archetype-consensus (needs KMeans; cf. H-161 dead), H-187 co-buy cluster (needs graph; cf. H-168 dead),
+  H-182 wallet-token fit (needs per-(wallet,state) win-rate). H-190 sizing overlay needs a sizing-aware gate
+  (separate metric from selection gate) — build next.
+
 ## The binding constraint (honest)
 Every on-chain candidate sits on a NEGATIVE base (May-14 dump). Edges over base are real and now walk-forward-
 robust (token_gbm perm 0.044, neutral perm 0.002, token+wallet perm 0.000), but **absolute EV stays <0** → no

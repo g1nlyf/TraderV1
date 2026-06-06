@@ -32,16 +32,21 @@ auto-run every cycle; a candidate must beat them all AND the previous best.
 
 ## The data flywheel (unblocks the only hard blocker: single regime)
 ```
-py hypothesis_lab/wallet_alpha/corecast_adapter.py --selftest   # verify mapping (no network)
-# one config change starts high-volume collection:
-set BITQUERY_TOKEN=<free Bitquery Ory token>                     # https://account.bitquery.io (free tier)
-py hypothesis_lab/wallet_alpha/corecast_adapter.py --stream      # resume-safe; writes -> firehose.sqlite3
-py hypothesis_lab/wallet_alpha/corecast_adapter.py --status      # daily event volume / collection target
-# thin fallback (no token): py firehose_collector.py --loop      (GeckoTerminal, ~0.5 clusters/day)
+# PRIMARY — GMGN smart-money (point-in-time, keyed via .env, ~17K trades/day). LIVE NOW.
+py hypothesis_lab/wallet_alpha/gmgn_adapter.py --selftest        # map+dedup (no network)
+py hypothesis_lab/wallet_alpha/gmgn_adapter.py --once            # one poll -> firehose.sqlite3
+py hypothesis_lab/wallet_alpha/gmgn_adapter.py --loop --interval 300   # CONTINUOUS collection (resume-safe)
+py hypothesis_lab/wallet_alpha/gmgn_adapter.py --status          # volume / collection target
+
+# FALLBACK — Bitquery Corecast raw firehose (all tokens; needs token). Only if base rates over ALL tokens needed.
+set BITQUERY_TOKEN=<free Bitquery Ory token>; py .../corecast_adapter.py --stream
+# thin fallback: py firehose_collector.py --loop                 (GeckoTerminal, ~0.5 clusters/day)
 ```
-Run the stream (or schedule it) for ≥14 distinct calendar days → rebuild events per day → re-run the
-tournament at DAY level (H-163/H-191). That is the experiment that can flip promoted=0 → promoted≥1, because
-it is the first time the gate sees a non-dump regime.
+Run `gmgn_adapter.py --loop` (or schedule it) to accrue cross-day smart-money trades. After ≥ a few distinct
+days with enough forward-labelable events → rebuild day-level events → re-run the tournament at DAY level
+(H-163/H-191). That is the first time the gate sees a non-dump regime — the experiment that can flip
+promoted=0 → promoted≥1. (GMGN smartmoney is curated to the smart-money population = exactly H-162/H-171's
+universe; use Corecast fallback for ALL-token base rates / token-lifecycle.)
 
 ## Continuous operation (scheduled agent)
 ```

@@ -38,7 +38,27 @@ LOG:
      selftest PASS; gRPC stream env-gated (BITQUERY_TOKEN), resume-safe; proto already installed in WS venv.
      Blocker = 1 token. RESUME.md loop operating manual (state files, cycle commands, flywheel, stop conditions).
 [t7] F DOCS — VALIDATION_AUDIT + CANONICAL/INDEX/STACK/DEAD_TRACKS Sprint-9 + this log.
-OUTCOME: Operating mode corrected — built a RESEARCH OS (reusable tournament + queue + ledger + flywheel +
-     resume manual), fixed a validation bug, ran 2 cycles, sharpened the signal library. Findings robust under
-     corrected gate. promoted=0 (single down-regime is the wall). Flywheel built + tested = 1 token from
-     unblocking cross-day. C-002 sole champion. Loop is resumable; next cycles need NO new data.
+OUTCOME (part 1): Operating mode corrected — built a RESEARCH OS (reusable tournament + queue + ledger +
+     flywheel + resume manual), fixed a validation bug, ran 2 cycles, sharpened the signal library. Findings
+     robust under corrected gate. promoted=0 (single down-regime is the wall). C-002 sole champion.
+
+=== CONTINUATION (GMGN primary correction) ===
+[t8] GMGN AUDIT — gmgn-cli has `track smartmoney|follow-wallet|kol` returning RAW POINT-IN-TIME trade records
+     (tx_hash, maker, base_address, side, amounts, price, TIMESTAMP). Classified fields: point-in-time
+     (events) vs discovery-only (smart-money membership) vs enrichment-snapshot (tags, token meta) vs FORBIDDEN
+     (portfolio stats aggregates = leaderboard class). GMGN_DATA_AUDIT.md.
+[t9] gmgn_adapter.py — PRIMARY collector -> firehose schema (source=gmgn:smartmoney), dedupe, raw stored,
+     provenance. selftest PASS. LIVE: 1 poll = 100 fetched/95 new/26 wallets/27 tokens/508s span ≈ 17K
+     smart-money trades/day (vs GeckoTerminal 0.5 clusters/day). Rows dated ~today = cross-day seed vs May-14.
+     Corecast demoted to FALLBACK.
+[t10] loop_runner.py — continuous loop (repeat tournament cycles, optional GMGN poll/cycle, resume from ledger,
+     schedulable, no chat memory). Ran cycle 3.
+[t11] Tournament cycle 3 — added H-183 (continuation/reversal) + H-185 (transition) via prev_state augment:
+     H183_buy_acceleration EV -22% edge -9% (continuation FAILS); H183_buy_distribution +3.4% n.s.;
+     H183_neutral_post_distrib +5.57% EV (only positive seen) but n=2 (noise, needs volume); H185 transitions
+     too sparse (n=6). Survivors persist (token_gbm 0.044, neutral 0.002, H184 0.000, token+wallet 0.000).
+     Ledger=43 rows across 3 cycles. promoted=0.
+OUTCOME (part 2): GMGN = the real data unblock (primary, point-in-time, live, ~17K/day). Collection RUNNING
+     (95 rows seeded, cross-day started). Loop runs continuous cycles + ledgers. Lifecycle directional signals
+     real but sparse on 1 session -> GMGN cross-day volume is the path. STOP-CONDITION MET: data collection
+     actually running (gmgn_adapter --loop). promoted=0; C-002 sole champion.

@@ -61,7 +61,20 @@
 
 ## Wallet firehose collector (NEW, Sprint 6 — the persistence unblock)
 - `hypothesis_lab/wallet_alpha/firehose_collector.py` → `hypothesis_lab/wallet_alpha/_data/firehose.sqlite3` (gitignored). **FREE, keyless** GeckoTerminal (new+trending pools → per-pool trades). Schema aligned to raw_trades (wallet, token, side, quote/base, block_ts, provenance). UNIQUE(sig,token,side,wallet) dedup. **Confidence MEDIUM (real fills), leakage LOW** (block_ts is event time). **This is what makes cross-day wallet persistence (H-163) testable** — run daily, target ≥14 days. Runbook: `wallet_alpha/FIREHOSE_RUNBOOK.md`.
-- Future-optional (free, not yet wired into this table): Bitquery Corecast gRPC (`WalletScarper/.../bitquery_corecast.py`, higher throughput), Helius free DAS (`helius_das.py`, per-wallet backfill). Document quota before relying.
+- Future-optional (free): Helius free DAS (per-wallet backfill). Document quota before relying.
+
+## GMGN collector (NEW, Sprint 9 — the PRIMARY point-in-time event source) ✅ LIVE
+- `hypothesis_lab/wallet_alpha/gmgn_adapter.py` → same `_data/firehose.sqlite3` (source=`gmgn:smartmoney`).
+  **FREE, keyed** (GMGN_API_KEY in `hypothesis_lab/.env`), via `gmgn-cli track smartmoney|follow-wallet|kol --raw`.
+  Returns RAW per-trade records with a unix `timestamp` (event time) = **point-in-time**. Live-probed: 1 poll =
+  100 trades / 95 new / 26 wallets / 27 tokens / 508s ≈ **~17K smart-money trades/day** (vs GeckoTerminal ~0.5
+  clusters/day). **Confidence HIGH (real fills, keyed), leakage LOW** (block_ts = event time). selftest passes.
+  Run: `gmgn_adapter.py --loop`. **This is the cross-day unblock** (H-163). See GMGN_DATA_AUDIT.md.
+- **Forbidden from GMGN** (leaderboard class, never a feature): `gmgn-cli portfolio stats` aggregates
+  (realized_profit/winrate/pnl_distribution), maker tags, smart-money membership (discovery-only). Enrichment
+  snapshots (token holders/security/pool, tags) stored in `raw_json` with fetched_at, never retroactive features.
+- **Bitquery Corecast = FALLBACK** raw firehose (`corecast_adapter.py`, gRPC, needs BITQUERY_TOKEN). Use only if
+  we need base rates over ALL tokens (GMGN smartmoney is curated to the smart-money population). Proto installed.
 
 ## Bottom line for Sprint 5
 - **Feature substrate:** raw_trades, point-in-time (block_time < t), price_sol = quote/token.

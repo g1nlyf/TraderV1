@@ -140,6 +140,7 @@ def build_lifecycle_sample(trades):
         off = 300.0
         while first + off < last - H and len(pts) < MAX_PTS:
             pts.append(first + off); off += H            # spaced >= H -> non-overlapping forward windows
+        prev = "none"                                    # prior decision-point state for THIS token (H-185)
         for t in pts:
             f = tok_features(trs, ts_list, t)
             if f is None:
@@ -149,8 +150,8 @@ def build_lifecycle_sample(trades):
                 continue
             st = classify(f)
             f = {k: v for k, v in f.items() if not k.startswith("_")}
-            f.update({"token": tok, "t": t, "state": st, "net": net})
-            rows.append(f)
+            f.update({"token": tok, "t": t, "state": st, "prev_state": prev, "net": net})
+            rows.append(f); prev = st
     rows.sort(key=lambda r: r["t"])
     return rows
 

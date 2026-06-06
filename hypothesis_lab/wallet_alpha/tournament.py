@@ -98,6 +98,11 @@ def state_not_in(states: set):                       # no-trade filter (fire = K
         return np.array([r.get("state") not in states for r in te], bool)
     return fn
 
+def transition(prev_set: set, state_set: set):       # H-185: fire on a lifecycle STATE TRANSITION
+    def fn(ds, tr, te):
+        return np.array([r.get("prev_state") in prev_set and r.get("state") in state_set for r in te], bool)
+    return fn
+
 def random_topk(frac=0.30):
     def fn(ds, tr, te):
         return RNG.random(len(te)) < frac
@@ -161,6 +166,10 @@ def lifecycle_candidates():
         "neutral_only": state_in({"neutral"}),
         "avoid_rug_distrib_decay": state_not_in({"rug_dead", "distribution", "decay"}),
         "H184_rug_skip_token": make_rug_skip("token", 0.30),     # H-184 rug pre-detection no-trade filter
+        "H183_buy_acceleration": state_in({"acceleration"}),     # H-183 continuation bet
+        "H183_buy_distribution": state_in({"distribution"}),     # H-183 reversal/bounce bet (H-042 on-chain?)
+        "H183_neutral_post_distrib": transition({"distribution"}, {"neutral", "acceleration"}),  # absorbed-distrib bounce
+        "H185_into_distribution": transition({"acceleration", "crowded_top", "neutral", "ignition"}, {"distribution"}),
     }
 
 def cluster_candidates():

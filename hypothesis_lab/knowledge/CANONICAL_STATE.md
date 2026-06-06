@@ -84,6 +84,19 @@ selection labels, not alpha** — never features. **Wallet alpha must not be siz
 - **promoted=0 still** — every selection EV<0 on the single May-14 down-regime. The wall is REGIME DIVERSITY;
   the Corecast flywheel is the built, tested, one-token-away unblock. C-002 remains sole champion.
 
+**Sprint 9 cont. (2026-06-06) — GMGN is the PRIMARY data unblock (data collection now RUNNING):**
+- GMGN `gmgn-cli track smartmoney` returns RAW POINT-IN-TIME trade records (tx_hash, maker, token, side,
+  amounts, price, unix timestamp). Built `gmgn_adapter.py` (PRIMARY collector → firehose schema, source=gmgn,
+  keyed via .env, selftest passes). **LIVE: ~17K smart-money trades/day** (vs GeckoTerminal 0.5 clusters/day),
+  rows dated ~today = cross-day accrual STARTED. Corecast demoted to FALLBACK. GMGN_DATA_AUDIT.md.
+- Forbidden from GMGN: `portfolio stats` aggregates / tags / smart-money membership (leaderboard/discovery/
+  enrichment, never point-in-time features). Only the raw `track` trade records are features.
+- Built `loop_runner.py` (continuous resume-safe tournament cycles + optional GMGN poll). Ran cycle 3 (ledger=
+  43 rows): added H-183 (continuation/reversal) + H-185 (transition). Continuation FAILS (accel −9% n.s.);
+  post-distribution bounce +5.57% EV but n=2 (too sparse on 1 session). Survivors persist. promoted=0.
+- **The data blocker is now resolving itself** (GMGN looping). Next: accrue ≥ a few cross-day, re-run the
+  tournament on GMGN-labeled events (needs forward time to label) → first genuine multi-regime test.
+
 ## The promotion gate (CONSTRAINTS.md, enforced by `finetune/pipeline/eval_stats.py`)
 A rule is promotable ONLY if, on a temporal OOS holdout with **realized** payoffs:
 1. realized net EV > **+2.0%** per trade, AND
