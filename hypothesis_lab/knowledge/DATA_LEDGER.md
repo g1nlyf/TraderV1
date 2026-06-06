@@ -59,6 +59,10 @@
 ## Forward collector (live, running)
 - `finetune/pipeline/forward_collector.py` + cron → `finetune/data/forward_collector_state.jsonl` (updated 2026-06-06 18:40). Accumulates forward outcomes for H-040/H-024/H-042 to grow n past the gate. **This is the unblock path for sub-gate sleeves.**
 
+## Wallet firehose collector (NEW, Sprint 6 — the persistence unblock)
+- `hypothesis_lab/wallet_alpha/firehose_collector.py` → `hypothesis_lab/wallet_alpha/_data/firehose.sqlite3` (gitignored). **FREE, keyless** GeckoTerminal (new+trending pools → per-pool trades). Schema aligned to raw_trades (wallet, token, side, quote/base, block_ts, provenance). UNIQUE(sig,token,side,wallet) dedup. **Confidence MEDIUM (real fills), leakage LOW** (block_ts is event time). **This is what makes cross-day wallet persistence (H-163) testable** — run daily, target ≥14 days. Runbook: `wallet_alpha/FIREHOSE_RUNBOOK.md`.
+- Future-optional (free, not yet wired into this table): Bitquery Corecast gRPC (`WalletScarper/.../bitquery_corecast.py`, higher throughput), Helius free DAS (`helius_das.py`, per-wallet backfill). Document quota before relying.
+
 ## Bottom line for Sprint 5
 - **Feature substrate:** raw_trades, point-in-time (block_time < t), price_sol = quote/token.
 - **Label:** intraday forward VWAP return from raw_trades itself, H ∈ {30m, 60m}. Multi-day = unavailable.

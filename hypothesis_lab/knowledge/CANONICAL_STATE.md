@@ -28,8 +28,18 @@ realized EV, eval_stats gate):
   Logged as a risk/exit signal, not a champion.
 
 `wallet_leaderboard.json`, `wallet_scores`, `wallet_token_pnl`, GMGN `composite_score` remain **look-ahead
-selection labels, not alpha** — never features. **Wallet alpha must not be sized.** Next = multi-day capture
-(H-163/H-164) to test persistence + find a capturable subset. See `DEAD_TRACKS.md#naive-leaderboard-copy`.
+selection labels, not alpha** — never features. **Wallet alpha must not be sized.** See `DEAD_TRACKS.md#naive-leaderboard-copy`.
+
+**Sprint 6 (2026-06-06) update — persistence flywheel built:**
+- **Free firehose collector LIVE** (`wallet_alpha/firehose_collector.py`, GeckoTerminal, keyless) — the
+  engine that makes cross-day persistence testable. Verified (392 trades/tick; smoke pass). Accruing days.
+- **H-162 intra-session persistence HOLDS** (walk-forward +7.7% over base, perm 0.000). Cross-DAY still
+  untestable (1 session) = the open question → H-163 once firehose has ≥14 days.
+- **Capturable conversions:** all wallet signals are real cross-sectional selectors on a NEGATIVE session
+  base → no positive-EV long. Only **exit-overlay** (de-risk a held long on distribution) is capturable
+  (+3.9/+5.4%/trade saved, perm 0.000) — a Stage-2 RISK module candidate, not alpha. See CAPTURABILITY_REPORT.md.
+- Net: wallet long alpha still **DEAD**; H-162 short signal **real, regime-robust intra-session, not yet
+  cross-day, not capturable as long**. Binding constraint = multi-day capture (now unblocking itself).
 
 ## The promotion gate (CONSTRAINTS.md, enforced by `finetune/pipeline/eval_stats.py`)
 A rule is promotable ONLY if, on a temporal OOS holdout with **realized** payoffs:

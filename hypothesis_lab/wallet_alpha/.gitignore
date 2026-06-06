@@ -2,3 +2,5 @@
 _cache/
 __pycache__/
 *.pyc
+# durable collected data (firehose.sqlite3) — large, machine-local, regrows by collecting
+_data/

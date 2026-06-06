@@ -128,6 +128,16 @@ First honest point-in-time test (`hypothesis_lab/wallet_alpha/`, SYNTHESIS.md). 
 - **No new champion. No new stack sleeve.** Wallet alpha is not sized. Binding constraint reconfirmed = DATA
   (need multi-day capture for persistence + a shortable subset for capture). Next: H-163/H-164.
 
+### Sprint 6 (2026-06-06) — persistence flywheel + capturability
+- **Free firehose collector built + LIVE** (`wallet_alpha/firehose_collector.py`, GeckoTerminal, keyless).
+  Accruing days → makes H-163 cross-day persistence testable.
+- **H-162 persists INTRA-session** (walk-forward +7.7% over base, perm 0.000). Cross-day = open (H-163).
+- **Exit-overlay (H-166) = RISK MODULE CANDIDATE, not a champion.** Distribution-timed exit on a held long
+  saves +3.9/+5.4%/trade (perm 0.000) and beats a shuffled-lag control 100% of draws (real signal, ~+1.8%
+  beyond mechanical early-exit). But the book stays −11% → de-risk only, never sized as alpha. Stage-2 paper
+  reject/exit filter once a profitable long book exists (none yet). See wallet_alpha/CAPTURABILITY_REPORT.md.
+- Still: C-002 sole champion; H-042 sole sub-gate sleeve; wallet long alpha DEAD.
+
 ## Pending Promotions
 _None._ C-002 sole champion; H-042 sole sub-gate sleeve; wallet alpha unproven (long)/uncapturable (short).
 See ROADMAP for the multi-day-capture unblock (now the highest-leverage data need).
