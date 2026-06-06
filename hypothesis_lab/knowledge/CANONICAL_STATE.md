@@ -41,6 +41,20 @@ selection labels, not alpha** — never features. **Wallet alpha must not be siz
 - Net: wallet long alpha still **DEAD**; H-162 short signal **real, regime-robust intra-session, not yet
   cross-day, not capturable as long**. Binding constraint = multi-day capture (now unblocking itself).
 
+**Sprint 7 (2026-06-06) update — H-166 productionized + DEMOTED by stronger control:**
+- Built `h166_risk_overlay.py` (deterministic, point-in-time, paper-only; 8/8 fixtures) + `backtest_h166.py`
+  (drives the real module, all controls) + `firehose_status.py` (health/rollup/target).
+- **H-166 DEMOTED.** Through the module with the correct **random-sell control**: exit_h166 −12.84% beats
+  hold (−15.08%) and random-time (−13.92%) [perm 0.000] but **LOSES to exit-on-any-random-sell (−11.69%)**.
+  The quality-distribution specificity adds **nothing** over "react to any selling." No-trade veto worthless
+  (−15.51%, perm 0.910). Sprint-6's shuffled-lag control was too weak. **H-166 = research curiosity /
+  one-session artifact, NOT a validated Stage-2 risk module.** Ships SHADOW-ONLY (log, never gate).
+- **Compound theory:** distributor-archetype (repeatedly-sells-before-drop) is the **best wallet feature**
+  (rho +0.262) but **< token context** (tok_prior_ret +0.332); **co-sell network/cabal DEAD** (rho −0.102).
+  No wallet/network layer beats token-only. Keep `distributor_score` as the wallet feature for H-163 only.
+- **Firehose volume truth:** GeckoTerminal free ≈ 0.5 sell-clusters/day ≪ 100 needed → too thin; the free
+  (already-wired) Bitquery Corecast stream is the volume path for cross-day. Cross-day H-162 = STILL OPEN.
+
 ## The promotion gate (CONSTRAINTS.md, enforced by `finetune/pipeline/eval_stats.py`)
 A rule is promotable ONLY if, on a temporal OOS holdout with **realized** payoffs:
 1. realized net EV > **+2.0%** per trade, AND

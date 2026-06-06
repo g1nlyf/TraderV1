@@ -138,6 +138,15 @@ First honest point-in-time test (`hypothesis_lab/wallet_alpha/`, SYNTHESIS.md). 
   reject/exit filter once a profitable long book exists (none yet). See wallet_alpha/CAPTURABILITY_REPORT.md.
 - Still: C-002 sole champion; H-042 sole sub-gate sleeve; wallet long alpha DEAD.
 
+### Sprint 7 (2026-06-06) — H-166 productionized then DEMOTED
+- Built deterministic `h166_risk_overlay.py` (8/8 fixtures) + Stage-2-style `backtest_h166.py` (all controls).
+- **H-166 fails the stronger control:** exit_h166 −12.84% beats hold/random-time (perm 0.000) but LOSES to
+  exit-on-any-random-sell (−11.69%); no-trade veto worthless (perm 0.910). Quality-distribution specificity
+  adds nothing over naive sell-reaction. **Demoted: research curiosity / 1-session artifact, SHADOW-only,
+  NOT an authoritative Stage-2 risk module.** (Sprint-6's shuffled-lag control was too weak.)
+- Distributor archetype (H-167) = best wallet feature (rho +0.262) but < token context; co-sell network
+  (H-168) DEAD. No new sleeve, no promotion. C-002 remains sole champion.
+
 ## Pending Promotions
 _None._ C-002 sole champion; H-042 sole sub-gate sleeve; wallet alpha unproven (long)/uncapturable (short).
 See ROADMAP for the multi-day-capture unblock (now the highest-leverage data need).

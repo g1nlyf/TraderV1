@@ -39,6 +39,17 @@
 - BTC-vol regime gate, AR(1)/low-beta/level×persist selection, basis-vol de-risker, funding dispersion/skew sizing: **all within CI95 of C-002**. Carry book is near-optimal on funding-cache data.
 - Why dead: no cheap Sharpe lift left in 730d 8h funding data. (See DUPLICATE_MAP for the ID collisions in this batch.)
 
+## Wallet distribution layers (Sprint 7, 2026-06-06)
+- **H-168 co-sell network / cabal cohesion — DEAD.** Co-sell graph cohesion among cluster sellers rho −0.102
+  vs forward drop; coordinated co-sellers do NOT out-drop independent sellers. "Cabal distributes together →
+  bigger crash" refuted on this data (cohesion used generous full-session membership → robust negative).
+- **H-166 as an AUTHORITATIVE risk module — NOT VALIDATED (demoted).** exit_h166 loses to exit-on-any-random-
+  sell (−12.84% vs −11.69%); quality-distribution specificity adds nothing over naive sell-reaction; no-trade
+  veto worthless (perm 0.910). Keep only SHADOW (log-only). The generic "exit-on-sell" reaction beats hold
+  but is naive + single-session. (Sprint-6 over-credited it via a too-weak shuffled-lag control.)
+- NOT dead but secondary: H-167 distributor-archetype (rho +0.262) is the best wallet feature yet, but <
+  token context (tok_prior_ret +0.332) → no separate edge; retained only for the H-163 cross-day test.
+
 ## BLOCKED (not dead — data-gated; cannot test on current cache) {#blocked}
 - H-096 OKX carry sleeve (no OKX funding), H-097 quarterly basis (no dated futures), H-098 USDC-margin split, H-102 perp-premium crowding (needs OI), H-103/H-113 OI-timing (no OI history), H-111/H-112 spread/maker-taker (no L2), H-118 implied-vol (no options), H-153 SPX-corr (no macro), H-120–H-139 calendar/macro (low-n + no event data).
 - Wallet multi-day persistence, archetype alpha half-life: blocked by the 5.5h raw_trades span (DATA_LEDGER).
