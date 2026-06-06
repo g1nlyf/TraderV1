@@ -14,15 +14,22 @@
 |----|------|--------|---------------|---------|
 | H-042 | Liquidation-cascade bounce (market-neutral) | **REAL but SUB-GATE** | −8%/H2 +1.46%/trade, cluster-t 2.24, n=91 periods | magnitude×n×significance frontier: no config clears EV>2% ∧ n>100 ∧ perm/CI at once. Needs forward-collect to grow n |
 
-## Wallet / on-chain alpha
-**UNPROVEN.** No validated wallet-intelligence edge exists. Everything in `finetune/pipeline/copy_engine.py`,
-`wallet_leaderboard.json`, `wallet_scores`, `wallet_token_pnl` is **in-sample + survivorship-selected**
-(wallets chosen because they made money on the very tape used to "backtest" copying them). No OOS, no
-permutation null, no cost-honest forward test has ever passed. The GMGN score and DB `composite_score`
-are **selection labels, not alpha**. See `DEAD_TRACKS.md#naive-leaderboard-copy`.
+## Wallet / on-chain alpha — TESTED honestly (Sprint 5), still NOT sized
+**LONG: UNPROVEN/DEAD on this data. SHORT: REAL but uncapturable.** The first leakage-controlled
+point-in-time test stack (`wallet_alpha/`, SYNTHESIS.md) is built and run. Results (temporal OOS, capped
+realized EV, eval_stats gate):
+- **Naive smart-wallet copy = −17.7% EV** (cluster-buys mark the local top). Invalidates
+  `finetune/pipeline/copy_engine.py` (in-sample + survivorship by construction).
+- **H-160 wallet-quality selection: DEAD** — pre-t quality *anti*-predicts (rho −0.37 = in-session
+  survivorship); adds ~0 over token-microstructure context. **H-161 archetype: DEAD.**
+- **H-162 distribution-sell down-signal: REAL, NOT promotable** — coordinated quality-wallet sells predict
+  larger forward drops (wq-sell SHORT +22% EV, perm_p 0.008, CI [+15.9%,+27.6%], n=212; selection edge
+  +4.5–5.9% cost-invariant). Blocked: no short venue for microcaps + eff-n=1 session (regime-capture risk).
+  Logged as a risk/exit signal, not a champion.
 
-Sprint 5 builds the first honest point-in-time test (`wallet_alpha/`). Until it passes the CONSTRAINTS
-gate OOS, **wallet alpha = unproven** and must not be sized.
+`wallet_leaderboard.json`, `wallet_scores`, `wallet_token_pnl`, GMGN `composite_score` remain **look-ahead
+selection labels, not alpha** — never features. **Wallet alpha must not be sized.** Next = multi-day capture
+(H-163/H-164) to test persistence + find a capturable subset. See `DEAD_TRACKS.md#naive-leaderboard-copy`.
 
 ## The promotion gate (CONSTRAINTS.md, enforced by `finetune/pipeline/eval_stats.py`)
 A rule is promotable ONLY if, on a temporal OOS holdout with **realized** payoffs:
