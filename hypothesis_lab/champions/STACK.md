@@ -147,6 +147,16 @@ First honest point-in-time test (`hypothesis_lab/wallet_alpha/`, SYNTHESIS.md). 
 - Distributor archetype (H-167) = best wallet feature (rho +0.262) but < token context; co-sell network
   (H-168) DEAD. No new sleeve, no promotion. C-002 remains sole champion.
 
+### Sprint 8 (2026-06-06) — Token Lifecycle Model + Beat-Token-Only gate (promotion machine)
+- Built `token_lifecycle.py`: deterministic lifecycle state machine + reusable beat-token-only ML gate.
+- **H-170 lifecycle states**: real OOS EV separator (neutral edge +8.0%, perm 0.000) but avoidance-axis only
+  (all states negative) and NOT incremental over continuous token feats. → interpretable risk states +
+  +2.3% no-trade avoidance filter (shadow candidate). Not alpha.
+- **H-171 wallet incremental value (REVISES wallet-dead)**: multivariate token+wallet beats token-only OOS
+  (+1.55% edge, +0.074 Spearman, perm 0.000). Best ranker yet (CI upper +0.24%, closest to break-even).
+  Wallet intelligence is NOT dead — demote-to-secondary was too harsh. Needs walk-forward + cross-day.
+- **Still no promotion** — every selection negative EV on the May-14 down-regime. Binding constraint
+  reconfirmed = REGIME DIVERSITY (cross-day data). C-002 remains sole champion; next decisive test = H-163.
 ## Pending Promotions
 _None._ C-002 sole champion; H-042 sole sub-gate sleeve; wallet alpha unproven (long)/uncapturable (short).
 See ROADMAP for the multi-day-capture unblock (now the highest-leverage data need).

@@ -50,6 +50,19 @@
 - NOT dead but secondary: H-167 distributor-archetype (rho +0.262) is the best wallet feature yet, but <
   token context (tok_prior_ret +0.332) → no separate edge; retained only for the H-163 cross-day test.
 
+## Wallet-dead verdict PARTIALLY REVISED (Sprint 8, 2026-06-06)
+- **The Sprint-7 "wallet adds nothing over token" claim was UNIVARIATE (Spearman rho per feature).** The
+  Sprint-8 beat-token-only gate (multivariate GBM, `token_lifecycle.py` PART B) shows **token+wallet DOES
+  beat token-only OOS** (edge +11.36% vs +9.81%; Spearman +0.474 vs +0.400; perm 0.000). Wallet/cohesion/wq
+  features carry multivariate information token features miss. → **do not re-kill wallet intelligence on
+  univariate rho alone.** Still negative EV (down-regime), still unpromotable, but NOT dead.
+- **DROP from the ML feature set: explicit lifecycle-state one-hot.** A GBM on continuous token features
+  already captures lifecycle state (state one-hot adds only +0.10% OOS). Keep the state machine for
+  interpretability + the +2.3% avoidance no-trade filter, not as an ML feature.
+- **Anti-repeat:** stop hunting new cross-sectional separators on May-14 alone — every one is negative EV
+  (down-regime); the wall is REGIME DIVERSITY, not feature engineering. Next decisive work = cross-day data
+  (H-163 / Corecast), not Sprint-9 of more features on the same session.
+
 ## BLOCKED (not dead — data-gated; cannot test on current cache) {#blocked}
 - H-096 OKX carry sleeve (no OKX funding), H-097 quarterly basis (no dated futures), H-098 USDC-margin split, H-102 perp-premium crowding (needs OI), H-103/H-113 OI-timing (no OI history), H-111/H-112 spread/maker-taker (no L2), H-118 implied-vol (no options), H-153 SPX-corr (no macro), H-120–H-139 calendar/macro (low-n + no event data).
 - Wallet multi-day persistence, archetype alpha half-life: blocked by the 5.5h raw_trades span (DATA_LEDGER).

@@ -55,6 +55,20 @@ selection labels, not alpha** — never features. **Wallet alpha must not be siz
 - **Firehose volume truth:** GeckoTerminal free ≈ 0.5 sell-clusters/day ≪ 100 needed → too thin; the free
   (already-wired) Bitquery Corecast stream is the volume path for cross-day. Cross-day H-162 = STILL OPEN.
 
+**Sprint 8 (2026-06-06) update — Token Lifecycle Model + Beat-Token-Only gate (the promotion machine):**
+- Built `token_lifecycle.py`: deterministic token lifecycle state machine (ignition/acceleration/crowded_top/
+  distribution/decay/rug_dead/neutral) + a reusable beat-token-only ML gate. See H170_TOKEN_LIFECYCLE_REPORT.md.
+- **H-170 lifecycle states: REAL OOS EV separator** (neutral −7.4% vs base −13.1%, edge +8.0%, perm 0.000),
+  but on the AVOIDANCE axis (all states negative) and **NOT incremental over continuous token features**
+  (state one-hot adds +0.10% to a GBM). Value = interpretable risk states + a +2.3% no-trade avoidance filter.
+- **H-171 wallet adds incremental MULTIVARIATE value — REVISES the "wallet dead" verdict.** Beat-token-only
+  gate (cluster events, GBM, temporal OOS): token-only edge +9.81% / Spearman +0.400; **token+wallet edge
+  +11.36% / Spearman +0.474** (perm 0.000). Wallet/cohesion/wq features add +1.55% edge & +0.074 Spearman
+  over token-only — the univariate Sprint-7 kill was too harsh. token+wallet is the best ranker yet (CI upper
+  +0.24%, closest to break-even). Needs walk-forward confirm; still negative EV on the down-regime.
+- **Nothing clears +2% gate** — all selections negative (ONE down-session). Reconfirmed binding constraint =
+  REGIME DIVERSITY (cross-day data), not features/models/architecture. Next decisive test = H-163, not more features.
+
 ## The promotion gate (CONSTRAINTS.md, enforced by `finetune/pipeline/eval_stats.py`)
 A rule is promotable ONLY if, on a temporal OOS holdout with **realized** payoffs:
 1. realized net EV > **+2.0%** per trade, AND
