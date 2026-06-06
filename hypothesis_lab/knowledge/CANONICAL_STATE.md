@@ -69,6 +69,21 @@ selection labels, not alpha** — never features. **Wallet alpha must not be siz
 - **Nothing clears +2% gate** — all selections negative (ONE down-session). Reconfirmed binding constraint =
   REGIME DIVERSITY (cross-day data), not features/models/architecture. Next decisive test = H-163, not more features.
 
+**Sprint 9 (2026-06-06) update — Alpha Factory OS: validation fix + reusable tournament + flywheel:**
+- **VALIDATION BUG FOUND + FIXED.** Sprint-8 `token_lifecycle.py` fed full-sample `all_nets` to the gate while
+  firing test-only → contaminated base/perm. Fixed in reusable `tournament.py` (gate runs on POOLED TEST-ONLY
+  walk-forward universe). 7/7 harness tests pass incl. `test_gate_test_only_isolation`. See VALIDATION_AUDIT.md.
+- **Sprint-8 findings SURVIVE the fix** (not manufactured by contamination): under corrected walk-forward —
+  token_gbm edge +4.66% **perm 0.044** (was n.s.), neutral-state +7.34% **perm 0.002**, token+wallet +1.78%
+  over token-only **perm 0.000** (CI upper +2.14% via token+wq). **Corrected:** naive avoidance filter n.s.
+  (perm 0.117) — superseded by **H-184 rug pre-detection no-trade filter (+4.73%, perm 0.000, robust)**.
+- **Built the research OS** (not a one-off): `tournament.py` (reusable harness + candidate registry + persistent
+  `tournament_ledger.jsonl` + auto `TOURNAMENT_REPORT.md`), `HYPOTHESIS_QUEUE.md` (20+ compound hypotheses,
+  12 test-now), `corecast_adapter.py` (free high-volume flywheel → firehose schema, selftest passes, one
+  BITQUERY_TOKEN starts it), `RESUME.md` (loop operating manual). Ran 2 cycles; ledger accumulating.
+- **promoted=0 still** — every selection EV<0 on the single May-14 down-regime. The wall is REGIME DIVERSITY;
+  the Corecast flywheel is the built, tested, one-token-away unblock. C-002 remains sole champion.
+
 ## The promotion gate (CONSTRAINTS.md, enforced by `finetune/pipeline/eval_stats.py`)
 A rule is promotable ONLY if, on a temporal OOS holdout with **realized** payoffs:
 1. realized net EV > **+2.0%** per trade, AND

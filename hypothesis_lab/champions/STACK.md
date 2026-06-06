@@ -157,6 +157,18 @@ First honest point-in-time test (`hypothesis_lab/wallet_alpha/`, SYNTHESIS.md). 
   Wallet intelligence is NOT dead — demote-to-secondary was too harsh. Needs walk-forward + cross-day.
 - **Still no promotion** — every selection negative EV on the May-14 down-regime. Binding constraint
   reconfirmed = REGIME DIVERSITY (cross-day data). C-002 remains sole champion; next decisive test = H-163.
+
+### Sprint 9 (2026-06-06) — Alpha Factory OS (validation fix + reusable tournament + flywheel)
+- **Found + fixed a validation bug** (Sprint-8 gate fed full-sample nets while firing test-only). Reusable
+  `tournament.py` now gates on POOLED TEST-ONLY walk-forward; 7/7 tests pass. VALIDATION_AUDIT.md.
+- **Findings survive the fix**: token_gbm perm 0.044, neutral-state 0.002, token+wallet +1.78% over token-only
+  (perm 0.000, CI upper +2.14%). New robust **H-184 rug-skip no-trade filter** (+4.73%, perm 0.000). Corrected:
+  naive avoidance filter n.s.
+- **Shipped a research OS**: tournament harness + candidate registry + persistent ledger + auto report;
+  `HYPOTHESIS_QUEUE.md` (20+ compound, 12 test-now); `corecast_adapter.py` (free flywheel, selftest passes,
+  one BITQUERY_TOKEN starts it); `RESUME.md` loop manual. Ran 2 cycles.
+- **promoted=0** — all selections EV<0 on the single down-regime. C-002 remains sole champion. Unblock =
+  Corecast flywheel (built/tested) → ≥14 days → day-level tournament (H-163/H-191).
 ## Pending Promotions
 _None._ C-002 sole champion; H-042 sole sub-gate sleeve; wallet alpha unproven (long)/uncapturable (short).
 See ROADMAP for the multi-day-capture unblock (now the highest-leverage data need).

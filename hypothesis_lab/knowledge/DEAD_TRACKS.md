@@ -59,6 +59,11 @@
 - **DROP from the ML feature set: explicit lifecycle-state one-hot.** A GBM on continuous token features
   already captures lifecycle state (state one-hot adds only +0.10% OOS). Keep the state machine for
   interpretability + the +2.3% avoidance no-trade filter, not as an ML feature.
+- **Sprint-9 correction:** the Sprint-8 naive avoidance filter (skip rug/distribution/decay states) is **NOT
+  robust** — under corrected TEST-ONLY walk-forward it is n.s. (edge +2.30%, perm 0.117). It was single-split
+  luck (contaminated gate). **Superseded by H-184** (GBM rug pre-detection skip: +4.73%, perm 0.000). Also:
+  the Sprint-8 gate itself was contaminated (full-sample nets into the gate) — fixed in `tournament.py`; do
+  not reuse `token_lifecycle.py`'s inline `gate_mask` for new claims, route through `tournament.py`. VALIDATION_AUDIT.md.
 - **Anti-repeat:** stop hunting new cross-sectional separators on May-14 alone — every one is negative EV
   (down-regime); the wall is REGIME DIVERSITY, not feature engineering. Next decisive work = cross-day data
   (H-163 / Corecast), not Sprint-9 of more features on the same session.
